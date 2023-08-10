@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto+Condensed:wght@400;700&display=swap');
+/*Abajo la paleta de colores*/
+/*#93E6F9 Celeste clielo*/
+/*#9BA7A9* Gris perla/
+/*#3F888F Azul verdoso*/
+/*#EBDDCC Beige*/
+
 /*
 font-family: 'Roboto Condensed', sans-serif;
 */
@@ -28,7 +34,7 @@ body{
 
 
 .header{
-    background-image: url(images/habitacion3.jpeg);
+    /*background-image: url(images/habitacion3.jpeg);*/
     background-position: center center;
     background-repeat:  no-repeat;
     background-size: cover;
