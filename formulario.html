@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="styleFormulario.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="menu">
+            <a href="#" class="logo">Logo</a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="images/menu.png" class="menu-icono" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Acerca</a></li>
+                </ul>
+            </nav>  
+        </div>
+    </header>
+    <section class="formulario">
+        <h2 >Registrarse</h2>
+        <form  action="#" method="post" id="registration-form">
+
+            <!-- Contenido del formulario de registro -->
+            <form action="#" method="post" id="registro-formulario">
+                <ul>
+                    <li>
+                        <label for="first_name">Nombre:</label>
+                        <input type="text" id="first_name" name="first_name" required>
+                    </li>
+
+                    <li>
+                        <label for="last_name">Apellidos:</label>
+                        <input type="text" id="last_name" name="last_name" required>
+                    </li>
+
+                    <li>
+                        <label for="document_type">Tipo de Documento:</label>
+                        <select id="document_type" name="document_type" required>
+                            <option value="">Seleccione</option>
+                            <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                            <option value="Cedula extranjera">Cedula extranjera</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                        </select>
+                    </li>
+
+                    <li>
+                        <label for="document_number">Número de Documento:</label>
+                        <input type="text" id="document_number" name="document_number"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+                    </li>
+                    <li>
+                        <label for="age">Edad:</label>
+                        <input type="number" id="age" name="age" min="1" required>
+                    </li>
+
+                    <li>
+                        <label for="phone">Teléfono:</label>
+                        <input type="text" id="phone" name="phone"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+                    </li>
+
+                    <li>
+                        <label for="address">Dirección:</label>
+                        <input type="text" id="address" name="address" required>
+                    </li>
+
+                    <li>
+                        <label for="gender">Género:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Seleccione</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </li>
+
+                    <li>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </li>
+
+                    <li>
+                        <label for="city">Ciudad:</label>
+                        <select id="city" name="city" required>
+                            <option value="">Seleccione</option>
+                            <option value="Arauca">Arauca</option>
+                            <option value="Armenia">Armenia</option>
+                            <option value="Barranquilla">Barranquilla</option>
+                            <option value="Bogotá">Bogotá</option>
+                            <option value="Bucaramanga">Bucaramanga</option>
+                            <option value="Buenaventura">Buenaventura</option>
+                            <option value="Cali">Cali</option>
+                            <option value="Cartagena">Cartagena</option>
+                            <option value="Cúcuta">Cúcuta</option>
+                            <option value="Florencia">Florencia</option>
+                            <option value="Ibagué">Ibagué</option>
+                            <option value="Inírida">Inírida</option>
+                            <option value="Leticia">Leticia</option>
+                            <option value="Manizales">Manizales</option>
+                            <option value="Medellín">Medellín</option>
+                            <option value="Mitú">Mitú</option>
+                            <option value="Mocoa">Mocoa</option>
+                            <option value="Montería">Montería</option>
+                            <option value="Neiva">Neiva</option>
+                            <option value="Pasto">Pasto</option>
+                            <option value="Pereira">Pereira</option>
+                            <option value="Popayán">Popayán</option>
+                            <option value="Puerto Carreño">Puerto Carreño</option>
+                            <option value="Quibdó">Quibdó</option>
+                            <option value="Riohacha">Riohacha</option>
+                            <option value="San Andrés">San Andrés</option>
+                            <option value="San José del Guaviare">San José del Guaviare</option>
+                            <option value="Santa Marta">Santa Marta</option>
+                            <option value="Sincelejo">Sincelejo</option>
+                            <option value="Tunja">Tunja</option>
+                            <option value="Valledupar">Valledupar</option>
+                            <option value="Villavicencio">Villavicencio</option>
+                            <option value="Yopal">Yopal</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="file">Subir Certificado:</label>
+                        <input type="file" id="file" name="file">
+                    </li>
+
+                    <li>
+                        <label for="username">Usuario:</label>
+                        <input type="text" id="username" name="username" required>
+                    </li>
+
+                    <li>
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" required>
+                    </li>
+
+                    <li>
+                        <div class="btn-container">
+                            <button type="submit" class="btn btn-login">Registrarse</button>
+                            <button type="button" class="btn btn-cancel" onclick="showLoginForm()">Cancelar
+                                registro</button>
+                        </div>
+                    </li>
+
+                </ul>
+            </form>
+        </form>
+
+    </section>
+</body>
+
+
+</html>
