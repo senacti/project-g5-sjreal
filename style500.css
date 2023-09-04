@@ -1,0 +1,150 @@
+/*#93E6F9 Celeste clielo*/
+/*#9BA7A9* Gris perla/
+/*#3F888F Azul verdoso*/
+/*#EBDDCC Beige*/
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+/* inicia body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1000;
+} */
+
+.heroimage .nabvar {
+    
+    position: sticky;
+    top: 0;
+    background: rgba(42, 61, 167, 0.445); 
+    z-index: 1000; 
+    /* display: flex; */
+    align-items: center;
+
+    /* padding: 40px 0; */
+  }
+
+ .heroimage .nabvar .menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background: rgba(42, 61, 167, 0.445);  */
+  }
+
+ .heroimage .nabvar .logo {
+    font-size: 25px;
+    color: #EBDDCC;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding-left: 30px;
+  }
+
+ .heroimage .menu .navbar ul li {
+    position: relative;
+    float: left;
+  }
+
+ .heroimage .menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #EBDDCC;
+    display: block;
+  }
+
+ .heroimage #menu {
+    display: none;
+  }
+
+ .heroimage .menu-icono {
+    width: 25px;
+  }
+
+.heroimage  .menu label {
+    cursor: pointer;
+    display: none;
+  }
+
+
+
+footer {
+    position: sticky;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Cambia esto al color de fondo que desees */
+    color: white; /* Cambia el color del texto si es necesario */
+    z-index: 1000; /* Asegura que el footer esté sobre otros elementos */
+}
+
+
+/*                                         */
+/* estilo imagen de fondo para error 500 */
+.heroimage {
+    /* padding: 20px; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantener la imagen de fondo fija */
+    width: 100%;
+    height: 100%;
+}
+/* estilo dentro imagen de fondo para error 500 */
+.heroimage  .error-container {
+  padding: 30px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  padding: 0 20px;
+  color: #505657;
+  text-align: center;
+
+}
+/* estilo letra para frase  h1 */
+.heroimage .error-container h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+/* estilo para boton */
+.heroimage .return-button {
+  display: inline-block;
+  background-color: #93E6F9;
+  color: #505657;
+  padding: 15px 30px;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+/* estilo para el boton cuando se pase por encima con el mouse */
+.heroimage .return-button:hover {
+  background-color: #EBDDCC;
+}
+/* estilo responsive */
+@media (max-width: 768px) {
+    .heroimage .error-container {
+      flex-direction: column;
+      justify-content: center;
+  }
+
+  .heroimage .error-container h1 {
+      max-width: 100%;
+      margin-right: 20px;
+      margin-bottom: 20px;
+  }
+}
