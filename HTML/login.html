@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="../CSS/styleLogin.css">
+</head>
+
+<body class="body">
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class=""><img src="../Images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
+                <p>San José Real</p>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Acerca</a></li>
+            </ul>
+            <div class="reserva">
+                <div class="input-group">
+                    <input type="datetime-local" id="fechaHora" required>
+                    <label for="fechaHora">Fecha Check IN</label>
+                </div>
+                <div class="input-group">
+                    <input type="date" id="fecha" required>
+                    <label for="fecha">Fecha Check OUT</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="adultos" min="1" placeholder=" ">
+                    <label for="adultos"># Adultos</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="ninos" min="0" placeholder=" ">
+                    <label for="ninos"># Niños</label>
+                </div>
+                <input type="submit" value="Reserva">
+            </div>
+            <div class="login">
+                <a href="login.html"><img src="../Images/user-circle-single.png" class="logo-login"
+                        alt="Logo de inicio de sesión"> </a>
+                <ul>
+                    <li class="link-login">
+                        <a href="login.html">Inicia sesión</a>
+                    </li>
+                    <li class="link-registro">
+                        <a href="registro.html">Regístrate</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="formulario">
+            <h2>Inicia sesión</h2>
+            <form action="#" method="post" id="formulario">
+                <ul>
+                    <li>
+                        <label for="username">Ingrese su usuario:</label>
+                        <input type="text" id="username" name="username" placeholder="Usuario" required>
+                    </li>
+
+                    <li>
+                        <label for="password">Ingrese su contraseña:</label>
+                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    </li>
+
+                    <li class="li-buttons">
+                        <div class="btn-container">
+                            <button id="Log-in" type="submit" class="btn-login">Iniciar sesión</button>
+                            <button  class="btn-cancel" onclick="showLoginForm()">Recuperar
+                                contraseña</button>
+                            
+                        </div>
+                    </li>
+
+                </ul>
+            </form>
+        </section>
+    </div>
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div id="about" class="footer-section">
+                <h3>Información</h3>
+                <p>Sobre nosotros</p>
+                <p>Servicios</p>
+                <p>Contacto</p>
+            </div>
+            <div class="footer-section">
+                <h3>Habitaciones</h3>
+                <p>Habitaciones y tarifas</p>
+                <p>Reservas</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <p>Síguenos en Facebook</p>
+                <p>Síguenos en Instagram</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Hotel XYZ. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
