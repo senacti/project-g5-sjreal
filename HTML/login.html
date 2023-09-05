@@ -9,53 +9,53 @@
 </head>
 
 <body class="body">
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="index.html" class=""><img src="../Images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
-                <p>San José Real</p>
-            </div>
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Acerca</a></li>
-            </ul>
-            <div class="reserva">
-                <div class="input-group">
-                    <input type="datetime-local" id="fechaHora" required>
-                    <label for="fechaHora">Fecha Check IN</label>
-                </div>
-                <div class="input-group">
-                    <input type="date" id="fecha" required>
-                    <label for="fecha">Fecha Check OUT</label>
-                </div>
-                <div class="input-group">
-                    <input type="number" id="adultos" min="1" placeholder=" ">
-                    <label for="adultos"># Adultos</label>
-                </div>
-                <div class="input-group">
-                    <input type="number" id="ninos" min="0" placeholder=" ">
-                    <label for="ninos"># Niños</label>
-                </div>
-                <input type="submit" value="Reserva">
-            </div>
-            <div class="login">
-                <a href="login.html"><img src="../Images/user-circle-single.png" class="logo-login"
-                        alt="Logo de inicio de sesión"> </a>
-                <ul>
-                    <li class="link-login">
-                        <a href="login.html">Inicia sesión</a>
-                    </li>
-                    <li class="link-registro">
-                        <a href="registro.html">Regístrate</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
     <div class="container">
+        <header class="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html" class=""><img src="../images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
+                    <p>San José Real</p>
+                </div>
+                <ul class="menu">
+                    <li ><a href="index.html">Inicio</a></li>
+                    <li ><a href="#">Servicios</a></li>
+                    <li ><a href="#">Productos</a></li>
+                    <li ><a href="#">Acerca</a></li>
+                </ul>
+                <!-- <div class="reserva">
+                    <div class="input-group">
+                        <input type="datetime-local" id="fechaHora" required>
+                        <label for="fechaHora">Fecha Check IN</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="date" id="fecha" required>
+                        <label for="fecha">Fecha Check OUT</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="adultos" min="1" placeholder=" ">
+                        <label for="adultos"># Adultos</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="ninos" min="0" placeholder=" ">
+                        <label for="ninos"># Niños</label>
+                    </div>
+                    <input type="submit" value="Reserva">
+                </div> -->
+                <div class="login">
+                    <a href="login.html"><img src="../images/logito.png" class="logo-login"
+                            alt="Logo de inicio de sesión"> </a>
+                    <ul>
+                        <li class="link-login">
+                            <a href="login.html">Inicia sesión</a>
+                        </li>
+                        <li class="link-registro">
+                            <a href="registro.html">Regístrate</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
         <section class="formulario">
             <h2>Inicia sesión</h2>
             <form action="#" method="post" id="formulario">
@@ -73,9 +73,9 @@
                     <li class="li-buttons">
                         <div class="btn-container">
                             <button id="Log-in" type="submit" class="btn-login">Iniciar sesión</button>
-                            <button  class="btn-cancel" onclick="showLoginForm()">Recuperar
+                            <button class="btn-cancel" onclick="showLoginForm()">Recuperar
                                 contraseña</button>
-                            
+
                         </div>
                     </li>
 
@@ -83,9 +83,9 @@
             </form>
         </section>
     </div>
-
+     
     <footer class="footer">
-
+    
         <div class="footer-content">
 
             <div id="about" class="footer-section">
@@ -109,6 +109,8 @@
             <p>&copy; 2023 Hotel XYZ. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+ 
 </body>
 
 </html>

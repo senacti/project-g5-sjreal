@@ -20,7 +20,7 @@ html, body {
 
 header a {
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
 }
 
 .navbar {
@@ -30,7 +30,12 @@ header a {
     padding: 10px 20px;
     /* background-color: #f4f4f4;  */
     /* Agrega un fondo para visualizar mejor el espacio */
-    background: linear-gradient( #abb7f0, #ffffff);
+    background-color: rgba(43, 49, 52, 0.5);
+    /* opacity:0.5 ; */
+}
+
+.reserva {
+    display:none;
 }
 
 .logo img {
@@ -41,8 +46,9 @@ header a {
 }
 
 .logo p {
+    
     font-size: 10px;
-    color: #000000;
+    color: #ffffff;
     padding-bottom: 10px;
 }
 
@@ -89,6 +95,21 @@ header a {
     transition: border-color 0.3s;
     
 }  
+.menu  a{ 
+  
+    transition: font-size 0.5s, font-weight 0.5s;
+
+
+  }
+
+  .menu  a:hover { 
+
+    font-size: 20px;
+    font-weight: 600;
+
+
+  
+  }
 
 .input-group input:focus {
     border-color: #007bff; /* Cambio de color al enfocar */
@@ -135,14 +156,25 @@ header a {
 
 /*Formulario*/
 
+.container  {
+    width: 100%; 
+    height: 1600px; 
+    background-image: url(../images/imagendifuminada.png);
+    background-size: cover;
+    background-position: center;
+  }
 
 .formulario {
-    padding-bottom: 120px;
-    border: #8b8b8a 2px solid;
-    border-radius: 10px;
-    margin: 5% 30% 5% 30%;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px 0px #8b8b8a;
+  /*padding-bottom: 20px;*/
+  box-shadow: 0px 0px 10px 0px #2E4B5F;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px; 
+  background-color: #ffffff;
+  border-radius: 10px;
+
 }
 
 h2 {
@@ -169,7 +201,10 @@ h2 {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: #8b8b8a 1px solid;
+    border-bottom: #8b8b8a 1px solid;
+    border-left: #8b8b8a 1px solid;
+    border-top: none;
+    border-right: none;
     border-radius: 5px;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
@@ -190,22 +225,23 @@ h2 {
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: -20%;
-    margin-right: -20%;
+    margin-left: -50%;
+    margin-right: -50%;
 }
 
 .btn-login {
     font-family: inherit;
-    background-color: #8b8b8a;
+    background-color: #2E4B5F;
+    transition: 0.5s;
     color: #ffffff;
     border: none;
     border-radius: 5px;
-    margin-right: 10px;;    
+    margin-right: 20px;;    
     padding: 10px;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
-    box-shadow: 0px 0px 10px 0px #8b8b8a;
-    transition: background-color 0.3s;
+    box-shadow: 0px 0px 10px 0px #2E4B5F;
+   
     
 }
 
@@ -222,10 +258,12 @@ h2 {
     transition: background-color 0.3s;
 }
 
-#formulario a:hover {
+/* #formulario a:hover {
     background-color: white;
     color: #8b8b8a;
-} 
+}  */
+
+
 
 /*FOOTER*/
 

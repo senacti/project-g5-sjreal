@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="../CSS/styleRegistro.css">
 </head>
 
-<body>
-    <div class="main-container">
+<body class="body">
+    <div class="container">
     
-        <header>
+        <header class="header">
             <nav class="navbar">
                 <div class="logo">
-                    <a href="index.html" class=""><img src="../Images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
+                    <a href="index.html" class=""><img src="../images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
                 </div>
                 <ul class="menu">
                     <li><a href="index.html">Inicio</a></li>
@@ -22,27 +22,9 @@
                     <li><a href="#">Productos</a></li>
                     <li><a href="#">Acerca</a></li>
                 </ul>
-                <div class="reserva">
-                    <div class="input-group">
-                        <input type="datetime-local" id="fechaHora" required>
-                        <label for="fechaHora">Fecha Check IN</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="date" id="fecha" required>
-                        <label for="fecha">Fecha Check OUT</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="number" id="adultos" min="1" placeholder=" ">
-                        <label for="adultos"># Adultos</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="number" id="ninos" min="0" placeholder=" ">
-                        <label for="ninos"># Niños</label>
-                    </div>
-                    <input type="submit" value="Reserva">
-                </div>
+                
                 <div class="login">
-                    <a href="login.html"><img src="../Images/user-circle-single.png" class="logo-login"
+                    <a href="login.html"><img src="../images/logito.png" class="logo-login"
                             alt="Logo de inicio de sesión"> </a>
                     <ul>
                         <li>
@@ -143,35 +125,34 @@
                 </ul>
             </form>
         </section>
-    
-        <footer class="footer">
-    
-            <div class="footer-content">
-    
-                <div id="about" class="footer-section">
-                    <h3>Información</h3>
-                    <p>Sobre nosotros</p>
-                    <p>Servicios</p>
-                    <p>Contacto</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Habitaciones</h3>
-                    <p>Habitaciones y tarifas</p>
-                    <p>Reservas</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Redes Sociales</h3>
-                    <p>Síguenos en Facebook</p>
-                    <p>Síguenos en Instagram</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Hotel XYZ. Todos los derechos reservados.</p>
-            </div>
-        </footer>
 
     </div>
 
+    <footer class="footer">
+    
+        <div class="footer-content">
+
+            <div id="about" class="footer-section">
+                <h3>Información</h3>
+                <p>Sobre nosotros</p>
+                <p>Servicios</p>
+                <p>Contacto</p>
+            </div>
+            <div class="footer-section">
+                <h3>Habitaciones</h3>
+                <p>Habitaciones y tarifas</p>
+                <p>Reservas</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <p>Síguenos en Facebook</p>
+                <p>Síguenos en Instagram</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Hotel XYZ. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
