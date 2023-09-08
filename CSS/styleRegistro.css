@@ -214,6 +214,17 @@ h2 {
     transition: border-color 0.3s;
 }
 
+/*Estilos de validación*/
+
+.invalid .validar {
+    color: #ff0000;
+    transition: border-color 0.3s;
+}
+
+.valid .validar {
+    color: #0000ff;
+}
+
 #formulario input::placeholder {
     color: #8a8074;
     font-size: 14px;
