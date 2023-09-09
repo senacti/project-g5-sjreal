@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="styleLogin.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class=""><img src="Logo-proyecto  (1).png" alt="Logo del hotel"></a>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Acerca</a></li>
+            </ul>
+            <div class="reserva">
+                <div class="input-group">
+                    <input type="datetime-local" id="fechaHora" required>
+                    <label for="fechaHora">Fecha Check IN</label>
+                </div>
+                <div class="input-group">
+                    <input type="date" id="fecha" required>
+                    <label for="fecha">Fecha Check OUT</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="adultos" min="1" placeholder=" ">
+                    <label for="adultos"># Adultos</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="ninos" min="0" placeholder=" ">
+                    <label for="ninos"># Niños</label>
+                </div>
+                <input type="submit" value="Reserva">
+            </div>
+            <div class="login">
+                <a  href="login.html"><img src="user-circle-single.png" class="logo-login"  alt="Logo de inicio de sesión"> </a>
+                <ul>
+                    <li>
+                        <a href="login.html">Inicia sesión</a>
+                    </li>
+                    <li>
+                        <a href="registro.html">Regístrate</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="formulario">
+        <h2>Inica sesión</h2>
+            <form action="#" method="post" id="formulario">
+                <ul>
+                    <li>
+                        <label for="username">Usuario:</label>
+                        <input type="text" id="username" name="username" required>
+                    </li>
+
+                    <li>
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" required>
+                    </li>
+
+                    <li class="li-buttons">
+                        <div class="btn-container">
+                            <button type="submit" class="btn btn-login">Iniciar sesión</button>
+                            <button type="button" class="btn btn-cancel" onclick="showLoginForm()">Recuperar contraseña</button>
+                        </div>
+                    </li>
+
+                </ul>
+            </form>
+    </section>
+</body>
+</html>
