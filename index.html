@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="CSS/styleIndex.css">
+
+
+
+</head>
+<body>
+    <!-- HEADER - TOPBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class=""><img src="images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">habitacionos</a></li>
+                <li><a href="#">Acerca</a></li>
+            </ul>
+            <div class="reserva">
+                <div class="input-group">
+                    <input type="datetime-local" id="fechaHora" required>
+                    <label for="fechaHora">Fecha Check IN</label>
+                </div>
+                <div class="input-group">
+                    <input type="date" id="fecha" required>
+                    <label for="fecha">Fecha Check OUT</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="adultos" min="1" placeholder=" ">
+                    <label for="adultos"># Adultos</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="ninos" min="0" placeholder=" ">
+                    <label for="ninos"># Niños</label>
+                </div>
+                <input type="submit" value="Reserva">
+            </div>
+            <div class="login">
+                <a  href="login.html"><img src="images/logito.png" class="logo-login"  alt="Logo de inicio de sesión"> </a>
+                <ul>
+                    <li>
+                        <a href="login.html">Inicia sesión</a>
+                    </li>
+                    <li>
+                        <a href="registro.html">Regístrate</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <section class="home">
+        <img class="img-home" src="images/home2.jpg"  alt="imagen de inicio">
+
+        <div class="contacto">
+            <h2>Hotel JS Real - Sibaté - Colombia</h2>
+            <h4>Cll75 B #17a 49 Sur</h4>
+            <p>Cel: 3125512595</p>
+        </div>
+    </section>
+
+
+    <!-- HABITACIONES -->
+    <!-- <section class="habitaciones">
+        <div class="habitaciones-info">
+          <h2>Hotel JS Real - Sibaté - Colombia</h2>
+          <h4>Cll75 B #17a 49 Sur</h4>
+          <p>Cel: 3125512595</p>
+        </div>
+        
+        <div class="habitacion-content">
+
+        </div>
+      </section> -->
+
+    <section class="habitaciones">
+        <div class="habitaciones-info">
+            <div class="habitacion-title">
+                <h2>Hotel JS Real - Sibaté - Colombia</h2>
+            </div>
+
+            <h4>Cll75 B #17a 49 Sur</h4>
+            <p>Cel: 3125512595</p>
+            <section class="busqueda-fechas">
+                <h3>Reserva tu estadía</h3>
+                <form>
+                    <label for="checkin">Check-in:</label>
+                    <input type="date" id="checkin" name="checkin">
+        
+                    <label for="checkout">Check-out:</label>
+                    <input type="date" id="checkout" name="checkout">
+        
+                    <input type="submit" value="Buscar habitaciones">
+                </form>
+            </section>
+        </div>
+
+        <div class="habitacion-content">
+
+            <div class="habitacion">
+                <img src="images/hab1.jpg" alt="">
+                <div class="habitacion-txt">
+                    <h3>Habitacion</h3>
+                    <p>calidaad premium</p>
+                    <p class="precio"> $200000</p>
+                    
+                </div>
+            </div>
+
+            <div class="habitacion">
+                <img src="images/hab1.jpg" alt="">
+                <div class="habitacion-txt">
+                    <h3>Habitacion</h3>
+                    <p>calidaad premium</p>
+                    <p class="precio"> $200000</p>
+                    
+                </div>
+            </div>
+
+            <div class="habitacion">
+                <img src="images/hab1.jpg" alt="">
+                <div class="habitacion-txt">
+                    <h3>Habitacion</h3>
+                    <p>calidaad premium</p>
+                    <p class="precio"> $200000</p>
+                    
+                </div>
+            </div>
+
+            <div class="habitacion">
+                <img src="images/hab1.jpg" alt="">
+                <div class="habitacion-txt">
+                    <h3>Habitacion</h3>
+                    <p>calidaad premium</p>
+                    <p class="precio"> $200000</p>
+                    
+                </div>
+            </div>
+
+            <div class="habitacion">
+                <img src="images/hab1.jpg" alt="">
+                <div class="habitacion-txt">
+                    <h3>Habitacion</h3>
+                    <p>calidaad premium</p>
+                    <p class="precio"> $200000</p>
+                    
+                </div>
+            </div>
+
+            <div class="habitacion">
+                <img src="images/hab1.jpg" alt="">
+                <div class="habitacion-txt">
+                    <h3>Habitacion</h3>
+                    <p>calidaad premium</p>
+                    <p class="precio"> $200000</p>
+                    
+                </div>
+            </div>
+
+        </div>
+    
+    </section>
+
+
+    <section class="map">
+        <!-- <iframe
+        width="600"
+        height="450"
+        frameborder="0"
+        style="border:0"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1dYOUR_LATITUDE_HERE!2dYOUR_LONGITUDE_HERE!3d15.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMDcnNTIuOCJTIDAwfC0zNS42Ilc!5e0!3m2!1sen!2sus!4v1568176148635!5m2!1sen!2sus"
+        allowfullscreen>
+    </iframe> -->
+    <div class="title-map">
+        <h1>Encuentros aquí</h1>  <img src="images/gifs/ubicacion.gif" alt="gif de ubicacion">
+    </div>
+    
+    <iframe class="map-content" 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d956.822632807316!2d-74.25802383423134!3d4.494867374282149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1694230673151!5m2!1ses!2sco" 
+
+        style="border:0; padding:20px;"
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+      </section>
+
+
+    <footer class="footer">
+
+        <div class="footer-content">
+            
+          <div class="footer-section">
+            <h3>Información</h3>
+            <p>Sobre nosotros</p>
+            <p>Servicios</p>
+            <p>Contacto</p>
+          </div>
+          <div class="footer-section">
+            <h3>Habitaciones</h3>
+            <p>Habitaciones y tarifas</p>
+            <p>Reservas</p>
+          </div>
+          <div class="footer-section">
+            <h3>Redes Sociales</h3>
+            <p>Síguenos en Facebook</p>
+            <p>Síguenos en Instagram</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 Hotel XYZ. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    <footer>     
+    </footer>
+
+</body>
+</html>
