@@ -15,12 +15,16 @@ const validarFormulario = (e) => {
 		case "first_name":
 			validarForm(expresiones.nombre, e.target, 'nombre');
 		break;
+		case "second_name":
+			validarForm(expresiones.nombre, e.target, 'segundo_nombre');
 		case "last_name":
 			validarForm(expresiones.nombre, e.target, 'apellido');
 		break;
-		case "document_type":
+		case "second_last_name":
+			validarForm(expresiones.nombre, e.target, 'segundo_apellido');
+		/*case "document_type":
 			validarForm(expresiones.nombre, e.target, 'tipo_documento');
-		break;
+		break;*/
 		case "document_number":
 			validarForm(expresiones.nombre, e.target, 'numero_documento');
 		break;
@@ -46,6 +50,7 @@ const validarForm = (expresion, input, campo) => {
 	if (expresion.test(input.value)) {
 		document.getElementById(campo).classList.remove('invalid');
 		document.getElementById(campo).classList.add('valid');
+		
 	} else {
 		document.getElementById(campo).classList.add('invalid');
 		document.getElementById(campo).classList.remove('valid');

@@ -16,7 +16,7 @@ html, body {
     height: 100%;
 }
 
-/*Header*/
+/*_________________________Header_________________________*/
 
 header a {
     text-decoration: none;
@@ -43,10 +43,10 @@ header a {
     height: 67px;
     background: inherit;
     font-family: Impact,'Arial Narrow Bold', sans-serif;
+    margin-right: 5%;
 }
 
 .logo p {
-    
     font-size: 10px;
     color: #ffffff;
     padding-bottom: 10px;
@@ -56,13 +56,8 @@ header a {
     list-style: none;
     display: flex;
     gap: 20px;
-    margin: auto; /* Empuja los elementos a la derecha */
-    margin-left: 2%;
-}
-
-.reserva {
-    display: flex;
-    margin-right: auto;
+    /*margin: auto;*/ /* Empuja los elementos a la derecha */
+    /*margin-left: 2%;*/
 }
 
 .login {
@@ -72,9 +67,17 @@ header a {
 }  
 
 .login .logo-login {
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
 }
+
+.login div {
+    padding: 10px 40px;
+    border: #8b8b8a 1px solid;
+    border-radius: 5px;
+    background-color: #2E4B5F;
+    cursor: pointer;
+} 
 
 .reserva {
     display: flex;
@@ -96,19 +99,12 @@ header a {
     
 }  
 .menu  a{ 
-  
     transition: font-size 0.5s, font-weight 0.5s;
-
-
-  }
+}
 
   .menu  a:hover { 
-
     font-size: 20px;
-    font-weight: 600;
-
-
-  
+    font-weight: 600; 
   }
 
 .input-group input:focus {
@@ -154,53 +150,66 @@ header a {
     background-color: #0056b3;
 }
 
-/*Formulario*/
+/*_________________________Formulario_________________________*/
 
-.container  {
+ .container  {
     width: 100%; 
-    height: 1600px; 
+    height: 1000px; 
     background-image: url(../images/imagendifuminada.png);
     background-size: cover;
     background-position: center;
   }
 
-.formulario {
-  /*padding-bottom: 20px;*/
-  box-shadow: 0px 0px 10px 0px #2E4B5F;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 400px; 
-  background-color: #ffffff;
-  border-radius: 10px;
 
+.grid {
+    height: 100%;
+  padding: 3%;  
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 2% 2%;
+  /*transform: translate(-50%,-50%); */
+  background-color: rgba(43, 49, 52, 0.5);
+  border-radius: 10px;
 }
 
 h2 {
     text-align: center;
-    padding: 40px;
-    
+    padding-top: 1%;
+    padding-bottom: 2%;
+    color: #fff;
+    width: 500px;
+    margin: auto auto 2% auto;
+    border-bottom: #8b8b8a 1px solid;
 }
 
 #formulario ul {
+    height: 600px;
     list-style: none;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 20%;
+    margin-right: 20%; 
 }
 
-#formulario label {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 10px;
-    
+#formulario ul li {
+    color: #fcf4f4;
+}
+
+.material-symbols-outlined {
+    margin-left: 5px;
+    height: 100%;
+    font-size: 30px;
+    font-variation-settings:
+  'FILL' 0,
+  'wght' 1100,
+  'GRAD' 0,
+  'opsz' 24,
 }
 
 #formulario input {
-    display: inline-block;
+    display: inline;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 8px;
+    margin-bottom: 0;
     border-bottom: #8b8b8a 1px solid;
     border-left: #8b8b8a 1px solid;
     border-top: none;
@@ -214,15 +223,48 @@ h2 {
     transition: border-color 0.3s;
 }
 
-/*Estilos de validación*/
-
-.invalid .validar {
-    color: #ff0000;
-    transition: border-color 0.3s;
+#formulario ul li div {
+    display: flex;
 }
 
-.valid .validar {
-    color: #0000ff;
+.select-class{
+    appearance: none;
+}
+
+.select-class select{
+	width: 100%;
+	cursor: pointer;
+  	height: 42px;
+	background: #ffffff;
+	color: #111111;
+	font-size: 1em;
+	font-family: 'Poppins', sans-serif;
+	border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transition: all 0.25s ease;
+}
+
+/*Estilos de validación*/
+
+
+.invalid .material-symbols-outlined .valido {
+  color: #00ff00;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24,
+
+}
+
+.invalid .material-symbols-outlined .invalido {
+    color: #ff0000;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24,
+
 }
 
 #formulario input::placeholder {
@@ -231,14 +273,6 @@ h2 {
     font-family: 'Poppins', sans-serif;
 } 
 
-.btn-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: -50%;
-    margin-right: -50%;
-}
 
 .btn-login {
     font-family: inherit;
@@ -252,8 +286,6 @@ h2 {
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0px 0px 10px 0px #2E4B5F;
-   
-    
 }
 
 .btn-cancel {
@@ -279,6 +311,7 @@ h2 {
 /*FOOTER*/
 
 .footer {
+    display: none;
     position: relative;
     width: 100%;
     height: 190px;
@@ -321,13 +354,9 @@ h2 {
 }
 
 @media only screen and (max-width: 1450px) {
-    
-    .reserva {
-      display: none;
-    }
 
     .formulario {
-        margin: 5% 10% 250px 10%;
+        margin: 5% 10% 1% 10%;
     }
 
     .footer {
