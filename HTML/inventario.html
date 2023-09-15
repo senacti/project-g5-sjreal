@@ -53,6 +53,8 @@
                             class="block py-5" href="reservas.html">Reservas</a></li>
                     <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a
                             class="block py-5" href="informes.html">Informes</a></iv>
+                    <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a
+                            class="block py-5" href="inventario.html">Inventario</a></iv>
                 </ul>
             </div>
 
@@ -78,13 +80,11 @@
                             class="p-2 bg-white rounded-t-xl  hover:bg-white hover:text-xl cursor-pointer  ">
                             Productos
                         </li>
-                        <li id="select-tab"
-                            class=" p-2 rounded-t-xl hover:bg-white hover:text-xl cursor-pointer   ">
-                                Pedidos
+                        <li id="select-tab" class=" p-2 rounded-t-xl hover:bg-white hover:text-xl cursor-pointer   ">
+                            Pedidos
                         </li>
-                        <li id="select-tab"
-                            class=" p-2 rounded-t-xl hover:bg-white hover:text-xl cursor-pointer   ">
-                                Factura
+                        <li id="select-tab" class=" p-2 rounded-t-xl hover:bg-white hover:text-xl cursor-pointer   ">
+                            Factura
                         </li>
                     </ul>
                     <!-- <section id="selec-content" class=" h-40 bg-blue-400 p-2 text-4xl flex items-center justify-center ">
@@ -96,7 +96,7 @@
                       <section id="selec-content" class=" h-40 bg-blue-400 p-2 text-4xl flex items-center justify-center hidden">
                         Taab 3
                       </section> -->
-                    <div id="selec-content" class="" >
+                    <div id="selec-content" class="">
                         <table class="border-collapse border border-gray-400 w-full">
                             <thead>
                                 <tr class="bg-gray-50">
@@ -246,7 +246,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div id="selec-content" class="  hidden" >
+                    <div id="selec-content" class="  hidden">
                         <table class="border-collapse border border-gray-400 w-full">
                             <thead>
                                 <tr class="bg-gray-50">
@@ -396,7 +396,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div id="selec-content" class=" hidden" >
+                    <div id="selec-content" class=" hidden">
                         <table class="border-collapse border border-gray-400 w-full">
                             <thead>
                                 <tr class="bg-gray-50">
@@ -563,48 +563,72 @@
                                     pag
                                 </button>
                     </div>
-                    <hr class="bg-black h-[2px] mt-1 mb-2" >
+                    <hr class="bg-black h-[2px] mt-1 mb-2">
                 </div>
 
 
             </div>
         </div>
-            <!-- Botón para abrir el modal -->
-    <button id="openModalDetalle" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-        Abrir Modal
-    </button>
-       <!-- Modal oculto por defecto -->
-    <div id="modal" class="hidden fixed inset-0 flex items-center justify-center z-50">
-        <!-- Fondo semitransparente -->
-        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
-        
-        <!-- Contenedor del modal -->
-        <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-            <!-- Contenido del modal -->
-            <div class="modal-content py-4 text-left px-6">
-                <!-- Título del modal -->
-                <div class="modal-header">
-                    <h3 class="text-lg font-semibold">Mi Modal</h3>
-                    <button id="closeModal" class="modal-close">
-                        <span>&times;</span>
-                    </button>
-                </div>
-                <!-- Cuerpo del modal -->
-                <div class="modal-body">
-                    <!-- Tu contenido aquí -->
-                    <p>Este es el contenido del modal.</p>
-                </div>
-                <!-- Botones del modal (si es necesario) -->
-                <div class="modal-footer">
-                    <button id="closeModal" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
-                        Cerrar Modal
-                    </button>
+
+        <!-- Modal oculto por defecto -->
+        <div id="modal" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
+            <!-- Fondo semitransparente -->
+            <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+
+            <!-- Contenedor del modal md:max-w-md  -->
+            <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
+                <!-- Contenido del modal -->
+                <div class="modal-content py-4 text-left px-6  flex flex-col">
+                    <!-- Título del modal -->
+                    <div class="modal-header flex flex-row  items-center">
+                        <h3 class="text-lg font-semibold">Detalles Producto ______</h3>
+
+                        <button id="closeModal"
+                            class=" modal-close my-3  ml-auto top-0  bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                            X
+                        </button>
+
+                    </div>
+                    <!-- Botones del modal (si es necesario) -->
+
+                    <!-- Cuerpo del modal -->
+                    <div class="modal-body">
+                        <!-- Tu contenido aquí -->
+                        <table class="border-collapse border border-gray-400 w-full">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="border border-gray-400 px-4 py-2">#</th>
+                                    <th class="border border-gray-400 px-4 py-2">Nombre</th>
+                                    <th class="border border-gray-400 px-4 py-2">Cargo</th>
+                                    <th class="border border-gray-400 px-4 py-2">Horas</th>
+                                    <th class="border border-gray-400 px-4 py-2">Sueldo</th>
+                                    <th class="border border-gray-400 px-4 py-2">Dirección</th>
+                                    <th class="border border-gray-400 px-4 py-2">Dirección</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Filas de datos -->
+                                <tr class="bg-gray-100">
+                                    <td class="border border-gray-400 px-4 py-2">1</td>
+                                    <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
+                                    <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
+                                    <td class="border border-gray-400 px-4 py-2">40</td>
+                                    <td class="border border-gray-400 px-4 py-2">$1000</td>
+                                    <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
+                                    <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="modal-footer ">
+                        <hr class="bg-black h-[2px] my-3 mb-2">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-        <script src="admin.js">
-
+        <script src="../JS/admin.js" defer>
         </script>
 </body>
 

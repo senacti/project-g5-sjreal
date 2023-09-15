@@ -5,6 +5,7 @@
 const tabsArray = Array.from(document.querySelectorAll("#select-tab"))
 const contentArray = Array.from(document.querySelectorAll("#selec-content"))
 
+//PAGINASCION QUE SE ESTA USANDO EN INVENTARIO
 tabsArray.forEach(tab => {
   tab.addEventListener('click', () => {
     target = tab
@@ -25,15 +26,17 @@ tabsArray.forEach(tab => {
 
   })
 })
-console.log(tabsArray)
-console.log(contentArray)
 
-//modal
-const openModalDettalleButton = document.getElementById('openModalDetalle');
+
+
+
+//MODAL DETALLE
+const tabsArrayopenModalDettalleButton = Array.from(document.querySelectorAll("#openModalDetalle"))
+// const openModalDettalleButton = document.getElementById('openModalDetalle');
 const closeModalButtons = document.querySelectorAll('.modal-close');
 const modal = document.getElementById('modal');
-
-openModalDettalleButton.addEventListener('click', () => {
+tabsArrayopenModalDettalleButton.forEach( openModalDettalleButton => {
+  openModalDettalleButton.addEventListener('click', () => {
     modal.classList.remove('hidden');
 });
 
@@ -42,6 +45,10 @@ closeModalButtons.forEach((button) => {
         modal.classList.add('hidden');
     });
 });
+
+})
+
+
 
 // const openModalEditButton = document.getElementById('openModalDetalle');
 // const closeModalButtons = document.querySelectorAll('.modal-close');
