@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de registro</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../CSS/styleRegistro.css">
 </head>
 
 <body class="body">
     <div class="container">
-    
+
         <header class="header">
             <nav class="navbar">
                 <ul class="menu">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="404.html">Servicios</a></li>
-                    <li><a href="404.html">Reservas</a></li>
-                    <li><a href="404.html">Acerca</a></li>
+                    <li id="group__"><a href="../index.html">Inicio</a></li>
+                    <li id="group__"><a href="404.html">Servicios</a></li>
+                    <li id="group__"><a href="404.html">Reservas</a></li>
+                    <li id="group__"><a href="404.html">Acerca</a></li>
                 </ul>
 
                 <div class="logo">
@@ -35,48 +36,56 @@
         </header>
 
         <h2>Formulario de registro</h2>
-
-        <section class="formulario">
-
-            <form action="#" method="post" id="formulario">
+            <form action="#" method="post" id="formulario" class="formulario">
 
                 <ul class="grid">
 
-                    <li>
+                    <li id="group__name">
                         <label class="validar" id="" for="first_name">Primer nombre:</label>
                         <div class="primer_nombre">
-                            <input class="validar" type="text" id="first_name" name="first_name" required>
+                            <input class="validar_input" type="text" id="first_name" name="first_name" required>
                             <span class="material-symbols-outlined">check_circle</span>
+                            <span class="material-symbols-outlined" id="false_symbols">
+                                cancel
+                            </span>
                         </div>
+                        <p class="mensaje_error">los nombres solo pueden estar compuestos de letras y espacios</p>
                     </li>
 
-                    <li>
+                    <li id="group__2name">
                         <label class="validar" id="" for="first_name">Segundo nombre:</label>
                         <div class="segundo_nombre">
-                            <input class="validar" type="text" id="second_name" name="second_name" required>
+                            <input class="validar_input" type="text" id="second_name" name="second_name" required>
                             <span class="material-symbols-outlined">check_circle</span>
+                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
                         </div>
+                        <p class="mensaje_error">los nombres solo pueden estar compuestos de letras y espacios</p>
                     </li>
 
-                    <li>
+                    <li id="group__apellido">
                         <label class="validar" id="" for="last_name">Primer apellido:</label>
                         <div class="apellido">
-                            <input class="validar" type="text" id="last_name" name="last_name" required>
+                            <input class="validar_input" type="text" id="last_name" name="last_name" required>
                             <span class="material-symbols-outlined">check_circle</span>
+                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
                         </div>
+                        <p class="mensaje_error">los apellidos solo pueden estar compuestos de letras y espacios</p>
                     </li>
 
-                    <li>
+                    <li id="group__2apellido">
                         <label class="validar" id="" for="last_name">Segundo apellido:</label>
                         <div class="segundo_apellido">
-                            <input class="validar" type="text" id="second_last_name" name="second_last_name" required>
+                            <input class="validar_input" type="text" id="second_last_name" name="second_last_name"
+                                required>
                             <span class="material-symbols-outlined">check_circle</span>
+                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
                         </div>
+                        <p class="mensaje_error">los apellidos solo pueden estar compuestos de letras y espacios</p>
                     </li>
 
-                    <li>
+                    <li id="group__tipoDocumento">
                         <label class="validar" id="" for="document_type">Tipo de Documento:</label>
-                        <div class="tipo_documento">
+                        
                             <div class="select-class">
                                 <select id="document_type" name="document_type" required>
                                     <option value="">Seleccione</option>
@@ -86,38 +95,41 @@
                                     <option value="Pasaporte">Pasaporte</option>
                                 </select>
                             </div>
-                        </div>
-                    </li>   
+                    
+                    </li>
 
-                    <li>
+                    <li id="group__documento">
                         <label class="validar" id="" for="document_number">Nro. de Documento:</label>
                         <div class="numero_documento">
-                            <input class="validar" type="text" id="document_number" name="document_number"
-                                oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
-                                <span class="material-symbols-outlined">check_circle</span>
+                            <input class="validar_input" type="text" id="document_number" name="document_number" required>
+                            <span class="material-symbols-outlined">check_circle</span>
+                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
                         </div>
+                        <p class="mensaje_error">El número de documento tiene entre 6 y 10 dígitos</p>
                     </li>
 
-                    <li>
+                    <li id="group__edad">
                         <label class="validar" id="" for="age">Edad:</label>
                         <div class="edad">
-                            <input class="validar" type="number" id="age" name="age" min="1" required>
+                            <input class="validar_input" type="number" id="age" name="age" min="1" required>
                             <span class="material-symbols-outlined">check_circle</span>
+                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
                         </div>
+                        <p class="mensaje_error">No puede ser un número negativo, ni mayor a 120</p>
                     </li>
 
-                    <li>
+                    <li id="group__telefono">
                         <label class="validar" id="" for="phone">Teléfono:</label>
                         <div class="telefono">
-                            <input class="validar" type="text" id="phone" name="phone"
-                                 oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
-                                 <span class="material-symbols-outlined">check_circle</span>
+                            <input class="validar_input" type="text" id="phone" name="phone" required>
+                            <span class="material-symbols-outlined">check_circle</span>
+                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
                         </div>
+                        <p class="mensaje_error">Ingrese un número válido</p>
                     </li>
 
-                    <li>
+                    <li id="group__genero">
                         <label class="validar" id="" for="gender">Género:</label>
-                        <div class="genero">
                             <div class="select-class">
                                 <select id="gender" name="gender" required>
                                     <option value="">Seleccione</option>
@@ -126,31 +138,37 @@
                                     <option value="Otro">Otro</option>
                                 </select>
                             </div>
-                        </div>
                     </li>
 
-                    <li>
+                    <li id="group__email">
                         <label class="validar" id="" for="email">Email:</label>
                         <div class="e-mail">
-                            <input class="validar" type="email" id="email" name="email" required>
+                            <input class="validar_input" type="email" id="email" name="email" required>
                             <span class="material-symbols-outlined">check_circle</span>
+                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
                         </div>
+                        <p class="mensaje_error">Ingrese un correo válido</p>
                     </li>
 
-                    <li>
+                    <li id="group__user">
                         <label class="validar" id="" for="username">Usuario:</label>
                         <div class="usuario">
-                            <input class="validar" type="text" id="username" name="username" required>
+                            <input class="validar_input" type="text" id="username" name="username" required>
                             <span class="material-symbols-outlined">check_circle</span>
+                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
                         </div>
+                        <p class="mensaje_error">El usuario tiene que ser de 4 a 16 carateres y solo puede contener letras, numeros, guión y guión bajo</p>
                     </li>
 
-                    <li>
+                    <li id="group__password">
                         <label class="validar" id="" for="password">Contraseña:</label>
                         <div class="contraseña">
-                            <input class="validar" type="password" id="password" name="password" required>
+                            <input class="validar_input" type="password" id="password" name="password" required>
                             <span class="material-symbols-outlined">check_circle</span>
+                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
+
                         </div>
+                        <p class="mensaje_error">La contraseña debe contener de 8 a 20 digitos, al menos 1 mayúscula, 1 minúscula, 1 número y 1 caracter especial</p>
                     </li>
 
                     <li class="li-buttons">
@@ -161,15 +179,14 @@
                         <button type="button" class="btn btn-cancel" onclick="showLoginForm()">Cancelar
                             registro</button>
                     </li>
-    
+                    
                 </ul>
             </form>
-        </section>
 
     </div>
 
     <footer class="footer">
-    
+
         <div class="footer-content">
 
             <div id="about" class="footer-section">
@@ -193,7 +210,7 @@
             <p>&copy; 2023 Hotel XYZ. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="../JS/formulario.js" ></script>
+    <script src="../JS/formulario.js"></script>
 </body>
 
 </html>
