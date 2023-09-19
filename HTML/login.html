@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../CSS/styleLogin.css">
 </head>
 
@@ -22,25 +24,6 @@
                     <li ><a href="404.html">Productos</a></li>
                     <li ><a href="404.html">Acerca</a></li>
                 </ul>
-                <!-- <div class="reserva">
-                    <div class="input-group">
-                        <input type="datetime-local" id="fechaHora" required>
-                        <label for="fechaHora">Fecha Check IN</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="date" id="fecha" required>
-                        <label for="fecha">Fecha Check OUT</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="number" id="adultos" min="1" placeholder=" ">
-                        <label for="adultos"># Adultos</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="number" id="ninos" min="0" placeholder=" ">
-                        <label for="ninos"># Niños</label>
-                    </div>
-                    <input type="submit" value="Reserva">
-                </div> -->
                 <div class="login">
                     <a href="login.html"><img src="../images/logito.png" class="logo-login"
                             alt="Logo de inicio de sesión"> </a>
@@ -57,28 +40,45 @@
         </header>
 
         <section class="formulario">
-            <h2>Inicia sesión</h2>
+            <h1>Inicia sesión</h1>
             <form action="#" method="post" id="formulario">
-                <ul>
-                    <li>
-                        <label for="username">Ingrese su usuario:</label>
-                        <input type="text" id="username" name="username" placeholder="Usuario" required>
+                <ul class="form-container">
+                    
+                    <li id="group__user">
+                        <label class="validar" id="" for="username">Usuario:</label>
+                        <div class="usuario">
+                            <input class="validar_input" type="text" id="username" name="username" required>
+                            <span class="material-symbols-outlined">check_circle</span>
+                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
+                        </div>
+                        <p class="mensaje_error">El usuario tiene que ser de 4 a 16 carateres y solo puede contener letras, numeros, guión y guión bajo</p>
                     </li>
 
-                    <li>
-                        <label for="password">Ingrese su contraseña:</label>
-                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
-                    </li>
-
-                    <li class="li-buttons">
-                        <div class="btn-container">
-                            <button id="Log-in" type="submit" class="btn-login">Iniciar sesión</button>
-                            <button class="btn-cancel" onclick="showLoginForm()">Recuperar
-                                contraseña</button>
+                    <li id="group__password">
+                        <label class="validar" id="" for="password">Contraseña:</label>
+                        <div class="contraseña">
+                            <input class="validar_input" type="password" id="password" name="password" required>
+                            <span class="material-symbols-outlined">check_circle</span>
+                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
 
                         </div>
+                        <p class="mensaje_error">La contraseña debe contener de 8 a 20 digitos, al menos 1 mayúscula, 1 minúscula, 1 número y 1 caracter especial</p>
                     </li>
 
+                    <div class="btn-container">
+                        <li class="li-buttons" id="iniciar-sesion">
+                            <button type="submit" class="btn btn-login">Iniciar sesión</button>
+                        </li>
+                    
+                        <li class="li-buttons">
+                            <button type="button" class="btn btn-cancel" onclick="showLoginForm()">Recuperar contraseña</button>
+                        </li>
+                    </div>
+
+                    <div>
+                        <p>¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
+                        <p id="mensaje_fail" class="validar_login">Campos inválidos</p>
+                    </div>
                 </ul>
             </form>
         </section>
@@ -110,7 +110,7 @@
         </div>
     </footer>
 
- 
+    <script src="../JS/validarLogin.js"></script>
 </body>
 
 </html>
