@@ -10,21 +10,27 @@
 </head>
 
 <body class="bg-gray-100">
-  <!-- Contenido del dashboard -->
+  <!-- Menú superior -->
   <div class="bg-gray-400 shadow-md p-4">
     <div class="flex justify-between items-center">
+      <div>
+        <img src="../images/Logo-proyecto(1).png" class="w-[70px] h-[70px]">
+      </div>
       <h1 class="text-xl font-semibold text-center flex-grow">Admin - Hotel JS Real</h1>
       <div class="flex space-x-4">
-        <button class="hover:text-blue-500">
+        <!-- <button class="hover:text-blue-500">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M15 12a3 3 0 11-6 0 3 3 0 016 0zM9 10a5 5 0 0110 0v2a5 5 0 01-10 0v-2z"></path>
           </svg>
-        </button>
+        </button> -->
         <button class="hover:text-red-500">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <!-- <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
+          </svg> -->
+          <a href="../index.html">
+            <img src="../images/dashboard/icons8-salir.png" alt=" imagen para salir del dashboard"
+              class=" h-12 w-12"></img></a>
         </button>
       </div>
 
@@ -35,31 +41,68 @@
     <div class="flex flex-row">
       <!-- Menú lateral -->
       <div class="w-1/5 bg-gray-700 text-white ">
-        <ul class="p-4  h-[80%] text-center pt-5 ">
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="inicio.html">Inicio</a></li>
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="empleados.html">Empleados</a></li>
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="ventas.html">Ventas</a></li>
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="compras.html">Compras</a></li>
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="reservas.html">Reservas</a></li>
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="informes.html">Informes</a></iv>
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="inventario.html">Inventario</a></iv>
+        <ul class="p-4  h-[80%] text-center pt-5 flex flex-col ">
+          <li>
+            <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-8"
+              href="inicio.html">
+              <img src="../images/dashboard/icons8-inicio.png" class="w-[50px] h-[50px] ml-2">
+              <span class="">Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
+              href="empleados.html">
+              <img src="../images/dashboard/icons8-empleado.png" class="w-[40px] h-[40px] ml-2">
+              <span class="">Empleados</span>
+            </a>
+          </li>
+          <li>
+            <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
+              href="ventas.html">
+              <img src="../images/dashboard/icons8-ventas.png" class="w-[40px] h-[40px] ml-2">
+              <span class="">Ventas</span>
+            </a>
+          </li>
+          <li>
+            <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
+              href="compras.html">
+              <img src="../images/dashboard/icons8-compras.png" class="w-[40px] h-[40px] ml-2">
+              <span class="">Compras</span>
+            </a>
+          </li>
+          <li>
+            <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
+              href="reservas.html">
+              <img src="../images/dashboard/icons8-reservas.png" class="w-[40px] h-[40px] ml-2">
+              <span class="">Reservas</span>
+            </a>
+          </li>
+          <li>
+            <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
+              href="informes.html">
+              <img src="../images/dashboard/icons8-informes.png" class="w-[40px] h-[40px] ml-2">
+              <span class="">Informes</span>
+            </a>
+          </li>
+          <li>
+            <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
+              href="inventario.html">
+              <img src="../images/dashboard/icons8-inventario.png" class="w-[40px] h-[40px] ml-2">
+              <span class="">Inventario</span>
+            </a>
+          </li>
         </ul>
       </div>
 
       <!-- Área de contenido principal -->
-      <div class="w-full flex-col  bg-stone-200 p-4 mx-10 mt-5">
+      <div class="w-full flex-col  bg-stone-200 p-4 mx-10 mt-5 rounded-lg  drop-shadow-2xl">
         <!-- Contenido principal -->
 
-        <div class="w-full  bg-stone-200 p-4 m-auto">
-
-          <h1 class="text-3xl py-4 border-b border-gray-400 ">Empleados</h1>
+        <div class="w-full  bg-stone-200 p-4 m-auto ">
+          <div class="flex flex-row items-center py-4 border-b border-gray-400 space-x-4 ml-2">
+            <img src="../images/dashboard/icons8-empleado.png" class=" w-[40px] h-[40px] ml-2">
+            <h1 class="text-3xl  ">Empleados</h1>
+          </div>
           <div class="flex justify-between mb-4 my-4">
             <button class="bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600">Crear</button>
             <input class="border border-gray-300 px-4 py-2 ml-5 rounded w-full" type="text" placeholder="Buscar...">
@@ -211,27 +254,39 @@
             </table>
           </div>
           <!-- Paginación -->
-          <hr class="my-4">
+          <hr class="bg-black h-[2px] mt-4 mb-2">
           <div class=" flex flex-row-reverse ">
-            <button class="bg-gray-200 hover:bg-gray-500 text-black hover:text-white text-2xl  rounded p-2 ml-2">
+            <button class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded p-1 mx-2 mr-4">
               >>
             </button>
+            <button
+              class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded border border-black px-3 ">
+              3
+            </button>
+            <button
+              class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded border border-black px-3 ">
+              2
+            </button>
+            <button
+              class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded border border-black px-3 ">
+              1
+            </button>
 
-            <button class="bg-gray-200 hover:bg-gray-500 text-black hover:text-white text-2xl  rounded p-2 mx-2">
+            <button class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded p-1 mx-2">
               << </button>
 
-                <button class="bg-gray-200 hover:bg-gray-500 text-black hover:text-white text-2xl  rounded p-2 mx-2">
+                <!-- <button class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded p-1 mx-2">
                   pag
-                </button>
+                </button> -->
           </div>
-          <hr class="mt-4">
+          <hr class="bg-black h-[2px] mt-1 mb-2">
         </div>
 
 
       </div>
     </div>
 
-    <!-- Modal oculto por defecto -->
+    <!-- Modal Detalle oculto por defecto -->
     <div id="modal" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
       <!-- Fondo semitransparente -->
       <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
@@ -390,6 +445,7 @@
 
     <script src="../JS/admin.js" defer>
     </script>
+
 </body>
 
 </html>
