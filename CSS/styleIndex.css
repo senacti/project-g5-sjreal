@@ -47,13 +47,12 @@ header a {
   height: 67px;
   background: inherit;
   font-family: Impact,'Arial Narrow Bold', sans-serif;
- 
+  margin-right: 5%;
 }
 .logo {
   flex-grow: 1;
-  text-align:center;
+  text-align: center;
 }
-
 .logo p {
   font-size: 10px;
   color: #ffffff;
@@ -69,7 +68,12 @@ header a {
   /*margin-left: 2%;*/
 }
 
+.login .sesion {
+  flex-direction: column;
+}
+
 .login {
+  margin: 0;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -80,13 +84,9 @@ header a {
   height: 50px;
 }
 
-/*.login div {
-  padding: 10px 40px;
-  border: #8b8b8a 1px solid;
-  border-radius: 5px;
-  background-color: #2E4B5F;
-  cursor: pointer;
-} */
+.login .sesion  p:hover  {
+  color: #92bde7;
+}
 
 .reserva {
   display: flex;
@@ -117,35 +117,29 @@ header a {
 }
 
 .input-group input:focus {
-  border-color: #007bff; /* Cambio de color al enfocar */
+  border-color: #007bff;
 }  
 
 .input-group label {
   position: absolute;
-  bottom: -20px; /* Ajusta la distancia vertical */
+  bottom: -20px;
   left: 0;
-  font-size: 12px; /* Tamaño de la fuente de la etiqueta */
+  font-size: 12px;
   color: #888;
   transition: bottom 0.3s, font-size 0.3s;
 }  
 
-/* .input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label {
-  bottom: 5px; 
-  font-size: 10px; 
-  color: #007bff; 
-} */  
 .input-group:hover input,
 .input-group input:focus {
-  border-color: #007bff; /* Cambio de color al hacer hover */
+  border-color: #007bff; 
 } 
 
 .input-group:hover label {
-  color: #007bff; /* Cambio de color de la etiqueta al hacer hover */
+  color: #007bff; 
 }
 
 .reserva input[type="submit"] {
-  padding: 12px 20px; /* Ajusta el padding para hacer el botón más grande */
+  padding: 12px 20px;
   background-color: #007bff;
   color: white;
   border: none;

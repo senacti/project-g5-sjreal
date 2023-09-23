@@ -10,52 +10,63 @@
 </head>
 
 <body class="bg-gray-100">
-  <!-- Contenido del dashboard -->
+  <!-- Menú superior -->
   <div class="bg-gray-400 shadow-md p-4">
     <div class="flex justify-between items-center">
+      <div >
+        <img src="../images/Logo-proyecto(1).png" class="w-[70px] h-[70px]">
+      </div>
       <h1 class="text-xl font-semibold text-center flex-grow">Admin - Hotel JS Real</h1>
       <div class="flex space-x-4">
-        <button class="hover:text-blue-500">
+        <!-- <button class="hover:text-blue-500">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M15 12a3 3 0 11-6 0 3 3 0 016 0zM9 10a5 5 0 0110 0v2a5 5 0 01-10 0v-2z"></path>
           </svg>
-        </button>
+        </button> -->
         <button class="hover:text-red-500">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <!-- <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
+          </svg> -->
+          <img src="../images/dashboard/icons8-salir.png" alt=" imagen para salir del dashboard" class=" h-12 w-12"></img>
         </button>
       </div>
 
     </div>
   </div>
-  <div>
 
     <div class="flex flex-row">
       <!-- Menú lateral -->
       <div class="w-1/5 bg-gray-700 text-white ">
         <ul class="p-4  h-[80%] text-center pt-5 ">
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="inicio.html">Inicio</a></li>
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="empleados.html">Empleados</a></li>
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="ventas.html">Ventas</a></li>
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="compras.html">Compras</a></li>
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="reservas.html">Reservas</a></li>
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-              href="informes.html">Informes</a></iv>
-          <li class="hover:bg-gray-900 hover:text-xl cursor-pointer border-b border-black "><a class="block py-5"
-            href="inventario.html">Inventario</a></iv>
+          <li class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center ">
+            <img src="../images/dashboard/icons8-inicio.png" class=" w-[50px] h-[50px] ml-2">
+            <a class="block py-8" href="inicio.html">Inicio</a>
+          </li>
+          <li class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black  flex space-x-4 items-center"> 
+            <img src="../images/dashboard/icons8-empleado.png" class=" w-[40px] h-[40px] ml-2">
+            <a class="block py-5" href="empleados.html">Empleados</a>
+            </li>
+          <li class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center">
+            <img src="../images/dashboard/icons8-ventas.png" class=" w-[40px] h-[40px] ml-2">
+            <a class="block py-5" href="ventas.html">Ventas</a></li>
+          <li class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center ">
+            <img src="../images/dashboard/icons8-compras.png" class=" w-[40px] h-[40px] ml-2">
+            <a class="block py-5"href="compras.html">Compras</a></li>
+          <li class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center ">
+            <img src="../images/dashboard/icons8-reservas.png" class=" w-[40px] h-[40px] ml-2">
+            <a class="block py-5"href="reservas.html">Reservas</a></li>
+          <li class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center ">
+            <img src="../images/dashboard/icons8-informes.png" class=" w-[40px] h-[40px] ml-2">
+            <a class="block py-5"href="informes.html">Informes</a></iv>
+          <li class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center ">
+            <img src="../images/dashboard/icons8-inventario.png" class=" w-[40px] h-[40px] ml-2">
+            <a class="block py-5"href="inventario.html">Inventario</a></iv>
         </ul>
-
       </div>
 
       <!-- Área de contenido principal -->
-      <div class="w-full flex-col  bg-stone-200 p-4 mx-10 mt-5">
+      <div class="w-full flex-col  bg-stone-200 p-4 mx-10 mt-5 rounded-lg  drop-shadow-2xl">
         <!-- Contenido principal -->
 
         <div class="w-full  bg-stone-200 p-4 m-auto">
@@ -199,7 +210,7 @@
                   pag
                 </button>
           </div>
-          <hr class="mt-4">
+          <hr class="mt-4 bg-black  m-[0.5px]">
 
 
         </div>
