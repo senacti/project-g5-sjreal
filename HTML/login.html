@@ -11,7 +11,7 @@
 </head>
 
 <body class="body">
-    <div class="container">
+        <!-- HEADER - TOPBAR -->
         <header class="header">
             <nav class="navbar">
                 <div class="logo">
@@ -19,70 +19,70 @@
                     <p>San José Real</p>
                 </div>
                 <ul class="menu">
-                    <li ><a href="index.html">Inicio</a></li>
-                    <li ><a href="404.html">Servicios</a></li>
-                    <li ><a href="404.html">Productos</a></li>
-                    <li ><a href="404.html">Acerca</a></li>
+                    <!-- <li><a href="../index.html">Inicio</a></li> -->
+                    <li><a href="404.html">Servicios</a></li>
+                    <li><a href="404.html">Reservas</a></li>
+                    <li><a href="404.html">Acerca</a></li>
                 </ul>
+    
                 <div class="login">
-                    <a href="login.html"><img src="../images/logito.png" class="logo-login"
-                            alt="Logo de inicio de sesión"> </a>
-                    <ul>
-                        <li class="link-login">
-                            <a href="login.html">Inicia sesión</a>
-                        </li>
-                        <li class="link-registro">
-                            <a href="registro.html">Regístrate</a>
-                        </li>
+                    <!-- <a href=""><img src="./images/logito.png" class="logo-login" alt="Logo de inicio de sesión"> </a> -->
+                    <a href=""><img src="../images/perfilblanco.png" class="logo-login" alt="Logo de inicio de sesión"> </a>
+                    <ul class="sesion">
+                        <li id="inicio-sesion" ><a  href="login.html"> <p>Inicia sesión </p> </a></li>
+                        <li id="inicio-registro" ><a  href="registro.html"><p>Registrarse</p> </a></li>
                     </ul>
                 </div>
             </nav>
         </header>
+    <!-- <div class="container"> -->
+        
+<div class="main"  style="background-image: url(../images/imagendifuminada.png);">
+</div>
+<section class="formulario">
+    <h1>Inicia sesión</h1>
+    <form action="#" method="post" id="formulario">
+        <ul class="form-container">
+            
+            <li id="group__user">
+                <label class="validar" id="" for="username">Usuario:</label>
+                <div class="usuario">
+                    <input class="validar_input" type="text" id="username" name="username" required>
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <span class="material-symbols-outlined" id="false_symbols">cancel</span>
+                </div>
+                <p class="mensaje_error">El usuario tiene que ser de 4 a 16 carateres y solo puede contener letras, numeros, guión y guión bajo</p>
+            </li>
 
-        <section class="formulario">
-            <h1>Inicia sesión</h1>
-            <form action="#" method="post" id="formulario">
-                <ul class="form-container">
-                    
-                    <li id="group__user">
-                        <label class="validar" id="" for="username">Usuario:</label>
-                        <div class="usuario">
-                            <input class="validar_input" type="text" id="username" name="username" required>
-                            <span class="material-symbols-outlined">check_circle</span>
-                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
-                        </div>
-                        <p class="mensaje_error">El usuario tiene que ser de 4 a 16 carateres y solo puede contener letras, numeros, guión y guión bajo</p>
-                    </li>
+            <li id="group__password">
+                <label class="validar" id="" for="password">Contraseña:</label>
+                <div class="contraseña">
+                    <input class="validar_input" type="password" id="password" name="password" required>
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <span class="material-symbols-outlined" id="false_symbols">cancel</span>
 
-                    <li id="group__password">
-                        <label class="validar" id="" for="password">Contraseña:</label>
-                        <div class="contraseña">
-                            <input class="validar_input" type="password" id="password" name="password" required>
-                            <span class="material-symbols-outlined">check_circle</span>
-                            <span class="material-symbols-outlined" id="false_symbols">cancel</span>
+                </div>
+                <p class="mensaje_error">La contraseña debe contener de 8 a 20 digitos, al menos 1 mayúscula, 1 minúscula, 1 número y 1 caracter especial</p>
+            </li>
 
-                        </div>
-                        <p class="mensaje_error">La contraseña debe contener de 8 a 20 digitos, al menos 1 mayúscula, 1 minúscula, 1 número y 1 caracter especial</p>
-                    </li>
+            <div class="btn-container">
+                <li class="li-buttons" id="iniciar-sesion">
+                    <button type="submit" class="btn btn-login"><a href="inicio.html">Iniciar sesión</a></button>
+                </li>
+            
+                <li class="li-buttons">
+                    <button type="button" class="btn btn-cancel" onclick="showLoginForm()">Recuperar contraseña</button>
+                </li>
+            </div>
 
-                    <div class="btn-container">
-                        <li class="li-buttons" id="iniciar-sesion">
-                            <button type="submit" class="btn btn-login"><a href="inicio.html">Iniciar sesión</a></button>
-                        </li>
-                    
-                        <li class="li-buttons">
-                            <button type="button" class="btn btn-cancel" onclick="showLoginForm()">Recuperar contraseña</button>
-                        </li>
-                    </div>
-
-                    <div>
-                        <p>¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
-                        <p id="mensaje_fail" class="validar_login">Campos inválidos</p>
-                    </div>
-                </ul>
-            </form>
-        </section>
-    </div>
+            <div>
+                <p>¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
+                <p id="mensaje_fail" class="validar_login">Campos inválidos</p>
+            </div>
+        </ul>
+    </form>
+</section>
+    <!-- </div> -->
      
     <footer class="footer">
     

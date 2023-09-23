@@ -5,25 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="CSS/styleIndex.css">
+
+
+
 </head>
 <body>
     <!-- HEADER - TOPBAR -->
     <header class="header">
         <nav class="navbar">
+            <div class="logo">
+                <a href="./index.html" class=""><img src="./images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
+                <p>San José Real</p>
+            </div>
             <ul class="menu">
                 <!-- <li><a href="../index.html">Inicio</a></li> -->
-                <li><a href="HTML/404.html">Servicios</a></li>
-                <li><a href="HTML/reserva.html">Reservas</a></li>
-                <li><a href="HTML/404.html">Acerca</a></li>
+                <li><a href="404.html">Servicios</a></li>
+                <li><a href="404.html">Reservas</a></li>
+                <li><a href="404.html">Acerca</a></li>
             </ul>
-
-            <div class="logo">
-                <a href="../index.html" class=""><img src="../images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
-            </div>
 
             <div class="login">
                 <!-- <a href=""><img src="./images/logito.png" class="logo-login" alt="Logo de inicio de sesión"> </a> -->
-                <a href=""><img src="../images/perfilblanco.png" class="logo-login" alt="Logo de inicio de sesión"> </a>
+                <a href=""><img src="./images/perfilblanco.png" class="logo-login" alt="Logo de inicio de sesión"> </a>
                 <ul class="sesion">
                     <li id="inicio-sesion" ><a  href="HTML/login.html"> <p>Inicia sesión </p> </a></li>
                     <li id="inicio-registro" ><a  href="HTML/registro.html"><p>Registrarse</p> </a></li>
@@ -31,12 +34,14 @@
             </div>
         </nav>
     </header>
-    
-
     <!-- HOME -->
     <section class="home">
-        <img class="img-home" src="images/home2.jpg"  alt="imagen de inicio">
-
+        <img class="img-home" src="images/habitacionfondoindex.jpg"  alt="imagen de inicio">
+        <div class="redes-sociales">
+            <a class="img-facebook" href=""><img  src="images/icons8-facebook-48.png"  alt="imagen de inicio"></a>
+            <a class="img-insta" href=""><img  src="images/icons8-instagram-48.png"  alt="imagen de inicio"></a>
+            <a class="img-guasa" href=""><img  src="images/icons8-whatsapp-48.png"  alt="imagen de inicio"></a>
+        </div>
         <div class="contacto">
             <h2>Hotel JS Real - Sibaté - Colombia</h2>
             <h4>Cll75 B #17a 49 Sur</h4>
@@ -83,30 +88,47 @@
         <div class="habitacion-content">
             
             <div class="habitacion">
-                <img src="images/hab1.jpg" alt="">
+                <img src="images/habitacion3index.jpg" alt="imagen habitacion 1">
+                
                 <div class="habitacion-txt">
                     <h3>Habitacion Familiar</h3>
-                    <p>calidad premium</p>
+                    <div>
+                        <img class="estrellita" src="images/icons8-star-48.png">
+                        <img class="estrellita" src="images/icons8-star-48.png">
+                        <img class="estrellita" src="images/icons8-star-48.png">
+                        <img class="estrellita" src="images/icons8-star-48.png">
+                    </div>
                     <p class="precio"> $200000</p>
                     
                 </div>
             </div>
 
             <div class="habitacion">
-                <img src="images/hab1.jpg" alt="">
+                <img src="images/habitacion2index.jpg" alt="imagen habitacion 2">
                 <div class="habitacion-txt">
                     <h3>Habitacion Sencilla</h3>
-                    <p>calidad premium</p>
+                    <div>
+                        <img class="estrellita" src="images/icons8-star-48.png">
+                        <img class="estrellita" src="images/icons8-star-48.png">
+                        <img class="estrellita" src="images/icons8-star-48.png">
+                    </div>
                     <p class="precio"> $200000</p>
                     
                 </div>
             </div>
 
             <div class="habitacion">
-                <img src="images/hab1.jpg" alt="">
+                <img src="images/hab1.jpg" alt=" imagen habitacion 3">
                 <div class="habitacion-txt">
                     <h3>Habitacion Doble</h3>
-                    <p>calidad premium</p>
+                    <div>
+                        <img class="estrellita" src="images/icons8-star-48.png">
+                        <img class="estrellita" src="images/icons8-star-48.png">
+                        <img class="estrellita" src="images/icons8-star-48.png">
+                        <img class="estrellita" src="images/icons8-star-48.png">
+                        <img class="estrellita" src="images/icons8-star-48.png">
+                    </div>
+                    
                     <p class="precio"> $200000</p>
                     
                 </div>
@@ -158,8 +180,11 @@
           </div>
           <div class="footer-section">
             <h3>Redes Sociales</h3>
-            <p>Síguenos en Facebook</p>
-            <p>Síguenos en Instagram</p>
+            <div class="redes-sociales-footer">
+                <a class="img-facebook-footer" href=""><img  src="images/icons8-facebook-48.png"  alt="imagen de inicio"></a>
+                <a class="img-insta-footer" href=""><img  src="images/icons8-instagram-48.png"  alt="imagen de inicio"></a>
+                <a class="img-guasa-footer" href=""><img  src="images/icons8-whatsapp-48.png"  alt="imagen de inicio"></a>
+            </div>
           </div>
         </div>
         <div class="footer-bottom">
