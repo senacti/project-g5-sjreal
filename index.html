@@ -13,17 +13,17 @@
     <!-- HEADER - TOPBAR -->
     <header class="header">
         <nav class="navbar">
-            <div class="logo">
-                <a href="./index.html" class=""><img src="./images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
-                <p>San José Real</p>
-            </div>
+            
             <ul class="menu">
                 <!-- <li><a href="../index.html">Inicio</a></li> -->
                 <li><a href="HTML/404.html">Servicios</a></li>
                 <li><a href="HTML/reserva.html">Reservas</a></li>
-                <li><a href="HTML/404.html">Acerca</a></li>
+                <li><a href="HTML/404.html">Habitaciones</a></li>
             </ul>
-
+            <div class="logo">
+                <a href="./index.html" class=""><img src="./images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
+                <!-- <p>San José Real</p> -->
+            </div>
             <div class="login">
                 <!-- <a href=""><img src="./images/logito.png" class="logo-login" alt="Logo de inicio de sesión"> </a> -->
                 <a href=""><img src="./images/perfilblanco.png" class="logo-login" alt="Logo de inicio de sesión"> </a>
@@ -38,14 +38,38 @@
     <section class="home">
         <img class="img-home" src="images/habitacionfondoindex.jpg"  alt="imagen de inicio">
         <div class="redes-sociales">
-            <a class="img-facebook" href=""><img  src="images/icons8-facebook-48.png"  alt="imagen de inicio"></a>
+            <!-- <a class="img-facebook" href=""><img  src="images/icons8-facebook-48.png"  alt="imagen de inicio"></a>
             <a class="img-insta" href=""><img  src="images/icons8-instagram-48.png"  alt="imagen de inicio"></a>
-            <a class="img-guasa" href=""><img  src="images/icons8-whatsapp-48.png"  alt="imagen de inicio"></a>
+            <a class="img-guasa" href=""><img  src="images/icons8-whatsapp-48.png"  alt="imagen de inicio"></a> -->
+            <a class="img-facebook" href=""><img  src="images/redes/facebookblanco.png"  alt="imagen de inicio"></a>
+            <a class="img-insta" href=""><img  src="images/redes/instagramsinfondoblanco.png"  alt="imagen de inicio"></a>
+            <a class="img-guasa" href=""><img  src="images/redes/whatsappblanco.png"  alt="imagen de inicio"></a>
         </div>
         <div class="contacto">
-            <h2>Hotel JS Real - Sibaté - Colombia</h2>
-            <h4>Cll75 B #17a 49 Sur</h4>
-            <p>Cel: 3125512595</p>
+                <div class="check-in"> 
+                    <img src="./images/calendario/icons8-calendar.gif" alt="Logo del hotel">
+                    <div>
+                        <label for="checkin">Check-in:</label>
+                        <input type="date" id="checkin" name="checkin">
+                    </div>
+                    
+                </div>
+                <div class="check-out">
+                        <label for="checkout">Check-out:</label>
+                        <input type="date" id="checkout" name="checkout">
+                </div>
+                <div class="guests">
+                    <div class="">
+                        <label for="Huespedes">Personas</label>
+                        <input type="number" min="1" value="1">
+                    </div>
+                    <div class="">
+                        <label for="huesped-animal">Animales</label>
+                        <input type="number" min="0" value="0">
+                    </div>
+                    
+                    
+                </div>
         </div>
     </section>
 
@@ -73,7 +97,7 @@
             <p>Cel: 3125512595</p>
             <section class="busqueda-fechas">
                 <h3>Reserva tu estadía</h3>
-                <form>
+                <!-- <form>
                     <label for="checkin">Check-in:</label>
                     <input type="date" id="checkin" name="checkin">
         
@@ -81,7 +105,7 @@
                     <input type="date" id="checkout" name="checkout">
         
                     <input type="submit" value="Buscar habitaciones">
-                </form>
+                </form> -->
             </section>
         </div>
 
@@ -181,9 +205,12 @@
           <div class="footer-section">
             <h3>Redes Sociales</h3>
             <div class="redes-sociales-footer">
-                <a class="img-facebook-footer" href=""><img  src="images/icons8-facebook-48.png"  alt="imagen de inicio"></a>
+                <!-- <a class="img-facebook-footer" href=""><img  src="images/icons8-facebook-48.png"  alt="imagen de inicio"></a>
                 <a class="img-insta-footer" href=""><img  src="images/icons8-instagram-48.png"  alt="imagen de inicio"></a>
-                <a class="img-guasa-footer" href=""><img  src="images/icons8-whatsapp-48.png"  alt="imagen de inicio"></a>
+                <a class="img-guasa-footer" href=""><img  src="images/icons8-whatsapp-48.png"  alt="imagen de inicio"></a> -->
+                <a class="img-facebook" href=""><img  src="images/redes/facebooknegro.png"  alt="imagen de inicio"></a>
+            <a class="img-insta" href=""><img  src="images/redes/instagramnegro.png"  alt="imagen de inicio"></a>
+            <a class="img-guasa" href=""><img  src="images/redes/whatsaapnegro.png"  alt="imagen de inicio"></a>
             </div>
           </div>
         </div>
