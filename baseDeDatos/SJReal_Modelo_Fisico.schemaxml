@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">sjreal</database>
+</source>
+<canvas zoom="55">
+<tables>
+<table name="cliente_de" view="colnames">
+<left>300</left>
+<top>289</top>
+<width>103</width>
+<height>90</height>
+<sql_create_table>CREATE TABLE `cliente_de` (
+  `idCliente_De` int(11) NOT NULL AUTO_INCREMENT,
+  `Sucursal_id_Sucursal` int(11) NOT NULL,
+  `Proveedor_idProveedor` int(11) NOT NULL,
+  `fecha_Inicio_Actividades` date NOT NULL,
+  `antiguedad_actividades` int(11) NOT NULL,
+  PRIMARY KEY (`idCliente_De`),
+  KEY `fk_Sucursal_has_Proveedor_Sucursal1` (`Sucursal_id_Sucursal`),
+  KEY `fk_Sucursal_has_Proveedor_Proveedor1` (`Proveedor_idProveedor`),
+  CONSTRAINT `fk_Sucursal_has_Proveedor_Proveedor1` FOREIGN KEY (`Proveedor_idProveedor`) REFERENCES `proveedor` (`idProveedor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Sucursal_has_Proveedor_Sucursal1` FOREIGN KEY (`Sucursal_id_Sucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="detalle_pago" view="colnames">
+<left>879</left>
+<top>798</top>
+<width>112</width>
+<height>80</height>
+<sql_create_table>CREATE TABLE `detalle_pago` (
+  `id_Detalle_Pago` int(11) NOT NULL AUTO_INCREMENT,
+  `Pago_idPago` int(11) NOT NULL,
+  `precio_Por_Dia_Hospedado` decimal(10,0) NOT NULL,
+  `precio_Total` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`id_Detalle_Pago`),
+  KEY `fk_Producto_has_Pago_Pago1` (`Pago_idPago`),
+  CONSTRAINT `fk_Producto_has_Pago_Pago1` FOREIGN KEY (`Pago_idPago`) REFERENCES `pago` (`idPago`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="detallepedido" view="colnames">
+<left>469</left>
+<top>861</top>
+<width>100</width>
+<height>99</height>
+<sql_create_table>CREATE TABLE `detallepedido` (
+  `idDetalle` int(11) NOT NULL AUTO_INCREMENT,
+  `cantidad_Producto` int(11) NOT NULL,
+  `precio_unitario` decimal(11,2) NOT NULL,
+  `precio_Total` decimal(11,2) NOT NULL,
+  `Pedido_idPedido` int(11) NOT NULL,
+  `Inventario_idInventario` int(11) NOT NULL,
+  PRIMARY KEY (`idDetalle`),
+  KEY `fk_detallePedido_Pedido1` (`Pedido_idPedido`),
+  KEY `fk_detallePedido_Inventario1` (`Inventario_idInventario`),
+  CONSTRAINT `fk_detallePedido_Inventario1` FOREIGN KEY (`Inventario_idInventario`) REFERENCES `inventario` (`idInventario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_detallePedido_Pedido1` FOREIGN KEY (`Pedido_idPedido`) REFERENCES `pedido` (`IdPedido`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</sql_create_table>
+</table>
+<table name="dueño" view="colnames">
+<left>1100</left>
+<top>85</top>
+<width>105</width>
+<height>164</height>
+<sql_create_table>CREATE TABLE `dueño` (
+  `idDueño` int(11) NOT NULL AUTO_INCREMENT,
+  `cedula_Dueño` varchar(15) NOT NULL,
+  `primer_Nombre_Dueño` varchar(40) NOT NULL,
+  `segundo_Nombre_Dueño` varchar(40) DEFAULT NULL,
+  `primer_Apellido_Dueño` varchar(45) NOT NULL,
+  `segundo_Apellido_Dueño` varchar(45) DEFAULT NULL,
+  `tipo_Documento_Dueño` enum('CC','CE','TI','Pasaporte') NOT NULL,
+  `fecha_Nacimiento_Dueño` date NOT NULL,
+  `edad_Dueño` int(11) NOT NULL,
+  `telefono_Dueño` varchar(15) NOT NULL,
+  `correo_Dueño` varchar(50) NOT NULL,
+  `porcentaje_Participacion` decimal(10,0) NOT NULL,
+  `nacionalidad` varchar(50) NOT NULL,
+  PRIMARY KEY (`idDueño`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="empleado" view="colnames">
+<left>405</left>
+<top>364</top>
+<width>110</width>
+<height>157</height>
+<sql_create_table>CREATE TABLE `empleado` (
+  `idEmpleado` int(11) NOT NULL AUTO_INCREMENT,
+  `cedula_Empleado` varchar(15) NOT NULL,
+  `tipo_Documento` enum('CC','CE','TI','Pasaporte') NOT NULL,
+  `fecha_Nacimiento` date NOT NULL,
+  `edad_Empleado` int(11) NOT NULL,
+  `correo_Empleado` varchar(45) NOT NULL,
+  `telefono_Empleado` varchar(10) NOT NULL,
+  `primer_Nombre_Empleado` varchar(45) NOT NULL,
+  `segundo_Nombre_Empleado` varchar(45) DEFAULT NULL,
+  `primer_Apellido_Empleado` varchar(45) NOT NULL,
+  `segundo_Apellido_Empleado` varchar(45) DEFAULT NULL,
+  `nacionalidad` varchar(50) NOT NULL,
+  PRIMARY KEY (`idEmpleado`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="habitacion" view="colnames">
+<left>1246</left>
+<top>289</top>
+<width>99</width>
+<height>108</height>
+<sql_create_table>CREATE TABLE `habitacion` (
+  `idHabitacion` int(11) NOT NULL AUTO_INCREMENT,
+  `Sucursal_id_Sucursal` int(11) NOT NULL,
+  `numero_Habitacion` varchar(3) NOT NULL,
+  `descripcion _Habitacion` varchar(500) NOT NULL,
+  `tipo_Habitacion` enum('Sencilla','Doble','Para pareja') NOT NULL,
+  `capacidad_Habitacion` int(11) NOT NULL,
+  `precio_Habitacion` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`idHabitacion`),
+  KEY `fk_Habitacion_Sucursal1` (`Sucursal_id_Sucursal`),
+  CONSTRAINT `fk_Habitacion_Sucursal1` FOREIGN KEY (`Sucursal_id_Sucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="hospedaje" view="colnames">
+<left>1131</left>
+<top>589</top>
+<width>100</width>
+<height>108</height>
+<sql_create_table>CREATE TABLE `hospedaje` (
+  `idHospedaje` int(11) NOT NULL AUTO_INCREMENT,
+  `Habitacion_idHabitacion` int(11) NOT NULL,
+  `Huesped_idHuesped` int(11) NOT NULL,
+  `checkIn_Hospedaje` datetime(2) NOT NULL,
+  `checkOut_Hospedaje` datetime(2) NOT NULL,
+  `tipo_Hospedaje` enum('Reserva','Hospedaje normal') NOT NULL,
+  `codigo_Hospedaje` int(11) NOT NULL,
+  PRIMARY KEY (`idHospedaje`),
+  KEY `fk_Habitacion_has_Huesped_Habitacion1` (`Habitacion_idHabitacion`),
+  KEY `fk_Habitacion_has_Huesped_Huesped1` (`Huesped_idHuesped`),
+  CONSTRAINT `fk_Habitacion_has_Huesped_Habitacion1` FOREIGN KEY (`Habitacion_idHabitacion`) REFERENCES `habitacion` (`idHabitacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Habitacion_has_Huesped_Huesped1` FOREIGN KEY (`Huesped_idHuesped`) REFERENCES `huesped` (`idHuesped`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="huesped" view="colnames">
+<left>1243</left>
+<top>671</top>
+<width>112</width>
+<height>155</height>
+<sql_create_table>CREATE TABLE `huesped` (
+  `idHuesped` int(11) NOT NULL AUTO_INCREMENT,
+  `cedula _Huesped` varchar(15) NOT NULL,
+  `primer_Nombre_Huesped` varchar(40) NOT NULL,
+  `segundo_Nombre_Huesped` varchar(40) DEFAULT NULL,
+  `primer_Apellido_Huesped` varchar(45) NOT NULL,
+  `segundo_Apellido_Huesped` varchar(45) DEFAULT NULL,
+  `tipo_Documento_Huesped` enum('CC','CE','TI','Pasaporte') NOT NULL,
+  `fecha_Nacimiento_Huesped` date NOT NULL,
+  `edad_Huesped` int(11) NOT NULL,
+  `telefono_Huesped` varchar(15) NOT NULL,
+  `correo_Huesped` varchar(50) NOT NULL,
+  `nacionalidad` varchar(50) NOT NULL,
+  PRIMARY KEY (`idHuesped`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="inventario" view="colnames">
+<left>587</left>
+<top>784</top>
+<width>96</width>
+<height>118</height>
+<sql_create_table>CREATE TABLE `inventario` (
+  `idInventario` int(11) NOT NULL AUTO_INCREMENT,
+  `Sucursal_id_Sucursal` int(11) NOT NULL,
+  `Producto_idProducto` int(11) NOT NULL,
+  `nombre_Inventario` varchar(100) NOT NULL,
+  `existencias_Inventario` int(11) NOT NULL,
+  `minimo_Producto` int(11) NOT NULL,
+  `maximo_Producto` int(11) NOT NULL,
+  `estado` enum('Activo','Inactivo') DEFAULT NULL,
+  PRIMARY KEY (`idInventario`),
+  KEY `fk_Sucursal_has_Inventario_Sucursal1` (`Sucursal_id_Sucursal`),
+  KEY `fk_Inventario_Producto1` (`Producto_idProducto`),
+  CONSTRAINT `fk_Inventario_Producto1` FOREIGN KEY (`Producto_idProducto`) REFERENCES `producto` (`idProducto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Sucursal_has_Inventario_Sucursal1` FOREIGN KEY (`Sucursal_id_Sucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="pago" view="colnames">
+<left>1005</left>
+<top>734</top>
+<width>101</width>
+<height>118</height>
+<sql_create_table>CREATE TABLE `pago` (
+  `idPago` int(11) NOT NULL AUTO_INCREMENT,
+  `Hospedaje_idHospedaje` int(11) NOT NULL,
+  `titular _Pago` varchar(80) NOT NULL,
+  `IDTitular_Pago` varchar(20) NOT NULL,
+  `medioDePago_Pago` enum('PSE','Tarjeta de crédito','Tarjeta de dédito','Efectivo') NOT NULL,
+  `concepto_Pago` varchar(500) NOT NULL,
+  `total_Pago` decimal(10,0) NOT NULL,
+  `tipo_Cliente` enum('Persona natural','Persona jurídica') NOT NULL,
+  PRIMARY KEY (`idPago`),
+  KEY `fk_Pago_Hospedaje1` (`Hospedaje_idHospedaje`),
+  CONSTRAINT `fk_Pago_Hospedaje1` FOREIGN KEY (`Hospedaje_idHospedaje`) REFERENCES `hospedaje` (`idHospedaje`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="pago_recibo" view="colnames">
+<left>385</left>
+<top>103</top>
+<width>118</width>
+<height>108</height>
+<sql_create_table>CREATE TABLE `pago_recibo` (
+  `idPago_Recibo` int(11) NOT NULL AUTO_INCREMENT,
+  `Recibo_idRecibo` int(11) NOT NULL,
+  `Responsable_idResponsable1` int(11) NOT NULL,
+  `fecha_Pago_Recibo` date NOT NULL,
+  `monto_Recibo` decimal(10,0) NOT NULL,
+  `Pago_Con_Retraso` varchar(2) NOT NULL,
+  `motivo_Retraso` varchar(100) NOT NULL,
+  PRIMARY KEY (`idPago_Recibo`),
+  KEY `fk_Pago_Recibo_Recibo1` (`Recibo_idRecibo`),
+  KEY `fk_Pago_Recibo_Responsable1` (`Responsable_idResponsable1`),
+  CONSTRAINT `fk_Pago_Recibo_Recibo1` FOREIGN KEY (`Recibo_idRecibo`) REFERENCES `recibo` (`idRecibo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="pedido" view="colnames">
+<left>187</left>
+<top>609</top>
+<width>100</width>
+<height>80</height>
+<sql_create_table>CREATE TABLE `pedido` (
+  `IdPedido` int(11) NOT NULL AUTO_INCREMENT,
+  `Proveedor_idProveedor` int(11) NOT NULL,
+  `fecha_Entrega` datetime NOT NULL,
+  `precio_Total_Pedido` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`IdPedido`),
+  KEY `fk_Proveedor_has_Producto_Proveedor1` (`Proveedor_idProveedor`),
+  CONSTRAINT `fk_Proveedor_has_Producto_Proveedor1` FOREIGN KEY (`Proveedor_idProveedor`) REFERENCES `proveedor` (`idProveedor`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="producto" view="colnames">
+<left>704</left>
+<top>862</top>
+<width>92</width>
+<height>90</height>
+<sql_create_table>CREATE TABLE `producto` (
+  `idProducto` int(11) NOT NULL AUTO_INCREMENT,
+  `precio_Producto` decimal(10,2) NOT NULL,
+  `descripcion_Producto` varchar(200) NOT NULL,
+  `nombre_Producto` varchar(50) NOT NULL,
+  `categoria_Producto` varchar(50) NOT NULL,
+  PRIMARY KEY (`idProducto`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="propiedad" view="colnames">
+<left>975</left>
+<top>190</top>
+<width>107</width>
+<height>108</height>
+<sql_create_table>CREATE TABLE `propiedad` (
+  `idPropiedad` int(11) NOT NULL AUTO_INCREMENT,
+  `codigo_Escritura` varchar(30) NOT NULL,
+  `Dueño_idDueño` int(11) NOT NULL,
+  `Sucursal_id_Sucursal` int(11) NOT NULL,
+  `fecha_Inicio_Participacion` date NOT NULL,
+  `antiguedad_Participacion` int(11) NOT NULL,
+  `participacion_Inicial` int(11) NOT NULL,
+  PRIMARY KEY (`idPropiedad`),
+  KEY `fk_Dueño_has_Sucursal_Dueño1` (`Dueño_idDueño`),
+  KEY `fk_Dueño_has_Sucursal_Sucursal1` (`Sucursal_id_Sucursal`),
+  CONSTRAINT `fk_Dueño_has_Sucursal_Dueño1` FOREIGN KEY (`Dueño_idDueño`) REFERENCES `dueño` (`idDueño`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Dueño_has_Sucursal_Sucursal1` FOREIGN KEY (`Sucursal_id_Sucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="proveedor" view="colnames">
+<left>63</left>
+<top>426</top>
+<width>91</width>
+<height>99</height>
+<sql_create_table>CREATE TABLE `proveedor` (
+  `idProveedor` int(11) NOT NULL AUTO_INCREMENT,
+  `NIT_Proveedor` varchar(15) NOT NULL,
+  `nombre_Proveedor` varchar(45) NOT NULL,
+  `telefono_Proveedor` varchar(15) NOT NULL,
+  `correo_Proveedor` varchar(45) NOT NULL,
+  `categoria_Proveedor` enum('Aseo','Textiles','') DEFAULT NULL,
+  PRIMARY KEY (`idProveedor`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="recibo" view="colnames">
+<left>701</left>
+<top>37</top>
+<width>137</width>
+<height>108</height>
+<sql_create_table>CREATE TABLE `recibo` (
+  `idRecibo` int(11) NOT NULL AUTO_INCREMENT,
+  `Servicio_Publico_idServicio_Publico` int(11) NOT NULL,
+  `Sucursal_id_Sucursal` int(11) NOT NULL,
+  `concepto_Recibo` varchar(100) NOT NULL,
+  `fecha_Pago_Oportuno` date NOT NULL,
+  `consumo_Recibo` decimal(11,2) NOT NULL,
+  `medida_consumo` varchar(45) NOT NULL,
+  PRIMARY KEY (`idRecibo`),
+  KEY `fk_Servicio_Publico_has_Sucursal_Servicio_Publico` (`Servicio_Publico_idServicio_Publico`),
+  KEY `fk_Servicio_Publico_has_Sucursal_Sucursal1` (`Sucursal_id_Sucursal`),
+  CONSTRAINT `fk_Servicio_Publico_has_Sucursal_Servicio_Publico` FOREIGN KEY (`Servicio_Publico_idServicio_Publico`) REFERENCES `servicio_publico` (`idServicio_Publico`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Servicio_Publico_has_Sucursal_Sucursal1` FOREIGN KEY (`Sucursal_id_Sucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="rol_empleado" view="colnames">
+<left>558</left>
+<top>470</top>
+<width>116</width>
+<height>118</height>
+<sql_create_table>CREATE TABLE `rol_empleado` (
+  `idRol_Empleado` int(11) NOT NULL AUTO_INCREMENT,
+  `Sucursal_id_Sucursal` int(11) NOT NULL,
+  `Empleado_idEmpleado` int(11) NOT NULL,
+  `cargo_Empleado` enum('Gerente','Recepcionista','Camarera','Mantenimiento','Otro') NOT NULL,
+  `cargo_Otro_Empleado` varchar(45) DEFAULT NULL,
+  `tipo_Contrato` varchar(50) NOT NULL,
+  `fecha_Vinculacion_Empleado` date NOT NULL,
+  `antiguedad_Empleado` int(11) NOT NULL,
+  PRIMARY KEY (`idRol_Empleado`),
+  KEY `fk_Sucursal_has_Empleado_Sucursal1` (`Sucursal_id_Sucursal`),
+  KEY `fk_Sucursal_has_Empleado_Empleado1` (`Empleado_idEmpleado`),
+  CONSTRAINT `fk_Sucursal_has_Empleado_Empleado1` FOREIGN KEY (`Empleado_idEmpleado`) REFERENCES `empleado` (`idEmpleado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Sucursal_has_Empleado_Sucursal1` FOREIGN KEY (`Sucursal_id_Sucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="servicio_publico" view="colnames">
+<left>855</left>
+<top>22</top>
+<width>113</width>
+<height>136</height>
+<sql_create_table>CREATE TABLE `servicio_publico` (
+  `idServicio_Publico` int(11) NOT NULL AUTO_INCREMENT,
+  `proveedor_Servicio_Publico` varchar(80) NOT NULL,
+  `nombre_Servicio_Publico` varchar(45) NOT NULL,
+  `carrera_Servicio_Publico` int(11) NOT NULL,
+  `calle_Servicio_Publico` int(11) NOT NULL,
+  `cuidad_Servicio_Publico` varchar(80) NOT NULL,
+  `correo_Servicio_Publico` varchar(50) NOT NULL,
+  `telefono_Servicio_Publico` varchar(15) NOT NULL,
+  `telefono2_Servicio_Publico` varchar(15) NOT NULL,
+  `NIT_Proveedor` varchar(15) NOT NULL,
+  PRIMARY KEY (`idServicio_Publico`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="sucursal" view="colnames">
+<left>855</left>
+<top>304</top>
+<width>100</width>
+<height>127</height>
+<sql_create_table>CREATE TABLE `sucursal` (
+  `id_Sucursal` int(11) NOT NULL AUTO_INCREMENT,
+  `NIT_Sucursal` varchar(50) NOT NULL,
+  `nombre_Sucursal` varchar(50) NOT NULL,
+  `departamento_Sucursal` enum('Amazonas','Antioquia','Arauca','Atlántico','Bolívar','Boyacá','Caldas','Caquetá','Casanare','Cauca','Cesar','Chocó','Córdoba','Cundinamarca','Guainía','Guaviare','Huila','La Guajira','Magdalena','Meta','Nariño','Norte de Santander','Putumayo','Quindío','Risaralda','San Andrés y Providencia','Santander','Sucre','Tolima','Valle del Cauca','Vaupés','Vichada') NOT NULL,
+  `cuidad_Sucursal` varchar(50) NOT NULL,
+  `calle_Sucursal` int(11) NOT NULL,
+  `carrera_Sucursal` int(11) NOT NULL,
+  `telefono_Sucursal` varchar(10) NOT NULL,
+  `correo_Sucursal` varchar(80) NOT NULL,
+  PRIMARY KEY (`id_Sucursal`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="vehiculo" view="colnames">
+<left>894</left>
+<top>677</top>
+<width>89</width>
+<height>90</height>
+<sql_create_table>CREATE TABLE `vehiculo` (
+  `idVehiculo` int(11) NOT NULL AUTO_INCREMENT,
+  `Huesped_idHuesped` int(11) NOT NULL,
+  `placa_Vehiculo` varchar(10) NOT NULL,
+  `modelo_Vehiculo` varchar(45) NOT NULL,
+  `color_Vehiculo` varchar(15) NOT NULL,
+  PRIMARY KEY (`idVehiculo`),
+  KEY `fk_Vehiculo_Huesped1` (`Huesped_idHuesped`),
+  CONSTRAINT `fk_Vehiculo_Huesped1` FOREIGN KEY (`Huesped_idHuesped`) REFERENCES `huesped` (`idHuesped`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="mantenimiento_saneamiento" view="colnames">
+<left>812</left>
+<top>449</top>
+<width>99</width>
+<height>80</height>
+<sql_create_table>CREATE TABLE `mantenimiento_saneamiento` (
+  `idMantenimento` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_Mantenimiento` varchar(100) NOT NULL,
+  `tipo_Mantenimiento` varchar(50) NOT NULL,
+  `Rol_Empleado` int(11) NOT NULL,
+  PRIMARY KEY (`idMantenimento`),
+  KEY `Rol_Empleado` (`Rol_Empleado`),
+  CONSTRAINT `mantenimiento_saneamiento_ibfk_1` FOREIGN KEY (`Rol_Empleado`) REFERENCES `rol_empleado` (`idRol_Empleado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</sql_create_table>
+</table>
+<table name="control_salida" view="colnames">
+<left>400</left>
+<top>678</top>
+<width>124</width>
+<height>90</height>
+<sql_create_table>CREATE TABLE `control_salida` (
+  `idControl` int(11) NOT NULL AUTO_INCREMENT,
+  `Rol_Empleado_idRol_Empleado` int(11) NOT NULL,
+  `Inventario_idInventario` int(11) NOT NULL,
+  `concepto_Salida` varchar(150) NOT NULL,
+  `cantidad_Salida` int(11) NOT NULL,
+  PRIMARY KEY (`idControl`),
+  KEY `fk_control_salida_rol_empleado1` (`Rol_Empleado_idRol_Empleado`),
+  KEY `fk_control_salida_inventario` (`Inventario_idInventario`),
+  CONSTRAINT `fk_control_salida_inventario` FOREIGN KEY (`Inventario_idInventario`) REFERENCES `inventario` (`idInventario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_control_salida_rol_empleado1` FOREIGN KEY (`Rol_Empleado_idRol_Empleado`) REFERENCES `rol_empleado` (`idRol_Empleado`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</sql_create_table>
+</table>
+<table name="detalle_mantenimiento" view="colnames">
+<left>944</left>
+<top>545</top>
+<width>132</width>
+<height>123</height>
+<sql_create_table>CREATE TABLE `detalle_mantenimiento` (
+  `idDetalle` int(11) NOT NULL AUTO_INCREMENT,
+  `Habitacion_idHabitacion` int(11) NOT NULL,
+  `Mantenimiento_idMantenimiento` int(11) NOT NULL,
+  `descripcion_Mantenimiento` varchar(200) NOT NULL,
+  `ejecutado` varchar(2) NOT NULL,
+  `fecha_Mantenimiento` datetime NOT NULL,
+  `Control_Salida_idControl` int(11) NOT NULL,
+  `Mantenimiento_idRutina` int(11) NOT NULL,
+  PRIMARY KEY (`idDetalle`),
+  KEY `fk_Detalle_Habitacion` (`Habitacion_idHabitacion`),
+  KEY `fk_Detaller_Mantenimiento` (`Mantenimiento_idMantenimiento`),
+  KEY `fk_Detalle_Control1` (`Control_Salida_idControl`),
+  KEY `Mantenimiento_idRutina` (`Mantenimiento_idRutina`),
+  CONSTRAINT `detalle_mantenimiento_ibfk_1` FOREIGN KEY (`Mantenimiento_idRutina`) REFERENCES `mantenimiento_saneamiento_rutinario` (`idRutina`),
+  CONSTRAINT `fk_Detalle_Control1` FOREIGN KEY (`Control_Salida_idControl`) REFERENCES `control_salida` (`idControl`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Detalle_Habitacion` FOREIGN KEY (`Habitacion_idHabitacion`) REFERENCES `habitacion` (`idHabitacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Detaller_Mantenimiento` FOREIGN KEY (`Mantenimiento_idMantenimiento`) REFERENCES `mantenimiento_saneamiento` (`idMantenimento`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</sql_create_table>
+</table>
+<table name="mantenimiento_sucursal" view="colnames">
+<left>968</left>
+<top>409</top>
+<width>126</width>
+<height>99</height>
+<sql_create_table>CREATE TABLE `mantenimiento_sucursal` (
+  `idMantenimiento_sucursal` int(11) NOT NULL AUTO_INCREMENT,
+  `Sucursal_idSucursal` int(11) NOT NULL,
+  `fecha_Mantenimiento` date NOT NULL,
+  `descripcion_Mantenimiento` varchar(200) NOT NULL,
+  `Mantenimiento_idMantenimineto` int(11) NOT NULL,
+  `Control_Salida_idControl` int(11) NOT NULL,
+  PRIMARY KEY (`idMantenimiento_sucursal`),
+  KEY `fk_Mantenimiento_Sucursal` (`Sucursal_idSucursal`),
+  KEY `fk_Mantenimiento_Sucursal_Mantenimiento` (`Mantenimiento_idMantenimineto`),
+  KEY `Control_Salida_idControl` (`Control_Salida_idControl`),
+  CONSTRAINT `fk_Mantenimiento_Sucursal` FOREIGN KEY (`Sucursal_idSucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Mantenimiento_Sucursal_Mantenimiento` FOREIGN KEY (`Mantenimiento_idMantenimineto`) REFERENCES `mantenimiento_saneamiento` (`idMantenimento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `mantenimiento_sucursal_ibfk_1` FOREIGN KEY (`Control_Salida_idControl`) REFERENCES `control_salida` (`idControl`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</sql_create_table>
+</table>
+<table name="pqrfs" view="colnames">
+<left>900</left>
+<top>928</top>
+<width>124</width>
+<height>108</height>
+<sql_create_table>CREATE TABLE `pqrfs` (
+  `idPqrfs` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo_PQRFs` enum('Pregunta','Queja','Reclamo','Felicitaciones') NOT NULL,
+  `descripcion_PQRFs` varchar(500) NOT NULL,
+  `fecha_Radicado` date NOT NULL,
+  `estado_PQRFs` enum('Resuelta','Por resolver') NOT NULL,
+  `Huesped_idHuesped` int(11) NOT NULL,
+  `Rol_Empleado_idRol_Empleado` int(11) NOT NULL,
+  PRIMARY KEY (`idPqrfs`),
+  KEY `Huesped_idHuesped` (`Huesped_idHuesped`),
+  KEY `Rol_Empleado_idRol_Empleado` (`Rol_Empleado_idRol_Empleado`),
+  CONSTRAINT `pqrfs_ibfk_1` FOREIGN KEY (`Huesped_idHuesped`) REFERENCES `huesped` (`idHuesped`),
+  CONSTRAINT `pqrfs_ibfk_2` FOREIGN KEY (`Rol_Empleado_idRol_Empleado`) REFERENCES `rol_empleado` (`idRol_Empleado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</sql_create_table>
+</table>
+<table name="mantenimiento_saneamiento_rutinario" view="colnames">
+<left>1141</left>
+<top>414</top>
+<width>74</width>
+<height>90</height>
+<sql_create_table>CREATE TABLE `mantenimiento_saneamiento_rutinario` (
+  `idRutina` int(11) NOT NULL AUTO_INCREMENT,
+  `item_Rutina` varchar(50) NOT NULL,
+  `estado_Rutina` enum('Hecho','Pendiente') NOT NULL,
+  `cantidad_Items` int(11) NOT NULL,
+  `fecha_Rutina` datetime NOT NULL,
+  PRIMARY KEY (`idRutina`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</sql_create_table>
+</table>
+<table name="parqueadero" view="colnames">
+<left>736</left>
+<top>542</top>
+<width>110</width>
+<height>108</height>
+<sql_create_table>CREATE TABLE `parqueadero` (
+  `idParqueadero` int(11) NOT NULL AUTO_INCREMENT,
+  `Sucursal_idSucursal` int(11) NOT NULL,
+  `Vehiculo_idVehiculo` int(11) NOT NULL,
+  `entrada_Vehiculo` datetime NOT NULL,
+  `salida_Vehiculo` date NOT NULL,
+  `ubicacion_Vehiculo` int(11) NOT NULL,
+  `Empleado_idRol_Empleado` int(11) NOT NULL,
+  PRIMARY KEY (`idParqueadero`),
+  KEY `Vehiculo_idVehiculo` (`Vehiculo_idVehiculo`),
+  KEY `Sucursal_idSucursal` (`Sucursal_idSucursal`),
+  KEY `Empleado_idRol_Empleado` (`Empleado_idRol_Empleado`),
+  CONSTRAINT `parqueadero_ibfk_1` FOREIGN KEY (`Vehiculo_idVehiculo`) REFERENCES `vehiculo` (`idVehiculo`),
+  CONSTRAINT `parqueadero_ibfk_2` FOREIGN KEY (`Sucursal_idSucursal`) REFERENCES `sucursal` (`id_Sucursal`),
+  CONSTRAINT `parqueadero_ibfk_3` FOREIGN KEY (`Empleado_idRol_Empleado`) REFERENCES `rol_empleado` (`idRol_Empleado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</sql_create_table>
+</table>
+<table name="registro_salida_entrada" view="colnames">
+<left>1387</left>
+<top>505</top>
+<width>101</width>
+<height>90</height>
+<sql_create_table>CREATE TABLE `registro_salida_entrada` (
+  `idRegistro` int(11) NOT NULL AUTO_INCREMENT,
+  `Huesped_idHuesped` int(11) NOT NULL,
+  `Hospedaje_idHospedaje` int(11) NOT NULL,
+  `tipo_Registro` enum('Salida','Entrada') NOT NULL,
+  `hora_registro` int(11) NOT NULL,
+  PRIMARY KEY (`idRegistro`),
+  KEY `Huesped_idHuesped` (`Huesped_idHuesped`),
+  KEY `Hospedaje_idHospedaje` (`Hospedaje_idHospedaje`),
+  CONSTRAINT `registro_salida_entrada_ibfk_1` FOREIGN KEY (`Huesped_idHuesped`) REFERENCES `huesped` (`idHuesped`),
+  CONSTRAINT `registro_salida_entrada_ibfk_2` FOREIGN KEY (`Hospedaje_idHospedaje`) REFERENCES `hospedaje` (`idHospedaje`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
