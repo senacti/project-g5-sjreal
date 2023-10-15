@@ -279,7 +279,7 @@ VALUES
     (3, 10,'Camarera', 'N/A', 'Contrato a término fijo', '2019-06-19', 4),
     (3, 11,'Mantenimiento', 'N/A', 'Contrato a término fijo', '2019-06-19', 4),
     (3, 12,'Otro', 'Portero','Contrato a término fijo', '2019-06-19', 4);
-
+    
 /*---------------Creacion de registros en la tabla Huesped---------------*/           
 INSERT INTO `huesped`
             (`cedula _Huesped`,
@@ -517,30 +517,79 @@ VALUES
     (63, 30, 31, '2023-03-16 13:00:00', '2023-03-21 15:30:00', 'Hospedaje normal'), /*79*/
     (64, 31, 9 , '2023-03-23 16:45:00', '2023-03-28 08:15:00', 'Reserva'); /*80*/
     
-  
+/*---------------Creacion de registros en la tabla Mantenimiento---------------*/           
+INSERT INTO `sjreal`.`mantenimiento_saneamiento`
+            (`nombre_Mantenimiento`,
+             `tipo_Mantenimiento`)
+VALUES 
+    ('Pintura de pared de pasillo', 'Reparación'),
+    ('Pintura de paredes de habitación', 'Reparación'),
+    ('Pintura de pasamanos', 'Reparación'),
+    ('Pintura de puertas', 'Reparación'),
+    ('Pintura de la entrada', 'Reparación'),
+    ('Lavado de pasillos', 'Sanaeamiento'),
+    ('Aseo de habitación', 'Saneamiento'),
+    ('Lavado de baño', 'Saneamiento'),
+    ('Lavado de toallas', 'Saneamiento'),
+    ('Lavado de tendidos', 'Saneamiento'),
+    ('Lavado de sábanas', 'Saneamiento'),
+    ('Reemplazo item dañado', 'Reparación'),
+    ('Agregación de item nuevo', 'Mejora');
+    
+
+
+
 /*--------------------------------------------------------------------------------------------------------------------*/     
 
-INSERT INTO `sjreal`.`mantenimiento`
-            (`nombre_Mantenimiento`,
-             `tipo_Mantenimiento`,
-             `Rol_Empleado`)
-VALUES ('nombre_Mantenimiento','tipo_Mantenimiento','Rol_Empleado');
         
-  
 INSERT INTO `sjreal`.`detalle_mantenimiento`
-            (`fecha_Mantenimiento`,
-             `costo_Mantenimiento`,
-             `descripcion_Mantenimiento`,
+            (`idDetalle`,
              `Habitacion_idHabitacion`,
-             `Mantenimiento_idMantenimiento`)
-VALUES ('fecha_Mantenimiento','costo_Mantenimiento','descripcion_Mantenimiento','Habitacion_idHabitacion','Mantenimiento_idMantenimiento');   
+             `Mantenimiento_idMantenimiento`,
+             `descripcion_Mantenimiento`,
+             `ejecutado`,
+             `fecha_Mantenimiento`,
+             `Control_Salida_idControl`,
+             `Mantenimiento_idRutina`,
+             `Rol_Empleado_idRol_Empleado`)
+VALUES ('idDetalle',
+        'Habitacion_idHabitacion',
+        'Mantenimiento_idMantenimiento',
+        'descripcion_Mantenimiento',
+        'ejecutado',
+        'fecha_Mantenimiento',
+        'Control_Salida_idControl',
+        'Mantenimiento_idRutina',
+        'Rol_Empleado_idRol_Empleado');
         
 INSERT INTO `sjreal`.`mantenimiento_sucursal`
-            (`Sucursal_idSucursal`,`fecha_Mantenimiento`,
-             `costo_Mantenimiento`,
+            (`idMantenimiento_sucursal`,
+             `Sucursal_idSucursal`,
+             `fecha_Mantenimiento`,
              `descripcion_Mantenimiento`,
-             `Mantenimiento_idMantenimineto`)
-VALUES ('Sucursal_idSucursal','fecha_Mantenimiento','costo_Mantenimiento','descripcion_Mantenimiento','Mantenimiento_idMantenimineto');
+             `Mantenimiento_idMantenimineto`,
+             `Control_Salida_idControl`,
+             `Rol_Empleado_idRolEmpleado`)
+VALUES ('idMantenimiento_sucursal',
+        'Sucursal_idSucursal',
+        'fecha_Mantenimiento',
+        'descripcion_Mantenimiento',
+        'Mantenimiento_idMantenimineto',
+        'Control_Salida_idControl',
+        'Rol_Empleado_idRolEmpleado');
+        
+        
+INSERT INTO `sjreal`.`mantenimiento_saneamiento_rutinario`
+            (`idRutina`,
+             `item_Rutina`,
+             `estado_Rutina`,
+             `cantidad_Items`,
+             `fecha_Rutina`)
+VALUES ('idRutina',
+        'item_Rutina',
+        'estado_Rutina',
+        'cantidad_Items',
+        'fecha_Rutina');       
         
 INSERT INTO `sjreal`.`pqrfs`
             (`tipo_PQRFs`,
@@ -550,6 +599,36 @@ INSERT INTO `sjreal`.`pqrfs`
              `Huesped_idHuesped`,
              `Rol_Empleado_idRol_Empleado`)
 VALUES ('tipo_PQRFs','descripcion_PQRFs','fecha_Radicado','estado_PQRFs','Huesped_idHuesped','Rol_Empleado_idRol_Empleado');        
+
+
+INSERT INTO `sjreal`.`registro_salida_entrada`
+            (`idRegistro`,
+             `Huesped_idHuesped`,
+             `Hospedaje_idHospedaje`,
+             `tipo_Registro`,
+             `hora_registro`)
+VALUES ('idRegistro',
+        'Huesped_idHuesped',
+        'Hospedaje_idHospedaje',
+        'tipo_Registro',
+        'hora_registro');
+        
+        
+INSERT INTO `sjreal`.`parqueadero`
+            (`idParqueadero`,
+             `Sucursal_idSucursal`,
+             `Vehiculo_idVehiculo`,
+             `entrada_Vehiculo`,
+             `salida_Vehiculo`,
+             `ubicacion_Vehiculo`,
+             `Empleado_idRol_Empleado`)
+VALUES ('idParqueadero',
+        'Sucursal_idSucursal',
+        'Vehiculo_idVehiculo',
+        'entrada_Vehiculo',
+        'salida_Vehiculo',
+        'ubicacion_Vehiculo',
+        'Empleado_idRol_Empleado');
            
 INSERT INTO `sjreal`.`detalle_pago`
             (`Producto_idProducto`,

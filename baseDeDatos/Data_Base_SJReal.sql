@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.4.22-MariaDB : Database - sjreal
+MySQL - 5.5.5-10.4.28-MariaDB : Database - sjreal
 *********************************************************************
 */
 
@@ -12,7 +12,7 @@ MySQL - 5.5.5-10.4.22-MariaDB : Database - sjreal
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`sjreal` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`sjreal` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 
 USE `sjreal`;
 
@@ -31,7 +31,7 @@ CREATE TABLE `cliente_de` (
   KEY `fk_Sucursal_has_Proveedor_Proveedor1` (`Proveedor_idProveedor`),
   CONSTRAINT `fk_Sucursal_has_Proveedor_Proveedor1` FOREIGN KEY (`Proveedor_idProveedor`) REFERENCES `proveedor` (`idProveedor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Sucursal_has_Proveedor_Sucursal1` FOREIGN KEY (`Sucursal_id_Sucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `cliente_de` */
 
@@ -52,7 +52,7 @@ CREATE TABLE `control_salida` (
   KEY `fk_control_salida_inventario` (`Inventario_idInventario`),
   CONSTRAINT `fk_control_salida_inventario` FOREIGN KEY (`Inventario_idInventario`) REFERENCES `inventario` (`idInventario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_control_salida_rol_empleado1` FOREIGN KEY (`Rol_Empleado_idRol_Empleado`) REFERENCES `rol_empleado` (`idRol_Empleado`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `control_salida` */
 
@@ -62,17 +62,18 @@ DROP TABLE IF EXISTS `detalle_mantenimiento`;
 
 CREATE TABLE `detalle_mantenimiento` (
   `idDetalle` int(11) NOT NULL AUTO_INCREMENT,
-  `fecha_Mantenimiento` date NOT NULL,
-  `costo_Mantenimiento` decimal(10,2) NOT NULL,
-  `descripcion_Mantenimiento` varchar(200) NOT NULL,
   `Habitacion_idHabitacion` int(11) NOT NULL,
-  `Mantenimiento_idMantenimiento` int(11) NOT NULL,
+  `fecha_Mantenimiento` date NOT NULL,
+  `descripcion_Mantenimiento` varchar(200) NOT NULL,
+  `nombre_Mantenimiento` varchar(50) NOT NULL,
+  `tipo_Mantenimiento` enum('Mejora','Reparación','Saneamineto') NOT NULL,
+  `Rol_Empleado_id` int(11) NOT NULL,
   PRIMARY KEY (`idDetalle`),
   KEY `fk_Detalle_Habitacion` (`Habitacion_idHabitacion`),
-  KEY `fk_Detaller_Mantenimiento` (`Mantenimiento_idMantenimiento`),
-  CONSTRAINT `fk_Detalle_Habitacion` FOREIGN KEY (`Habitacion_idHabitacion`) REFERENCES `habitacion` (`idHabitacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Detaller_Mantenimiento` FOREIGN KEY (`Mantenimiento_idMantenimiento`) REFERENCES `mantenimiento` (`idMantenimento`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  KEY `Rol_Empleado_id` (`Rol_Empleado_id`),
+  CONSTRAINT `detalle_mantenimiento_ibfk_1` FOREIGN KEY (`Rol_Empleado_id`) REFERENCES `rol_empleado` (`idRol_Empleado`),
+  CONSTRAINT `fk_Detalle_Habitacion` FOREIGN KEY (`Habitacion_idHabitacion`) REFERENCES `habitacion` (`idHabitacion`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `detalle_mantenimiento` */
 
@@ -88,7 +89,7 @@ CREATE TABLE `detalle_pago` (
   PRIMARY KEY (`id_Detalle_Pago`),
   KEY `fk_Producto_has_Pago_Pago1` (`Pago_idPago`),
   CONSTRAINT `fk_Producto_has_Pago_Pago1` FOREIGN KEY (`Pago_idPago`) REFERENCES `pago` (`idPago`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `detalle_pago` */
 
@@ -108,7 +109,7 @@ CREATE TABLE `detallepedido` (
   KEY `fk_detallePedido_Inventario1` (`Inventario_idInventario`),
   CONSTRAINT `fk_detallePedido_Inventario1` FOREIGN KEY (`Inventario_idInventario`) REFERENCES `inventario` (`idInventario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_detallePedido_Pedido1` FOREIGN KEY (`Pedido_idPedido`) REFERENCES `pedido` (`IdPedido`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `detallepedido` */
 
@@ -131,7 +132,7 @@ CREATE TABLE `dueño` (
   `porcentaje_Participacion` decimal(10,0) NOT NULL,
   `nacionalidad` varchar(50) NOT NULL,
   PRIMARY KEY (`idDueño`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `dueño` */
 
@@ -155,7 +156,7 @@ CREATE TABLE `empleado` (
   `segundo_Apellido_Empleado` varchar(45) DEFAULT NULL,
   `nacionalidad` varchar(50) NOT NULL,
   PRIMARY KEY (`idEmpleado`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `empleado` */
 
@@ -176,7 +177,7 @@ CREATE TABLE `habitacion` (
   PRIMARY KEY (`idHabitacion`),
   KEY `fk_Habitacion_Sucursal1` (`Sucursal_id_Sucursal`),
   CONSTRAINT `fk_Habitacion_Sucursal1` FOREIGN KEY (`Sucursal_id_Sucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `habitacion` */
 
@@ -199,11 +200,11 @@ CREATE TABLE `hospedaje` (
   KEY `fk_Habitacion_has_Huesped_Huesped1` (`Huesped_idHuesped`),
   CONSTRAINT `fk_Habitacion_has_Huesped_Habitacion1` FOREIGN KEY (`Habitacion_idHabitacion`) REFERENCES `habitacion` (`idHabitacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Habitacion_has_Huesped_Huesped1` FOREIGN KEY (`Huesped_idHuesped`) REFERENCES `huesped` (`idHuesped`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=161 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `hospedaje` */
 
-insert  into `hospedaje`(`idHospedaje`,`Habitacion_idHabitacion`,`Huesped_idHuesped`,`checkIn_Hospedaje`,`checkOut_Hospedaje`,`tipo_Hospedaje`,`codigo_Hospedaje`) values (1,7,1,'2023-01-05 12:00:00.00','2023-01-10 14:00:00.00','Reserva',1),(2,7,2,'2023-01-05 12:00:00.00','2023-01-10 14:00:00.00','Reserva',1),(3,29,3,'2023-01-10 14:30:00.00','2023-01-15 09:45:00.00','Hospedaje normal',2),(4,50,22,'2023-01-04 08:00:00.00','2023-01-10 16:30:00.00','Reserva',3),(5,9,14,'2023-01-15 13:30:00.00','2023-01-20 15:30:00.00','Hospedaje normal',4),(6,9,31,'2023-01-15 13:30:00.00','2023-01-20 15:30:00.00','Hospedaje normal',4),(7,36,40,'2023-01-20 16:30:00.00','2023-01-25 12:00:00.00','Reserva',5),(8,36,9,'2023-01-12 10:45:00.00','2023-01-24 13:00:00.00','Reserva',5),(9,51,1,'2023-01-25 12:45:00.00','2023-01-28 11:00:00.00','Hospedaje normal',6),(10,1,49,'2023-01-19 09:15:00.00','2023-01-25 14:45:00.00','Reserva',7),(11,33,44,'2023-01-08 12:00:00.00','2023-01-13 14:00:00.00','Hospedaje normal',8),(12,56,29,'2023-01-01 09:30:00.00','2023-01-07 14:15:00.00','Reserva',9),(13,20,39,'2023-01-10 14:30:00.00','2023-01-15 09:45:00.00','Hospedaje normal',10),(14,35,23,'2023-01-04 08:00:00.00','2023-01-10 16:30:00.00','Reserva',11),(15,53,15,'2023-01-15 10:15:00.00','2023-01-20 15:30:00.00','Hospedaje normal',12),(16,19,40,'2023-01-09 13:30:00.00','2023-01-14 11:45:00.00','Reserva',13),(17,21,40,'2023-01-20 16:30:00.00','2023-01-25 12:00:00.00','Reserva',65),(18,44,11,'2023-01-12 10:45:00.00','2023-01-17 13:00:00.00','Hospedaje normal',14),(19,44,32,'2023-01-12 12:45:00.00','2023-01-18 11:00:00.00','Hospedaje normal',14),(20,54,45,'2023-01-19 09:15:00.00','2023-01-25 14:45:00.00','Reserva',15),(21,13,15,'2023-02-05 12:00:00.00','2023-02-10 14:00:00.00','Hospedaje normal',16),(22,13,30,'2023-02-02 09:30:00.00','2023-02-08 14:15:00.00','Hospedaje normal',16),(23,31,26,'2023-02-10 14:30:00.00','2023-02-15 09:45:00.00','Reserva',17),(24,50,26,'2023-02-04 08:00:00.00','2023-02-10 16:30:00.00','Hospedaje normal',18),(25,1,10,'2023-02-15 10:15:00.00','2023-02-20 15:30:00.00','Reserva',19),(26,1,4,'2023-02-09 13:30:00.00','2023-02-14 11:45:00.00','Hospedaje normal',20),(27,30,40,'2023-02-20 16:30:00.00','2023-02-25 12:00:00.00','Reserva',21),(28,61,19,'2023-02-25 10:45:00.00','2023-02-28 13:00:00.00','Hospedaje normal',22),(29,61,8,'2023-02-25 10:45:00.00','2023-02-28 13:00:00.00','Hospedaje normal',22),(30,46,44,'2023-02-19 09:15:00.00','2023-02-25 14:45:00.00','Reserva',23),(31,46,30,'2023-02-06 08:30:00.00','2023-02-12 12:15:00.00','Reserva',23),(32,52,49,'2023-02-11 11:00:00.00','2023-02-16 13:30:00.00','Hospedaje normal',24),(33,14,15,'2023-02-16 14:45:00.00','2023-02-20 09:00:00.00','Reserva',25),(34,31,15,'2023-02-21 08:00:00.00','2023-02-27 15:15:00.00','Hospedaje normal',26),(35,1,26,'2023-02-26 16:30:00.00','2023-02-28 10:45:00.00','Reserva',27),(36,15,3,'2023-02-07 12:15:00.00','2023-02-12 14:30:00.00','Hospedaje normal',28),(37,16,14,'2023-02-12 15:45:00.00','2023-02-17 09:30:00.00','Reserva',29),(38,9,22,'2023-02-17 12:00:00.00','2023-02-22 13:45:00.00','Hospedaje normal',30),(39,9,31,'2023-02-17 12:30:00.00','2023-02-22 13:00:00.00','Hospedaje normal',30),(40,17,9,'2023-02-27 14:15:00.00','2023-02-28 09:00:00.00','Reserva',31),(41,18,40,'2023-02-06 14:45:00.00','2023-02-12 16:30:00.00','Hospedaje normal',32),(42,19,20,'2023-02-13 08:00:00.00','2023-02-18 10:15:00.00','Reserva',33),(43,10,33,'2023-02-18 11:30:00.00','2023-02-28 15:45:00.00','Hospedaje normal',34),(44,10,23,'2023-02-18 09:30:00.00','2023-02-28 13:00:00.00','Hospedaje normal',34),(45,20,50,'2023-02-28 14:15:00.00','2023-02-28 23:59:59.00','Reserva',35),(46,21,6,'2023-02-01 12:00:00.00','2023-02-03 14:00:00.00','Hospedaje normal',36),(47,29,46,'2023-02-04 09:30:00.00','2023-02-06 14:15:00.00','Reserva',37),(48,30,36,'2023-02-07 14:30:00.00','2023-02-09 09:45:00.00','Hospedaje normal',38),(49,31,16,'2023-02-10 10:00:00.00','2023-02-12 16:30:00.00','Reserva',39),(50,32,49,'2023-02-13 16:15:00.00','2023-02-15 10:30:00.00','Hospedaje normal',40),(51,2,41,'2023-03-05 12:30:00.00','2023-03-10 14:45:00.00','Hospedaje normal',40),(52,2,11,'2023-03-02 09:45:00.00','2023-03-08 14:30:00.00','Hospedaje normal',40),(53,2,26,'2023-03-10 14:45:00.00','2023-03-15 09:15:00.00','Reserva',41),(54,33,44,'2023-03-04 08:15:00.00','2023-03-10 16:45:00.00','Hospedaje normal',42),(55,34,32,'2023-03-15 10:00:00.00','2023-03-20 15:45:00.00','Reserva',43),(56,35,42,'2023-03-09 13:45:00.00','2023-03-14 11:30:00.00','Hospedaje normal',44),(57,50,17,'2023-03-20 16:45:00.00','2023-03-25 12:15:00.00','Reserva',45),(58,11,29,'2023-03-12 10:30:00.00','2023-03-17 13:15:00.00','Hospedaje normal',46),(59,11,21,'2023-03-25 12:45:00.00','2023-03-28 11:15:00.00','Hospedaje normal',46),(60,12,1,'2023-03-19 09:30:00.00','2023-03-25 14:00:00.00','Reserva',48),(61,12,15,'2023-03-06 08:45:00.00','2023-03-12 12:30:00.00','Reserva',48),(62,51,30,'2023-03-11 11:15:00.00','2023-03-16 13:45:00.00','Hospedaje normal',49),(63,52,48,'2023-03-16 15:00:00.00','2023-03-20 09:15:00.00','Reserva',50),(64,53,38,'2023-03-21 08:15:00.00','2023-03-27 15:30:00.00','Hospedaje normal',51),(65,54,13,'2023-03-26 16:45:00.00','2023-03-28 10:30:00.00','Reserva',52),(66,55,45,'2023-03-07 12:30:00.00','2023-03-12 14:45:00.00','Hospedaje normal',53),(67,56,39,'2023-03-12 15:45:00.00','2023-03-17 09:45:00.00','Reserva',54),(68,13,19,'2023-03-17 10:15:00.00','2023-03-22 11:30:00.00','Hospedaje normal',55),(69,13,35,'2023-03-22 12:45:00.00','2023-03-27 13:15:00.00','Hospedaje normal',55),(70,1,7,'2023-03-27 14:30:00.00','2023-03-28 09:30:00.00','Reserva',56),(71,15,10,'2023-03-06 15:00:00.00','2023-03-12 16:45:00.00','Hospedaje normal',57),(72,16,24,'2023-03-13 08:15:00.00','2023-03-18 10:30:00.00','Reserva',58),(73,17,4,'2023-03-18 11:45:00.00','2023-03-22 15:15:00.00','Hospedaje normal',59),(74,18,27,'2023-03-23 09:45:00.00','2023-03-28 13:45:00.00','Hospedaje normal',59),(75,19,12,'2023-03-28 14:00:00.00','2023-03-28 23:59:59.00','Reserva',60),(76,20,3,'2023-03-01 12:15:00.00','2023-03-05 10:30:00.00','Reserva',60),(77,21,14,'2023-03-06 11:45:00.00','2023-03-11 14:00:00.00','Hospedaje normal',61),(78,29,22,'2023-03-09 15:15:00.00','2023-03-14 10:45:00.00','Reserva',62),(79,30,31,'2023-03-16 13:00:00.00','2023-03-21 15:30:00.00','Hospedaje normal',63),(80,31,9,'2023-03-23 16:45:00.00','2023-03-28 08:15:00.00','Reserva',64);
+insert  into `hospedaje`(`idHospedaje`,`Habitacion_idHabitacion`,`Huesped_idHuesped`,`checkIn_Hospedaje`,`checkOut_Hospedaje`,`tipo_Hospedaje`,`codigo_Hospedaje`) values (1,7,1,'2023-01-05 12:00:00.00','2023-01-10 14:00:00.00','Reserva',1),(2,7,2,'2023-01-05 12:00:00.00','2023-01-10 14:00:00.00','Reserva',1),(3,29,3,'2023-01-10 14:30:00.00','2023-01-15 09:45:00.00','Hospedaje normal',2),(4,50,22,'2023-01-04 08:00:00.00','2023-01-10 16:30:00.00','Reserva',3),(5,9,14,'2023-01-15 13:30:00.00','2023-01-20 15:30:00.00','Hospedaje normal',4),(6,9,31,'2023-01-15 13:30:00.00','2023-01-20 15:30:00.00','Hospedaje normal',4),(7,36,40,'2023-01-20 16:30:00.00','2023-01-25 12:00:00.00','Reserva',5),(8,36,9,'2023-01-12 10:45:00.00','2023-01-24 13:00:00.00','Reserva',5),(9,51,1,'2023-01-25 12:45:00.00','2023-01-28 11:00:00.00','Hospedaje normal',6),(10,1,49,'2023-01-19 09:15:00.00','2023-01-25 14:45:00.00','Reserva',7),(11,33,44,'2023-01-08 12:00:00.00','2023-01-13 14:00:00.00','Hospedaje normal',8),(12,56,29,'2023-01-01 09:30:00.00','2023-01-07 14:15:00.00','Reserva',9),(13,20,39,'2023-01-10 14:30:00.00','2023-01-15 09:45:00.00','Hospedaje normal',10),(14,35,23,'2023-01-04 08:00:00.00','2023-01-10 16:30:00.00','Reserva',11),(15,53,15,'2023-01-15 10:15:00.00','2023-01-20 15:30:00.00','Hospedaje normal',12),(16,19,40,'2023-01-09 13:30:00.00','2023-01-14 11:45:00.00','Reserva',13),(17,21,40,'2023-01-20 16:30:00.00','2023-01-25 12:00:00.00','Reserva',65),(18,44,11,'2023-01-12 10:45:00.00','2023-01-17 13:00:00.00','Hospedaje normal',14),(19,44,32,'2023-01-12 12:45:00.00','2023-01-18 11:00:00.00','Hospedaje normal',14),(20,54,45,'2023-01-19 09:15:00.00','2023-01-25 14:45:00.00','Reserva',15),(21,13,15,'2023-02-05 12:00:00.00','2023-02-10 14:00:00.00','Hospedaje normal',16),(22,13,30,'2023-02-02 09:30:00.00','2023-02-08 14:15:00.00','Hospedaje normal',16),(23,31,26,'2023-02-10 14:30:00.00','2023-02-15 09:45:00.00','Reserva',17),(24,50,26,'2023-02-04 08:00:00.00','2023-02-10 16:30:00.00','Hospedaje normal',18),(25,1,10,'2023-02-15 10:15:00.00','2023-02-20 15:30:00.00','Reserva',19),(26,1,4,'2023-02-09 13:30:00.00','2023-02-14 11:45:00.00','Hospedaje normal',20),(27,30,40,'2023-02-20 16:30:00.00','2023-02-25 12:00:00.00','Reserva',21),(28,61,19,'2023-02-25 10:45:00.00','2023-02-28 13:00:00.00','Hospedaje normal',22),(29,61,8,'2023-02-25 10:45:00.00','2023-02-28 13:00:00.00','Hospedaje normal',22),(30,46,44,'2023-02-19 09:15:00.00','2023-02-25 14:45:00.00','Reserva',23),(31,46,30,'2023-02-06 08:30:00.00','2023-02-12 12:15:00.00','Reserva',23),(32,52,49,'2023-02-11 11:00:00.00','2023-02-16 13:30:00.00','Hospedaje normal',24),(33,14,15,'2023-02-16 14:45:00.00','2023-02-20 09:00:00.00','Reserva',25),(34,31,15,'2023-02-21 08:00:00.00','2023-02-27 15:15:00.00','Hospedaje normal',26),(35,1,26,'2023-02-26 16:30:00.00','2023-02-28 10:45:00.00','Reserva',27),(36,15,3,'2023-02-07 12:15:00.00','2023-02-12 14:30:00.00','Hospedaje normal',28),(37,16,14,'2023-02-12 15:45:00.00','2023-02-17 09:30:00.00','Reserva',29),(38,9,22,'2023-02-17 12:00:00.00','2023-02-22 13:45:00.00','Hospedaje normal',30),(39,9,31,'2023-02-17 12:30:00.00','2023-02-22 13:00:00.00','Hospedaje normal',30),(40,17,9,'2023-02-27 14:15:00.00','2023-02-28 09:00:00.00','Reserva',31),(41,18,40,'2023-02-06 14:45:00.00','2023-02-12 16:30:00.00','Hospedaje normal',32),(42,19,20,'2023-02-13 08:00:00.00','2023-02-18 10:15:00.00','Reserva',33),(43,10,33,'2023-02-18 11:30:00.00','2023-02-28 15:45:00.00','Hospedaje normal',34),(44,10,23,'2023-02-18 09:30:00.00','2023-02-28 13:00:00.00','Hospedaje normal',34),(45,20,50,'2023-02-28 14:15:00.00','2023-02-28 23:59:59.00','Reserva',35),(46,21,6,'2023-02-01 12:00:00.00','2023-02-03 14:00:00.00','Hospedaje normal',36),(47,29,46,'2023-02-04 09:30:00.00','2023-02-06 14:15:00.00','Reserva',37),(48,30,36,'2023-02-07 14:30:00.00','2023-02-09 09:45:00.00','Hospedaje normal',38),(49,31,16,'2023-02-10 10:00:00.00','2023-02-12 16:30:00.00','Reserva',39),(50,32,49,'2023-02-13 16:15:00.00','2023-02-15 10:30:00.00','Hospedaje normal',40),(51,2,41,'2023-03-05 12:30:00.00','2023-03-10 14:45:00.00','Hospedaje normal',40),(52,2,11,'2023-03-02 09:45:00.00','2023-03-08 14:30:00.00','Hospedaje normal',40),(53,2,26,'2023-03-10 14:45:00.00','2023-03-15 09:15:00.00','Reserva',41),(54,33,44,'2023-03-04 08:15:00.00','2023-03-10 16:45:00.00','Hospedaje normal',42),(55,34,32,'2023-03-15 10:00:00.00','2023-03-20 15:45:00.00','Reserva',43),(56,35,42,'2023-03-09 13:45:00.00','2023-03-14 11:30:00.00','Hospedaje normal',44),(57,50,17,'2023-03-20 16:45:00.00','2023-03-25 12:15:00.00','Reserva',45),(58,11,29,'2023-03-12 10:30:00.00','2023-03-17 13:15:00.00','Hospedaje normal',46),(59,11,21,'2023-03-25 12:45:00.00','2023-03-28 11:15:00.00','Hospedaje normal',46),(60,12,1,'2023-03-19 09:30:00.00','2023-03-25 14:00:00.00','Reserva',48),(61,12,15,'2023-03-06 08:45:00.00','2023-03-12 12:30:00.00','Reserva',48),(62,51,30,'2023-03-11 11:15:00.00','2023-03-16 13:45:00.00','Hospedaje normal',49),(63,52,48,'2023-03-16 15:00:00.00','2023-03-20 09:15:00.00','Reserva',50),(64,53,38,'2023-03-21 08:15:00.00','2023-03-27 15:30:00.00','Hospedaje normal',51),(65,54,13,'2023-03-26 16:45:00.00','2023-03-28 10:30:00.00','Reserva',52),(66,55,45,'2023-03-07 12:30:00.00','2023-03-12 14:45:00.00','Hospedaje normal',53),(67,56,39,'2023-03-12 15:45:00.00','2023-03-17 09:45:00.00','Reserva',54),(68,13,19,'2023-03-17 10:15:00.00','2023-03-22 11:30:00.00','Hospedaje normal',55),(69,13,35,'2023-03-22 12:45:00.00','2023-03-27 13:15:00.00','Hospedaje normal',55),(70,1,7,'2023-03-27 14:30:00.00','2023-03-28 09:30:00.00','Reserva',56),(71,15,10,'2023-03-06 15:00:00.00','2023-03-12 16:45:00.00','Hospedaje normal',57),(72,16,24,'2023-03-13 08:15:00.00','2023-03-18 10:30:00.00','Reserva',58),(73,17,4,'2023-03-18 11:45:00.00','2023-03-22 15:15:00.00','Hospedaje normal',59),(74,18,27,'2023-03-23 09:45:00.00','2023-03-28 13:45:00.00','Hospedaje normal',59),(75,19,12,'2023-03-28 14:00:00.00','2023-03-28 23:59:59.00','Reserva',60),(76,20,3,'2023-03-01 12:15:00.00','2023-03-05 10:30:00.00','Reserva',60),(77,21,14,'2023-03-06 11:45:00.00','2023-03-11 14:00:00.00','Hospedaje normal',61),(78,29,22,'2023-03-09 15:15:00.00','2023-03-14 10:45:00.00','Reserva',62),(79,30,31,'2023-03-16 13:00:00.00','2023-03-21 15:30:00.00','Hospedaje normal',63),(80,31,9,'2023-03-23 16:45:00.00','2023-03-28 08:15:00.00','Reserva',64),(81,7,1,'2023-01-05 12:00:00.00','2023-01-10 14:00:00.00','Reserva',1),(82,7,2,'2023-01-05 12:00:00.00','2023-01-10 14:00:00.00','Reserva',1),(83,29,3,'2023-01-10 14:30:00.00','2023-01-15 09:45:00.00','Hospedaje normal',2),(84,50,22,'2023-01-04 08:00:00.00','2023-01-10 16:30:00.00','Reserva',3),(85,9,14,'2023-01-15 13:30:00.00','2023-01-20 15:30:00.00','Hospedaje normal',4),(86,9,31,'2023-01-15 13:30:00.00','2023-01-20 15:30:00.00','Hospedaje normal',4),(87,36,40,'2023-01-20 16:30:00.00','2023-01-25 13:00:00.00','Reserva',5),(88,36,9,'2023-01-20 16:45:00.00','2023-01-25 13:00:00.00','Reserva',5),(89,51,1,'2023-01-25 12:45:00.00','2023-01-28 11:00:00.00','Hospedaje normal',6),(90,1,49,'2023-01-19 09:15:00.00','2023-01-25 14:45:00.00','Reserva',7),(91,33,44,'2023-01-08 12:00:00.00','2023-01-13 14:00:00.00','Hospedaje normal',8),(92,56,29,'2023-01-01 09:30:00.00','2023-01-07 14:15:00.00','Reserva',9),(93,20,39,'2023-01-10 14:30:00.00','2023-01-15 09:45:00.00','Hospedaje normal',10),(94,35,23,'2023-01-04 08:00:00.00','2023-01-10 16:30:00.00','Reserva',11),(95,53,15,'2023-01-15 10:15:00.00','2023-01-20 15:30:00.00','Hospedaje normal',12),(96,19,40,'2023-01-09 13:30:00.00','2023-01-14 11:45:00.00','Reserva',13),(97,21,40,'2023-01-20 16:30:00.00','2023-01-25 12:00:00.00','Reserva',65),(98,44,11,'2023-01-12 10:45:00.00','2023-01-17 13:00:00.00','Hospedaje normal',14),(99,44,32,'2023-01-12 12:45:00.00','2023-01-18 11:00:00.00','Hospedaje normal',14),(100,54,45,'2023-01-19 09:15:00.00','2023-01-25 14:45:00.00','Reserva',15),(101,13,15,'2023-02-05 12:00:00.00','2023-02-10 14:00:00.00','Hospedaje normal',16),(102,13,30,'2023-02-02 09:30:00.00','2023-02-08 14:15:00.00','Hospedaje normal',16),(103,31,26,'2023-02-10 14:30:00.00','2023-02-15 09:45:00.00','Reserva',17),(104,50,26,'2023-02-04 08:00:00.00','2023-02-10 16:30:00.00','Hospedaje normal',18),(105,1,10,'2023-02-15 10:15:00.00','2023-02-20 15:30:00.00','Reserva',19),(106,1,4,'2023-02-09 13:30:00.00','2023-02-14 11:45:00.00','Hospedaje normal',20),(107,30,40,'2023-02-20 16:30:00.00','2023-02-25 12:00:00.00','Reserva',21),(108,61,19,'2023-02-25 10:45:00.00','2023-02-28 13:00:00.00','Hospedaje normal',22),(109,61,8,'2023-02-25 10:45:00.00','2023-02-28 13:00:00.00','Hospedaje normal',22),(110,46,44,'2023-02-19 09:15:00.00','2023-02-25 14:45:00.00','Reserva',23),(111,46,30,'2023-02-06 08:30:00.00','2023-02-25 14:45:00.00','Reserva',23),(112,52,49,'2023-02-11 11:00:00.00','2023-02-16 13:30:00.00','Hospedaje normal',24),(113,14,15,'2023-02-16 14:45:00.00','2023-02-20 09:00:00.00','Reserva',25),(114,31,15,'2023-02-21 08:00:00.00','2023-02-27 15:15:00.00','Hospedaje normal',26),(115,1,26,'2023-02-26 16:30:00.00','2023-02-28 10:45:00.00','Reserva',27),(116,15,3,'2023-02-07 12:15:00.00','2023-02-12 14:30:00.00','Hospedaje normal',28),(117,16,14,'2023-02-12 15:45:00.00','2023-02-17 09:30:00.00','Reserva',29),(118,9,22,'2023-02-17 12:00:00.00','2023-02-22 13:45:00.00','Hospedaje normal',30),(119,9,31,'2023-02-17 12:30:00.00','2023-02-22 13:00:00.00','Hospedaje normal',30),(120,17,9,'2023-02-27 14:15:00.00','2023-02-28 09:00:00.00','Reserva',31),(121,18,40,'2023-02-06 14:45:00.00','2023-02-12 16:30:00.00','Hospedaje normal',32),(122,19,20,'2023-02-13 08:00:00.00','2023-02-18 10:15:00.00','Reserva',33),(123,10,33,'2023-02-18 11:30:00.00','2023-02-28 13:00:00.00','Hospedaje normal',34),(124,10,23,'2023-02-18 11:30:00.00','2023-02-28 13:00:00.00','Hospedaje normal',34),(125,20,50,'2023-02-28 14:15:00.00','2023-02-28 23:59:59.00','Reserva',35),(126,21,6,'2023-02-01 12:00:00.00','2023-02-03 14:00:00.00','Hospedaje normal',36),(127,29,46,'2023-02-04 09:30:00.00','2023-02-06 14:15:00.00','Reserva',37),(128,30,36,'2023-02-07 14:30:00.00','2023-02-09 09:45:00.00','Hospedaje normal',38),(129,31,16,'2023-02-10 10:00:00.00','2023-02-12 16:30:00.00','Reserva',39),(130,32,49,'2023-02-13 16:15:00.00','2023-02-15 10:30:00.00','Hospedaje normal',40),(131,2,41,'2023-03-13 16:15:00.00','2023-03-15 10:30:00.00','Hospedaje normal',40),(132,2,11,'2023-03-13 16:15:00.00','2023-03-15 10:30:00.00','Hospedaje normal',40),(133,2,26,'2023-03-10 14:45:00.00','2023-03-15 09:15:00.00','Reserva',41),(134,33,44,'2023-03-04 08:15:00.00','2023-03-10 16:45:00.00','Hospedaje normal',42),(135,34,32,'2023-03-15 10:00:00.00','2023-03-20 15:45:00.00','Reserva',43),(136,35,42,'2023-03-09 13:45:00.00','2023-03-14 11:30:00.00','Hospedaje normal',44),(137,50,17,'2023-03-20 16:45:00.00','2023-03-25 12:15:00.00','Reserva',45),(138,11,29,'2023-03-12 10:30:00.00','2023-03-17 13:15:00.00','Hospedaje normal',46),(139,11,21,'2023-03-25 12:45:00.00','2023-03-28 11:15:00.00','Hospedaje normal',46),(140,12,1,'2023-03-19 09:30:00.00','2023-03-25 14:00:00.00','Reserva',48),(141,12,15,'2023-03-06 08:45:00.00','2023-03-12 12:30:00.00','Reserva',48),(142,51,30,'2023-03-11 11:15:00.00','2023-03-16 13:45:00.00','Hospedaje normal',49),(143,52,48,'2023-03-16 15:00:00.00','2023-03-20 09:15:00.00','Reserva',50),(144,53,38,'2023-03-21 08:15:00.00','2023-03-27 15:30:00.00','Hospedaje normal',51),(145,54,13,'2023-03-26 16:45:00.00','2023-03-28 10:30:00.00','Reserva',52),(146,55,45,'2023-03-07 12:30:00.00','2023-03-12 14:45:00.00','Hospedaje normal',53),(147,56,39,'2023-03-12 15:45:00.00','2023-03-17 09:45:00.00','Reserva',54),(148,13,19,'2023-03-17 10:15:00.00','2023-03-22 11:30:00.00','Hospedaje normal',55),(149,13,35,'2023-03-22 12:45:00.00','2023-03-27 13:15:00.00','Hospedaje normal',55),(150,1,7,'2023-03-27 14:30:00.00','2023-03-28 09:30:00.00','Reserva',56),(151,15,10,'2023-03-06 15:00:00.00','2023-03-12 16:45:00.00','Hospedaje normal',57),(152,16,24,'2023-03-13 08:15:00.00','2023-03-18 10:30:00.00','Reserva',58),(153,17,4,'2023-03-18 11:45:00.00','2023-03-22 15:15:00.00','Hospedaje normal',59),(154,18,27,'2023-03-23 09:45:00.00','2023-03-28 13:45:00.00','Hospedaje normal',59),(155,19,12,'2023-03-28 14:00:00.00','2023-03-28 23:59:59.00','Reserva',60),(156,20,3,'2023-03-01 12:15:00.00','2023-03-05 10:30:00.00','Reserva',60),(157,21,14,'2023-03-06 11:45:00.00','2023-03-11 14:00:00.00','Hospedaje normal',61),(158,29,22,'2023-03-09 15:15:00.00','2023-03-14 10:45:00.00','Reserva',62),(159,30,31,'2023-03-16 13:00:00.00','2023-03-21 15:30:00.00','Hospedaje normal',63),(160,31,9,'2023-03-23 16:45:00.00','2023-03-28 08:15:00.00','Reserva',64);
 
 /*Table structure for table `huesped` */
 
@@ -223,7 +224,7 @@ CREATE TABLE `huesped` (
   `correo_Huesped` varchar(50) NOT NULL,
   `nacionalidad` varchar(50) NOT NULL,
   PRIMARY KEY (`idHuesped`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `huesped` */
 
@@ -247,27 +248,29 @@ CREATE TABLE `inventario` (
   KEY `fk_Inventario_Producto1` (`Producto_idProducto`),
   CONSTRAINT `fk_Inventario_Producto1` FOREIGN KEY (`Producto_idProducto`) REFERENCES `producto` (`idProducto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Sucursal_has_Inventario_Sucursal1` FOREIGN KEY (`Sucursal_id_Sucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `inventario` */
 
 insert  into `inventario`(`idInventario`,`Sucursal_id_Sucursal`,`Producto_idProducto`,`nombre_Inventario`,`existencias_Inventario`,`minimo_Producto`,`maximo_Producto`,`estado`) values (1,1,1,'Inventario de toallas',0,80,150,'Activo'),(2,1,2,'Inventario de jabones',0,80,200,'Activo'),(3,1,3,'Inventario de gaseosas',0,40,80,'Activo'),(4,1,4,'Inventario de cepillos dentales',0,15,30,'Activo'),(5,1,5,'Inventario de sábanas',0,150,200,'Activo'),(6,1,6,'Inventario de champú',0,80,150,'Activo'),(7,1,7,'Inventario de botellas de agua',0,40,80,'Activo'),(8,1,8,'Inventario de paquetes de papel higiénico por 6',0,20,30,'Activo'),(9,1,9,'Inventario de almohadas',0,90,100,'Activo'),(10,1,10,'Inventario de jabon de baño',0,80,150,'Activo'),(11,1,11,'Inventario de Snacks variados',0,30,50,'Activo'),(12,1,12,'Inventario de cobijas de lana',0,30,50,'Activo'),(13,1,13,'Inventario de crema dental',0,10,15,'Activo'),(14,1,14,'Inventario de vinotinto',0,5,20,'Activo'),(15,1,15,'Inventario del rollo de papel de cocina',0,5,10,'Activo'),(16,1,16,'Inventario de prendas de ropa interior',0,20,30,'Activo'),(17,1,17,'Inventario de gel de ducha',0,30,50,'Activo'),(18,1,18,'Inventario de latas de cerveza',0,50,80,'Activo'),(19,1,19,'Inventario de empaque de cubiertos desechables',0,10,20,'Activo'),(20,1,20,'Inventario de alfombras',0,30,40,'Activo'),(21,2,1,'Inventario de toallas',0,80,150,'Activo'),(22,2,2,'Inventario de jabones',0,80,200,'Activo'),(23,2,3,'Inventario de gaseosas',0,40,80,'Activo'),(24,2,5,'Inventario de sábanas',0,150,200,'Activo'),(25,2,6,'Inventario de champú',0,80,150,'Activo'),(26,2,7,'Inventario de botellas de agua',0,40,80,'Activo'),(27,2,8,'Inventario de paquetes de papel higiénico por 6',0,20,30,'Activo'),(28,2,9,'Inventario de almohadas',0,90,100,'Activo'),(29,2,11,'Inventario de Snacks variados',0,30,50,'Activo'),(30,2,12,'Inventario de cobijas de lana',0,30,50,'Activo'),(31,2,13,'Inventario de crema dental',0,10,15,'Activo'),(32,2,16,'Inventario de prendas de ropa interior',0,20,30,'Activo'),(33,2,17,'Inventario de gel de ducha',0,30,50,'Activo'),(34,2,18,'Inventario de latas de cerveza',0,50,80,'Activo'),(35,2,19,'Inventario de empaque de cubiertos desechables',0,10,20,'Activo'),(36,3,1,'Inventario de toallas',0,80,150,'Activo'),(37,3,2,'Inventario de jabones',0,80,200,'Activo'),(38,3,3,'Inventario de gaseosas',0,40,80,'Activo'),(39,3,4,'Inventario de cepillos dentales',0,15,30,'Activo'),(40,3,5,'Inventario de sábanas',0,150,200,'Activo'),(41,3,6,'Inventario de champú',0,80,150,'Activo'),(42,3,7,'Inventario de botellas de agua',0,40,80,'Activo'),(43,3,8,'Inventario de paquetes de papel higiénico por 6',0,20,30,'Activo'),(44,3,9,'Inventario de almohadas',0,90,100,'Activo'),(45,3,10,'Inventario de jabon de baño',0,80,150,'Activo'),(46,3,11,'Inventario de Snacks variados',0,30,50,'Activo'),(47,3,12,'Inventario de cobijas de lana',0,30,50,'Activo'),(48,3,13,'Inventario de crema dental',0,10,15,'Activo'),(49,3,14,'Inventario de vinotinto',0,5,20,'Activo'),(50,3,15,'Inventario del rollo de papel de cocina',0,5,10,'Activo'),(51,3,16,'Inventario de prendas de ropa interior',0,20,30,'Activo'),(52,3,17,'Inventario de gel de ducha',0,30,50,'Activo'),(53,3,18,'Inventario de latas de cerveza',0,50,80,'Activo'),(54,3,19,'Inventario de empaque de cubiertos desechables',0,10,20,'Activo'),(55,3,20,'Inventario de alfombras',0,30,40,'Activo'),(56,3,21,'Preservativos caja de 3',0,15,20,'Activo');
 
-/*Table structure for table `mantenimiento` */
+/*Table structure for table `mantenimiento_saneamiento_rutinario` */
 
-DROP TABLE IF EXISTS `mantenimiento`;
+DROP TABLE IF EXISTS `mantenimiento_saneamiento_rutinario`;
 
-CREATE TABLE `mantenimiento` (
-  `idMantenimento` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre_Mantenimiento` varchar(100) NOT NULL,
-  `tipo_Mantenimiento` varchar(50) NOT NULL,
-  `Rol_Empleado` int(11) NOT NULL,
-  PRIMARY KEY (`idMantenimento`),
-  KEY `Rol_Empleado` (`Rol_Empleado`),
-  CONSTRAINT `mantenimiento_ibfk_1` FOREIGN KEY (`Rol_Empleado`) REFERENCES `rol_empleado` (`idRol_Empleado`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `mantenimiento_saneamiento_rutinario` (
+  `idRutina` int(11) NOT NULL AUTO_INCREMENT,
+  `item_Rutina` varchar(50) NOT NULL,
+  `estado_Rutina` enum('Hecho','Pendiente') NOT NULL,
+  `cantidad_Items` int(11) NOT NULL,
+  `fecha_Rutina` datetime NOT NULL,
+  `Detalle_Mantenimiento_id` int(11) NOT NULL,
+  PRIMARY KEY (`idRutina`),
+  KEY `Detalle_Mantenimiento_id` (`Detalle_Mantenimiento_id`),
+  CONSTRAINT `mantenimiento_saneamiento_rutinario_ibfk_1` FOREIGN KEY (`Detalle_Mantenimiento_id`) REFERENCES `detalle_mantenimiento` (`idDetalle`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-/*Data for the table `mantenimiento` */
+/*Data for the table `mantenimiento_saneamiento_rutinario` */
 
 /*Table structure for table `mantenimiento_sucursal` */
 
@@ -277,15 +280,16 @@ CREATE TABLE `mantenimiento_sucursal` (
   `idMantenimiento_sucursal` int(11) NOT NULL AUTO_INCREMENT,
   `Sucursal_idSucursal` int(11) NOT NULL,
   `fecha_Mantenimiento` date NOT NULL,
-  `costo_Mantenimiento` decimal(11,2) NOT NULL,
   `descripcion_Mantenimiento` varchar(200) NOT NULL,
-  `Mantenimiento_idMantenimineto` int(11) NOT NULL,
+  `nombre_Mantenimiento` varchar(50) NOT NULL,
+  `tipo_Mantenimiento` enum('Reparacion','Mejora','Saneamiento') NOT NULL,
+  `Rol_Empleado_id` int(11) NOT NULL,
   PRIMARY KEY (`idMantenimiento_sucursal`),
   KEY `fk_Mantenimiento_Sucursal` (`Sucursal_idSucursal`),
-  KEY `fk_Mantenimiento_Sucursal_Mantenimiento` (`Mantenimiento_idMantenimineto`),
+  KEY `Rol_Empleado_id` (`Rol_Empleado_id`),
   CONSTRAINT `fk_Mantenimiento_Sucursal` FOREIGN KEY (`Sucursal_idSucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Mantenimiento_Sucursal_Mantenimiento` FOREIGN KEY (`Mantenimiento_idMantenimineto`) REFERENCES `mantenimiento` (`idMantenimento`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `mantenimiento_sucursal_ibfk_1` FOREIGN KEY (`Rol_Empleado_id`) REFERENCES `rol_empleado` (`idRol_Empleado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `mantenimiento_sucursal` */
 
@@ -305,7 +309,7 @@ CREATE TABLE `pago` (
   PRIMARY KEY (`idPago`),
   KEY `fk_Pago_Hospedaje1` (`Hospedaje_idHospedaje`),
   CONSTRAINT `fk_Pago_Hospedaje1` FOREIGN KEY (`Hospedaje_idHospedaje`) REFERENCES `hospedaje` (`idHospedaje`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `pago` */
 
@@ -325,9 +329,32 @@ CREATE TABLE `pago_recibo` (
   KEY `fk_Pago_Recibo_Recibo1` (`Recibo_idRecibo`),
   KEY `fk_Pago_Recibo_Responsable1` (`Responsable_idResponsable1`),
   CONSTRAINT `fk_Pago_Recibo_Recibo1` FOREIGN KEY (`Recibo_idRecibo`) REFERENCES `recibo` (`idRecibo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `pago_recibo` */
+
+/*Table structure for table `parqueadero` */
+
+DROP TABLE IF EXISTS `parqueadero`;
+
+CREATE TABLE `parqueadero` (
+  `idParqueadero` int(11) NOT NULL AUTO_INCREMENT,
+  `Sucursal_idSucursal` int(11) NOT NULL,
+  `Vehiculo_idVehiculo` int(11) NOT NULL,
+  `entrada_Vehiculo` datetime NOT NULL,
+  `salida_Vehiculo` date NOT NULL,
+  `ubicacion_Vehiculo` int(11) NOT NULL,
+  `Empleado_idRol_Empleado` int(11) NOT NULL,
+  PRIMARY KEY (`idParqueadero`),
+  KEY `Vehiculo_idVehiculo` (`Vehiculo_idVehiculo`),
+  KEY `Sucursal_idSucursal` (`Sucursal_idSucursal`),
+  KEY `Empleado_idRol_Empleado` (`Empleado_idRol_Empleado`),
+  CONSTRAINT `parqueadero_ibfk_1` FOREIGN KEY (`Vehiculo_idVehiculo`) REFERENCES `vehiculo` (`idVehiculo`),
+  CONSTRAINT `parqueadero_ibfk_2` FOREIGN KEY (`Sucursal_idSucursal`) REFERENCES `sucursal` (`id_Sucursal`),
+  CONSTRAINT `parqueadero_ibfk_3` FOREIGN KEY (`Empleado_idRol_Empleado`) REFERENCES `rol_empleado` (`idRol_Empleado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `parqueadero` */
 
 /*Table structure for table `pedido` */
 
@@ -341,7 +368,7 @@ CREATE TABLE `pedido` (
   PRIMARY KEY (`IdPedido`),
   KEY `fk_Proveedor_has_Producto_Proveedor1` (`Proveedor_idProveedor`),
   CONSTRAINT `fk_Proveedor_has_Producto_Proveedor1` FOREIGN KEY (`Proveedor_idProveedor`) REFERENCES `proveedor` (`idProveedor`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `pedido` */
 
@@ -362,7 +389,7 @@ CREATE TABLE `pqrfs` (
   KEY `Rol_Empleado_idRol_Empleado` (`Rol_Empleado_idRol_Empleado`),
   CONSTRAINT `pqrfs_ibfk_1` FOREIGN KEY (`Huesped_idHuesped`) REFERENCES `huesped` (`idHuesped`),
   CONSTRAINT `pqrfs_ibfk_2` FOREIGN KEY (`Rol_Empleado_idRol_Empleado`) REFERENCES `rol_empleado` (`idRol_Empleado`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `pqrfs` */
 
@@ -377,7 +404,7 @@ CREATE TABLE `producto` (
   `nombre_Producto` varchar(50) NOT NULL,
   `categoria_Producto` varchar(50) NOT NULL,
   PRIMARY KEY (`idProducto`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `producto` */
 
@@ -400,7 +427,7 @@ CREATE TABLE `propiedad` (
   KEY `fk_Dueño_has_Sucursal_Sucursal1` (`Sucursal_id_Sucursal`),
   CONSTRAINT `fk_Dueño_has_Sucursal_Dueño1` FOREIGN KEY (`Dueño_idDueño`) REFERENCES `dueño` (`idDueño`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Dueño_has_Sucursal_Sucursal1` FOREIGN KEY (`Sucursal_id_Sucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `propiedad` */
 
@@ -418,7 +445,7 @@ CREATE TABLE `proveedor` (
   `correo_Proveedor` varchar(45) NOT NULL,
   `categoria_Proveedor` enum('Aseo','Textiles','') DEFAULT NULL,
   PRIMARY KEY (`idProveedor`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `proveedor` */
 
@@ -441,11 +468,30 @@ CREATE TABLE `recibo` (
   KEY `fk_Servicio_Publico_has_Sucursal_Sucursal1` (`Sucursal_id_Sucursal`),
   CONSTRAINT `fk_Servicio_Publico_has_Sucursal_Servicio_Publico` FOREIGN KEY (`Servicio_Publico_idServicio_Publico`) REFERENCES `servicio_publico` (`idServicio_Publico`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Servicio_Publico_has_Sucursal_Sucursal1` FOREIGN KEY (`Sucursal_id_Sucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `recibo` */
 
 insert  into `recibo`(`idRecibo`,`Servicio_Publico_idServicio_Publico`,`Sucursal_id_Sucursal`,`concepto_Recibo`,`fecha_Pago_Oportuno`,`consumo_Recibo`,`medida_consumo`) values (1,1,1,'Pago recibo luz, sucursal Medellín','2023-01-23',50.00,'Kilovatio'),(2,1,1,'Pago recibo luz, sucursal Medellín','2023-02-22',49.00,'Kilovatio'),(3,1,1,'Pago recibo luz, sucursal Medellín','2023-03-25',58.00,'Kilovatio'),(4,4,2,'Pago recibo luz, sucursal Sibaté','2023-01-25',45.00,'Kilovatio'),(5,4,2,'Pago recibo luz, sucursal Sibaté','2023-02-24',44.00,'Kilovatio'),(6,4,2,'Pago recibo luz, sucursal Sibaté','2023-03-25',40.00,'Kilovatio'),(7,7,3,'Pago recibo luz, sucursal Bogotá','2023-01-24',50.00,'Kilovatio'),(8,7,3,'Pago recibo luz, sucursal Bogotá','2023-02-24',49.20,'Kilovatio'),(9,7,3,'Pago recibo luz, sucursal Bogotá','2023-03-24',46.70,'Kilovatio'),(10,2,1,'Pago recibo agua, sucursal Medellín','2023-01-17',120.00,'Metro cúbico'),(11,2,1,'Pago recibo agua, sucursal Medellín','2023-02-18',120.60,'Metro cúbico'),(12,2,1,'Pago recibo agua, sucursal Medellín','2023-03-27',140.30,'Metro cúbico'),(13,5,2,'Pago recibo agua, sucursal Sibaté','2023-01-15',98.00,'Metro cúbico'),(14,5,2,'Pago recibo agua, sucursal Sibaté','2023-02-17',99.20,'Metro cúbico'),(15,8,3,'Pago recibo agua, sucursal Bogotá','2023-01-15',109.00,'Metro cúbico'),(16,8,3,'Pago recibo agua, sucursal Bogotá','2023-02-15',101.10,'Metro cúbico'),(17,8,3,'Pago recibo agua, sucursal Bogotá','2023-03-19',110.60,'Metro cúbico'),(18,3,1,'Pago recibo gas, sucursal Medellín','2023-01-08',34.00,'Metro cúbico de gas'),(19,6,2,'Pago recibo gas, sucursal Sibaté','2023-01-10',45.00,'Metro cúbico de gas'),(20,9,3,'Pago recibo gas, sucursal Bogotá','2023-01-11',23.00,'Metro cúbico de gas');
+
+/*Table structure for table `registro_salida_entrada` */
+
+DROP TABLE IF EXISTS `registro_salida_entrada`;
+
+CREATE TABLE `registro_salida_entrada` (
+  `idRegistro` int(11) NOT NULL AUTO_INCREMENT,
+  `Huesped_idHuesped` int(11) NOT NULL,
+  `Hospedaje_idHospedaje` int(11) NOT NULL,
+  `tipo_Registro` enum('Salida','Entrada') NOT NULL,
+  `hora_registro` int(11) NOT NULL,
+  PRIMARY KEY (`idRegistro`),
+  KEY `Huesped_idHuesped` (`Huesped_idHuesped`),
+  KEY `Hospedaje_idHospedaje` (`Hospedaje_idHospedaje`),
+  CONSTRAINT `registro_salida_entrada_ibfk_1` FOREIGN KEY (`Huesped_idHuesped`) REFERENCES `huesped` (`idHuesped`),
+  CONSTRAINT `registro_salida_entrada_ibfk_2` FOREIGN KEY (`Hospedaje_idHospedaje`) REFERENCES `hospedaje` (`idHospedaje`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `registro_salida_entrada` */
 
 /*Table structure for table `rol_empleado` */
 
@@ -465,7 +511,7 @@ CREATE TABLE `rol_empleado` (
   KEY `fk_Sucursal_has_Empleado_Empleado1` (`Empleado_idEmpleado`),
   CONSTRAINT `fk_Sucursal_has_Empleado_Empleado1` FOREIGN KEY (`Empleado_idEmpleado`) REFERENCES `empleado` (`idEmpleado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Sucursal_has_Empleado_Sucursal1` FOREIGN KEY (`Sucursal_id_Sucursal`) REFERENCES `sucursal` (`id_Sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `rol_empleado` */
 
@@ -487,7 +533,7 @@ CREATE TABLE `servicio_publico` (
   `telefono2_Servicio_Publico` varchar(15) NOT NULL,
   `NIT_Proveedor` varchar(15) NOT NULL,
   PRIMARY KEY (`idServicio_Publico`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `servicio_publico` */
 
@@ -508,7 +554,7 @@ CREATE TABLE `sucursal` (
   `telefono_Sucursal` varchar(10) NOT NULL,
   `correo_Sucursal` varchar(80) NOT NULL,
   PRIMARY KEY (`id_Sucursal`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `sucursal` */
 
@@ -527,7 +573,7 @@ CREATE TABLE `vehiculo` (
   PRIMARY KEY (`idVehiculo`),
   KEY `fk_Vehiculo_Huesped1` (`Huesped_idHuesped`),
   CONSTRAINT `fk_Vehiculo_Huesped1` FOREIGN KEY (`Huesped_idHuesped`) REFERENCES `huesped` (`idHuesped`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `vehiculo` */
 
