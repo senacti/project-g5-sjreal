@@ -61,7 +61,12 @@ INSERT INTO `proveedor`
 VALUES 
 	('123456789-1', 'Proveedor de Textiles', '34567890', 'proveedor.textiles@example.com', 'Textiles'),
 	('987654321-2', 'Proveedor de Productos de Aseo', '3123456789', 'proveedor.aseo@example.com', 'Aseo'),
-	('555555555-3', 'Proveedor de Toallas', '3333333333', 'proveedor.alimentos@example.com', 'Textiles');
+	('555555555-3', 'Proveedor de Toallas', '3333333333', 'proveedor.alimentos@example.com', 'Textiles'),
+	('555545655-3', 'Proveedor de mobiliario', '3213333333', 'proveedor.mobiliario@example.com', 'Muebles');
+	('890545655-3', 'Proveedor de ferretería', '3213333358', 'proveedor.ferreteria@example.com', 'Ferretería'),
+	('890545655-3', 'Proveedor de bebidas', '3213333358', 'proveedor@example.com', 'Bebidas'),
+	('890545655-3', 'Proveedor de comestibles', '3213333358', 'proveedor.fe@example.com', 'Comestibles');
+	
 	
 /*---------------Creacion de registros en la tabla Cliente_De---------------*/	
 INSERT INTO `cliente_de`
@@ -78,7 +83,19 @@ VALUES
       (3, 1, '2019-06-20', 4),
       (1, 2, '2020-12-05', 2),
       (2, 2, '2020-12-05', 2),
-      (3, 2, '2019-06-20', 4);     
+      (3, 2, '2019-06-20', 4),
+      (1, 4, '2020-12-05', 2),
+      (2, 4, '2020-12-05', 2),
+      (3, 4, '2019-06-20', 4),  
+      (1, 5, '2020-12-05', 2),
+      (2, 5, '2020-12-05', 2),
+      (3, 5, '2019-06-20', 4),
+      (1, 6, '2020-12-05', 2),
+      (2, 6, '2020-12-05', 2),
+      (3, 6, '2019-06-20', 4),
+      (1, 7, '2020-12-05', 2),
+      (2, 7, '2020-12-05', 2),
+      (3, 7, '2019-06-20', 4);
       
 /*---------------Creacion de registros en la tabla Inventario---------------*/     
 INSERT INTO `sjreal`.`inventario`
@@ -88,6 +105,8 @@ INSERT INTO `sjreal`.`inventario`
              `existencias_Inventario`,
              `maximo_Producto`,
              `minimo_Producto`)
+             
+SELECT * FROM inventario            
              
 VALUES 
     (1, 1, 'Inventario de toallas', 'Activo', 0, 150, 80),
@@ -110,6 +129,7 @@ VALUES
     (1, 18, 'Inventario de latas de cerveza', 'Activo',  0, 80, 50),
     (1, 19, 'Inventario de empaque de cubiertos desechables', 'Activo',  0, 20, 10),
     (1, 20, 'Inventario de alfombras', 'Activo',  0, 40, 30),
+   
     (2, 1, 'Inventario de toallas', 'Activo',  0, 150, 80),
     (2, 2, 'Inventario de jabones', 'Activo',  0, 200, 80),
     (2, 3, 'Inventario de gaseosas', 'Activo',  0, 80, 40),
@@ -125,6 +145,7 @@ VALUES
     (2, 17, 'Inventario de gel de ducha', 'Activo',   0, 50, 30),
     (2, 18, 'Inventario de latas de cerveza', 'Activo',  0, 80, 50),
     (2, 19, 'Inventario de empaque de cubiertos desechables', 'Activo', 0, 20, 10),
+    
     (3, 1, 'Inventario de toallas', 'Activo',   0, 150, 80),
     (3, 2, 'Inventario de jabones', 'Activo',  0, 200, 80),
     (3, 3, 'Inventario de gaseosas', 'Activo',  0, 80, 40),
@@ -146,6 +167,99 @@ VALUES
     (3, 19, 'Inventario de empaque de cubiertos desechables', 'Activo', 0, 20, 10),
     (3, 20, 'Inventario de alfombras', 'Activo', 0, 40, 30),
     (3, 21, 'Preservativos caja de 3', 'Activo', 0, 20, 15);
+    
+/*---------------Creacion de registros en la tabla Pedido---------------*/         
+INSERT INTO `sjreal`.`pedido`
+            (`cliente_De_id`,
+             `fecha_Entrega`,
+             `precio_Total_Pedido`,
+             `Rol_idRol_Empleado`)
+VALUES 
+    (1, '2020-12-10', 0, 1),
+    (2, '2020-12-10', 0, 5),
+    (3, '2019-06-30', 0, 9),
+    (4, '2020-12-10', 0, 1),
+    (5, '2020-12-10', 0, 5),
+    (6, '2019-06-30', 0, 9),
+    (7, '2020-12-10', 0, 1),
+    (8, '2020-12-10', 0, 5),
+    (9, '2019-06-30', 0, 9),
+    (10, '2020-12-10', 0, 1),
+    (11, '2020-12-10', 0, 5),
+    (12, '2019-06-30', 0, 9),
+    (13, '2020-12-10', 0, 1),
+    (14, '2020-12-10', 0, 5),
+    (15, '2019-06-30', 0, 9),
+    (16, '2020-12-10', 0, 1),
+    (17, '2020-12-10', 0, 5),
+    (18, '2019-06-30', 0, 9),
+    (19, '2020-12-10', 0, 1),
+    (20, '2020-12-10', 0, 5),
+    (21, '2019-06-30', 0, 9);       
+/*---------------Creacion de registros en la tabla Detalle de pedido---------------*/   
+INSERT INTO `sjreal`.`detallepedido`
+            (`inventario_idInventario`,
+             `Pedido_idPedido`,
+             `cantidad_Producto`,
+             `precio_unitario`,
+             `precio_Total`)
+VALUES 
+          (1, 1, 80, 20000, 0),
+          (2, 7, 80, 2000, 0),
+          (3, 16, 40, 15000, 0),
+          (4, 7, 15, 1500, 0),
+          (5, 4, 150, 30000, 0),
+          (6, 7, 80, 5000, 0),
+          (7, 16, 40, 15000, 0),
+          (8, 7, 20, 50000, 0),
+          (9, 4, 90, 10000, 0),
+          (10, 7, 80, 2000, 0),
+          (11, 19, 30, 1200, 0),
+          (12, 4, 30, 40000, 0),
+          (13, 7, 10, 3500, 0),
+          (14, 16, 5, 40000, 0),
+          (15, 19, 5, 3000, 0),
+          (16, 4, 20, 7000, 0),
+          (17, 7, 30, 4000, 0),
+          (18, 16, 50, 3000, 0),
+          (19, 19, 10, 6000, 0),
+          (20, 4, 30, 50000, 0),                    
+          (21, 2, 80, 20000, 0),
+          (22, 8, 80, 2000, 0),
+          (23, 17, 40, 15000, 0),           
+          (24, 5, 150, 30000, 0),
+          (25, 8, 80, 5000, 0),
+          (26, 17, 40, 15000, 0),
+          (27, 8, 20, 50000, 0),
+          (28, 5, 90, 10000, 0),          
+          (29, 20, 30, 1200, 0),
+          (30, 5, 30, 40000, 0),
+          (31, 8, 10, 3500, 0),          
+          (32, 5, 20, 7000, 0),
+          (33, 8, 30, 4000, 0),
+          (34, 17, 50, 3000, 0),
+          (35, 20, 10, 6000, 0),          
+          (36, 3, 80, 20000, 0),
+          (37, 9, 80, 2000, 0),
+          (38, 18, 40, 15000, 0),
+          (39, 9, 15, 1500, 0),
+          (40, 6, 150, 30000, 0),
+          (41, 9, 80, 5000, 0),
+          (42, 18, 40, 15000, 0),
+          (43, 9, 20, 50000, 0),
+          (44, 6, 90, 10000, 0),
+          (45, 9, 80, 2000, 0),
+          (46, 21, 30, 1200, 0),
+          (47, 6, 30, 40000, 0),
+          (48, 9, 10, 3500, 0),
+          (49, 18, 5, 40000, 0),
+          (50, 21, 5, 3000, 0),
+          (51, 6, 20, 7000, 0),
+          (52, 9, 30, 4000, 0),
+          (53, 18, 50, 3000, 0),
+          (54, 21, 10, 6000, 0),
+          (55, 6, 30, 50000, 0),
+          (56, 9, 15, 6000, 0);
 
 /*---------------Creacion de registros en la tabla Producto---------------*/      
 INSERT INTO `producto`
@@ -517,80 +631,344 @@ VALUES
     (63, 30, 31, '2023-03-16 13:00:00', '2023-03-21 15:30:00', 'Hospedaje normal'), /*79*/
     (64, 31, 9 , '2023-03-23 16:45:00', '2023-03-28 08:15:00', 'Reserva'); /*80*/
     
-/*---------------Creacion de registros en la tabla Mantenimiento---------------*/           
-INSERT INTO `sjreal`.`mantenimiento_saneamiento`
-            (`nombre_Mantenimiento`,
-             `tipo_Mantenimiento`)
+/*---------------Creacion de registros en la tabla Vehiculo---------------*/           
+INSERT INTO `sjreal`.`vehiculo`
+            (`Huesped_idHuesped`,
+             `placa_Vehiculo`,
+             `modelo_Vehiculo`,
+             `color_Vehiculo`)
 VALUES 
-    ('Pintura de pared de pasillo', 'Reparación'),
-    ('Pintura de paredes de habitación', 'Reparación'),
-    ('Pintura de pasamanos', 'Reparación'),
-    ('Pintura de puertas', 'Reparación'),
-    ('Pintura de la entrada', 'Reparación'),
-    ('Lavado de pasillos', 'Sanaeamiento'),
-    ('Aseo de habitación', 'Saneamiento'),
-    ('Lavado de baño', 'Saneamiento'),
-    ('Lavado de toallas', 'Saneamiento'),
-    ('Lavado de tendidos', 'Saneamiento'),
-    ('Lavado de sábanas', 'Saneamiento'),
-    ('Reemplazo item dañado', 'Reparación'),
-    ('Agregación de item nuevo', 'Mejora');
+    (3, '123ABC', 'Sedán', 'Rojo'),
+    (14, 'XYZ789', 'Camioneta', 'Azul'),
+    (40, 'LMN456', 'Motocicleta', 'Negro'),
+    (33, 'PQR321', 'Camioneta', 'Blanco'),
+    (50, 'UVW654', 'Sedán', 'Verde'),
+    (23, 'EFG987', 'Motocicleta', 'Rojo'),
+    (36, '124ABC', 'Ford fiesta', 'Blanco'),
+    (41, '145ABE', 'Mazda x', 'Rojo'),
+    (26, '106ABC', 'Camioneta Prado', 'Negra'),
+    (44, '125TBC', 'Moto RTX', 'Rojo');
+
+/*---------------Creacion de registros en la tabla Parqueadero---------------*/        
+INSERT INTO sjreal.parqueadero (`Sucursal_idSucursal`,
+                         `Vehiculo_idVehiculo`,
+                         `entrada_Vehiculo`,
+                         `salida_Vehiculo`,
+                         `ubicacion_Vehiculo`,
+                         `Empleado_idRol_Empleado`)
+VALUES 
+          (1, 1, '2023-02-07 12:15:00.00', '2023-02-12 14:30:00.00', 1, 4),
+          (1, 1, '2023-03-01 12:15:00.00', '2023-03-05 10:30:00.00', 1, 4), 
+          (1, 2, '2023-01-15 13:30:00.00', '2023-01-20 15:30:00.00', 2, 4),
+          (1, 2, '2023-02-12 15:45:00.00', '2023-02-17 09:30:00.00', 3,  4),
+          (1, 2, '2023-03-06 11:45:00.00', '2023-03-11 14:00:00.00', 4,  4),
+          (1, 6, '2023-02-18 09:30:00.00', '2023-02-28 13:00:00.00', 5, 4),
+          (1, 8, '2023-03-13 16:15:00.00', '2023-03-15 10:30:00.00', 6, 4),
+          (1, 8, '2023-03-05 12:30:00.00', '2023-03-10 14:45:00.00', 7, 4),
+          (1, 6, '2023-02-07 12:15:00.00', '2023-02-12 14:30:00.00', 8, 4),
+          (1, 6, '2023-02-18 11:30:00.00', '2023-02-28 13:00:00.00', 9, 4),
+          (1, 9, '2023-02-26 16:30:00.00', '2023-02-28 10:45:00.00', 10, 4),
+          (1, 9, '2023-03-10 14:45:00.00', '2023-03-15 09:15:00.00', 11, 4),
+          (1, 4, '2023-02-18 11:30:00.00', '2023-02-28 15:45:00.00', 12, 4),
+          (1, 4, '2023-02-18 11:30:00.00', '2023-02-28 13:00:00.00', 13, 4),
+          (1, 3, '2023-02-06 14:45:00.00', '2023-02-12 16:30:00.00', 13, 4),
+          (1, 3, '2023-01-20 16:30:00.00', '2023-01-25 12:00:00.00', 14, 4),
+          (1, 3, '2023-01-09 13:30:00.00', '2023-01-14 11:45:00.00', 1, 4),
+          (1, 5, '2023-02-28 14:15:00.00', '2023-02-28 23:59:59.00', 2, 4),
+          (2, 7, '2023-02-07 14:30:00.00', '2023-02-09 09:45:00.00', 10, 8),
+          (2, 9, '2023-02-10 14:30:00.00', '2023-02-15 09:45:00.00', 9, 8),
+          (2, 6, '2023-01-04 08:00:00.00', '2023-01-10 16:30:00.00', 8, 8),
+          (2, 1, '2023-01-10 14:30:00.00', '2023-01-15 09:45:00.00', 7, 8),
+          (2, 3, '2023-01-20 16:30:00.00', '2023-01-25 12:00:00.00', 6, 8),
+          (2, 3, '2023-02-20 16:30:00.00', '2023-02-25 12:00:00.00', 5, 8),
+          (2, 3, '023-01-20 16:30:00.00', '2023-01-25 13:00:00.00', 4, 8),
+          (2, 10, '2023-02-19 09:15:00.00', '2023-02-25 14:45:00.00', 3, 8),
+          (2, 10, '2023-01-08 12:00:00.00', '2023-01-13 14:00:00.00', 2, 8),
+          (2, 10, '2023-03-04 08:15:00.00', '2023-03-10 16:45:00.00', 1, 8),
+          (3, 9, '2023-02-04 08:00:00.00', '2023-02-10 16:30:00.00', 1, 13);
+ 
+/*---------------Creacion de registros en la tabla Pago_Recibo---------------*/                           
+INSERT INTO `sjreal`.`pago_recibo`
+            (`Recibo_idRecibo`,
+             `Responsable_idResponsable1`,
+             `concepto_Recibo`,
+             `fecha_Pago_Recibo`,
+             `monto_Recibo`,
+             `consumo_Recibo`,
+             `precio_medida`,
+             `medida_consumo`,
+             `Pago_Con_Retraso`,
+             `motivo_Retraso`)
+VALUES 
+       (1, 1,    'Pago recibo luz Enero, sucursal Medellín', '2023-01-23', 230000,  50.00, 2000, 'Kilovatio', 'No', 'N/A'),
+      (18, 1,   'Pago recibo gas Enero, sucursal Medellín', '2023-01-08', 231000,  34.00, 1500, 'Metro cúbico de gas', 'No', 'N/A'),
+      (10, 1,  'Pago recibo agua Marzo, sucursal Medellín', '2023-03-27', 198000, 140.30, 1000, 'Metro cúbico', 'No', 'N/A'),         
+      (10, 1, 'Pago recibo agua Febrero, sucursal Medellín', '2023-02-18', 198000, 120.60, 1000, 'Metro cúbico', 'No', 'N/A'),        
+      (10, 1,  'Pago recibo agua Enero, sucursal Medellín', '2023-01-17', 198000, 120.00, 1000, 'Metro cúbico', 'No', 'N/A'),        
+       (1, 1, 'Pago recibo luz Febrero, sucursal Medellín', '2023-02-22', 230000,  49.00, 2000, 'Kilovatio', 'No', 'N/A'),           
+       (1, 1,   'Pago recibo luz Marzo, sucursal Medellín', '2023-03-25', 230000,  58.00, 2000, 'Kilovatio', 'No', 'N/A'),            
+       (6, 5,     'Pago recibo luz Marzo, sucursal Sibaté', '2023-03-25', 290000,  40.00, 2000, 'Kilovatio', 'No', 'N/A'),            
+      (22, 5,     'Pago recibo gas Enero, sucursal Sibaté', '2023-01-10', 150000,  45.00, 1500, 'Metro cúbico de gas', 'No', 'N/A'), 
+      (21, 5,  'Pago recibo agua Febrero, sucursal Sibaté', '2023-02-17', 150000,  99.20, 1000, 'Metro cúbico', 'No', 'N/A'),        
+      (21, 5,    'Pago recibo agua Enero, sucursal Sibaté', '2023-01-15', 290000,  98.00, 1000, 'Metro cúbico', 'No', 'N/A'),        
+       (6, 5,     'Pago recibo luz Enero, sucursal Sibaté', '2023-01-25', 290000,  45.00, 2000, 'Kilovatio', 'No', 'N/A'),            
+       (6, 5,   'Pago recibo luz Febrero, sucursal Sibaté', '2023-02-24', 290000,  44.00, 2000, 'Kilovatio', 'No', 'N/A'),            
+       (9, 9,    'Pago recibo luz Marzo, sucursal Bogotá', '2023-03-24', 310000,  46.70, 2000, 'Kilovatio', 'No', 'N/A'),            
+      (17, 9,    'Pago recibo agua Enero, sucursal Bogotá', '2023-01-15', 200000, 109.00, 1000,  'Metro cúbico', 'No', 'N/A'),         
+      (17, 9,  'Pago recibo agua Febrero, sucursal Bogotá', '2023-02-15', 200000, 101.10, 1000, 'Metro cúbico', 'No', 'N/A'),        
+      (17, 9,    'Pago recibo agua Marzo, sucursal Bogotá', '2023-03-19', 200000, 110.60, 1000, 'Metro cúbico', 'No', 'N/A'),        
+       (9, 9,   'Pago recibo luz Febrero, sucursal Bogotá', '2023-02-24', 310000,  49.20, 2000, 'Kilovatio', 'No', 'N/A'),            
+       (9, 9,     'Pago recibo luz Enero, sucursal Bogotá', '2023-01-24', 310000,  50.00, 2000, 'Kilovatio', 'No', 'N/A'),            
+      (20, 9,     'Pago recibo gas Enero, sucursal Bogotá', '2023-01-11', 250000,  23.00, 1500, 'Metro cúbico de gas', 'No', 'N/A');
+
+/*---------------Creacion de registros en la tabla Pago---------------*/ 
+INSERT INTO `sjreal`.`pago`
+            (`Hospedaje_idHospedaje`,
+             `titular _Pago`,
+             `IDTitular_Pago`,
+             `tipo_Cliente`,
+             `medioDePago_Pago`,
+             `fecha_pago`,
+             `concepto_Pago`,
+             `descuento_pago`,
+             `total_Pago`,
+             `dias_hospedaje`,
+             `precio_por_dia`)
+VALUES 
+    (1, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (2, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (3, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (4, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (5, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (6, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (7, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (8, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (9, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (10, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (11, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (12, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (13, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (14, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (15, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (16, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (17, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (18, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (19, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (20, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (21, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (22, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (23, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (24, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (25, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (26, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (27, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (28, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (29, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (30, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (31, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (32, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (33, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (34, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (35, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),       
+    (36, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (37, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (38, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (39, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (40, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (41, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (42, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (43, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (44, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (45, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (46, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (47, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (48, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (49, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (50, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (51, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (52, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (53, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (54, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (55, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (56, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (57, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (58, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (59, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (60, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (61, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (62, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (63, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0),
+    (64, 'Por definir', 'Por definir', 'Persona natural', 'Efectivo', '31-03-30 12:00:00', 'Hospedaje', 0, 0, 0, 0);
     
+/*---------------Creacion de registros en la tabla Detalle_pago---------------*/  
+INSERT INTO `sjreal`.`detalle_pago`
+            (`Pago_idPago`,
+             `Inventario_idInventario`,
+             `precio_Total`,             
+             `precio_producto`,
+             `cantidad_producto`)
+VALUES 
+    (1, 1, 0,  0, 2),
+    (1, 8, 0, 0, 1),
+    (2, 1, 0,  0, 2),
+    (2, 8, 0, 0, 1),
+    (3, 21, 0, 0, 2),
+    (3, 27, 0, 0, 1),
+    (4, 36, 0, 0, 2),
+    (4, 43, 0, 0, 1),
+    (5, 1, 0,  0, 2),
+    (5, 8, 0, 0, 1),
+    (6, 1, 0,  0, 2),
+    (6, 8, 0, 0, 1),
+    (7, 21, 0, 0, 2),
+    (7, 27, 0, 0, 1),
+    (8, 21, 0, 0, 2),
+    (8, 27, 0, 0, 1),
+    (9, 36, 0, 0, 2),
+    (9, 43, 0, 0, 1),
+    (10, 1, 0,  0, 2),
+    (10, 8, 0, 0, 1),
+    (11, 21, 0, 0, 2),
+    (11, 27, 0, 0, 1),
+    (12, 36, 0, 0, 2),
+    (12, 43, 0, 0, 1),
+    (13, 1, 0,  0, 2),
+    (13, 8, 0, 0, 1),
+    (14, 21, 0, 0, 2),
+    (14, 27, 0, 0, 1),
+    (15, 36, 0, 0, 2),
+    (15, 43, 0, 0, 1),
+    (16, 1, 0,  0, 2),
+    (16, 8, 0, 0, 1),
+    (17, 1, 0,  0, 2),
+    (17, 8, 0, 0, 1),
+    (18, 21, 0, 0, 2),
+    (18, 27, 0, 0, 1),
+    (19, 21, 0, 0, 2),
+    (19, 27, 0, 0, 1),
+    (20, 36, 0, 0, 2),
+    (20, 43, 0, 0, 1),
+    (21, 1, 0,  0, 2),
+    (21, 8, 0, 0, 1),
+    (22, 1, 0,  0, 2),
+    (22, 8, 0, 0, 1),
+    (23, 21, 0, 0, 2),
+    (23, 27, 0, 0, 1),
+    (24, 36, 0, 0, 2),
+    (24, 43, 0, 0, 1),
+    (25, 1, 0,  0, 2),
+    (25, 8, 0, 0, 1),
+    (26, 1, 0,  0, 2),
+    (26, 8, 0, 0, 1),
+    (27, 21, 0, 0, 2),
+    (27, 27, 0, 0, 1),
+    (28, 36, 0, 0, 2),
+    (28, 43, 0, 0, 1),
+    (29, 36, 0, 0, 2),
+    (29, 43, 0, 0, 1),
+    (30, 21, 0, 0, 2),
+    (30, 27, 0, 0, 1),
+    (31, 21, 0, 0, 2),
+    (31, 27, 0, 0, 1),
+    (32, 36, 0, 0, 2),
+    (32, 43, 0, 0, 1),
+    (33, 1, 0,  0, 2),
+    (33, 8, 0, 0, 1),
+    (34, 21, 0, 0, 2),
+    (34, 27, 0, 0, 1),
+    (35, 1, 0,  0, 2),
+    (35, 8, 0, 0, 1),
+    (36, 1, 0,  0, 2),
+    (36, 8, 0, 0, 1),
+    (37, 1, 0,  0, 2),
+    (37, 8, 0, 0, 1),
+    (38, 1, 0,  0, 2),
+    (38, 8, 0, 0, 1),
+    (39, 1, 0,  0, 2),
+    (39, 8, 0, 0, 1),
+    (40, 1, 0,  0, 2),
+    (40, 8, 0, 0, 1),
+    (41, 1, 0,  0, 2),
+    (41, 8, 0, 0, 1),
+    (42, 1, 0,  0, 2),
+    (42, 8, 0, 0, 1),
+    (43, 1, 0,  0, 2),
+    (43, 8, 0, 0, 1),
+    (44, 1, 0,  0, 2),
+    (44, 8, 0, 0, 1),
+    (45, 1, 0,  0, 2),
+    (45, 8, 0, 0, 1),
+    (46, 1, 0,  0, 2),
+    (46, 8, 0, 0, 1),
+    (47, 21, 0, 0, 2),
+    (47, 27, 0, 0, 1),
+    (48, 21, 0, 0, 2),
+    (48, 27, 0, 0, 1),
+    (49, 21, 0, 0, 2),
+    (49, 27, 0, 0, 1),
+    (50, 21, 0, 0, 2),
+    (50, 27, 0, 0, 1),
+    (51, 1, 0,  0, 2),
+    (51, 8, 0, 0, 1),
+    (52, 1, 0,  0, 2),
+    (52, 8, 0, 0, 1),
+    (53, 1, 0,  0, 2),
+    (53, 8, 0, 0, 1),
+    (54, 21, 0, 0, 2),
+    (54, 27, 0, 0, 1),
+    (55, 21, 0, 0, 2),
+    (55, 27, 0, 0, 1),
+    (56, 21, 0, 0, 2),
+    (56, 27, 0, 0, 1),
+    (57, 36, 0, 0, 2),
+    (57, 43, 0, 0, 1),
+    (58, 1, 0,  0, 2),
+    (58, 8, 0, 0, 1),
+    (59, 1, 0,  0, 2),
+    (59, 8, 0, 0, 1),
+    (60, 1, 0,  0, 2),
+    (60, 8, 0, 0, 1),
+    (61, 1, 0,  0, 2),
+    (61, 8, 0, 0, 1),
+    (62, 36, 0, 0, 2),
+    (62, 43, 0, 0, 1),
+    (63, 36, 0, 0, 2),
+    (63, 43, 0, 0, 1),
+    (64, 36, 0, 0, 2),
+    (64, 43, 0, 0, 1);
+ 
+/*---------------Creacion de registros en la tabla Control_salida---------------*/    
+INSERT INTO `sjreal`.`control_salida`
+            (`Rol_Empleado_idRol_Empleado`,
+             `Inventario_idInventario`,
+             `concepto_Salida`,
+             `cantidad`)
+VALUES 
+    (4, 62, 'Salida de dos cuñetes de pintura', 2),
+    (8, 63, 'Salida de dos cuñetes de pintura', 2),
+    (12, 64, 'Salida de dos cuñetes de pintura', 2),
+    (3, 66, 'Salida de dos bolsas de jabon', 2),
+    (7, 66, 'Salida de dos bolsas de jabon', 2),
+    (11, 67, 'Salida de dos bolsas de jabon', 2),
+    (3, 68, 'Salida de una botella de cloro', 1),
+    (7, 69, 'Salida de una botella de cloro', 1),
+    (11, 70, 'Salida de una botella de cloro', 1);
 
-
-
-/*--------------------------------------------------------------------------------------------------------------------*/     
-
-        
-INSERT INTO `sjreal`.`detalle_mantenimiento`
-            (`idDetalle`,
-             `Habitacion_idHabitacion`,
-             `Mantenimiento_idMantenimiento`,
-             `descripcion_Mantenimiento`,
-             `ejecutado`,
+/*---------------Creacion de registros en la tabla mantenimiento_sucursal---------------*/     
+INSERT INTO `sjreal`.`detalle_mantenimiento_habitacion`
+            (`Habitacion_idHabitacion`,
              `fecha_Mantenimiento`,
-             `Control_Salida_idControl`,
-             `Mantenimiento_idRutina`,
-             `Rol_Empleado_idRol_Empleado`)
-VALUES ('idDetalle',
-        'Habitacion_idHabitacion',
-        'Mantenimiento_idMantenimiento',
-        'descripcion_Mantenimiento',
-        'ejecutado',
-        'fecha_Mantenimiento',
-        'Control_Salida_idControl',
-        'Mantenimiento_idRutina',
-        'Rol_Empleado_idRol_Empleado');
-        
-INSERT INTO `sjreal`.`mantenimiento_sucursal`
-            (`idMantenimiento_sucursal`,
-             `Sucursal_idSucursal`,
-             `fecha_Mantenimiento`,
              `descripcion_Mantenimiento`,
-             `Mantenimiento_idMantenimineto`,
-             `Control_Salida_idControl`,
-             `Rol_Empleado_idRolEmpleado`)
-VALUES ('idMantenimiento_sucursal',
-        'Sucursal_idSucursal',
-        'fecha_Mantenimiento',
-        'descripcion_Mantenimiento',
-        'Mantenimiento_idMantenimineto',
-        'Control_Salida_idControl',
-        'Rol_Empleado_idRolEmpleado');
-        
-        
-INSERT INTO `sjreal`.`mantenimiento_saneamiento_rutinario`
-            (`idRutina`,
-             `item_Rutina`,
-             `estado_Rutina`,
-             `cantidad_Items`,
-             `fecha_Rutina`)
-VALUES ('idRutina',
-        'item_Rutina',
-        'estado_Rutina',
-        'cantidad_Items',
-        'fecha_Rutina');       
-        
+             `nombre_Mantenimiento`,
+             `tipo_Mantenimiento`,
+             `Rol_Empleado_id`,
+             `Control_Salida_id`)
+VALUES 
+    (29, '2023-01-10 17:00:00', 'Aseo de la habitacion 201 de la sucursal Sibaté', 'Aseo habitación', 'Saneamiento', 3, 5),
+    (33, '2023-01-10 17:00:00', 'Aseo de la habitacion 205 de la sucursal Sibaté', 'Aseo habitación', 'Saneamiento', 3, 5),
+    (7, '2023-01-10 15:00:00', 'Aseo de la habitacion 107 de la sucursal Medellín', 'Aseo habitación', 'Saneamiento', 7, 5);
+    
+/*---------------Creacion de registros en la tabla PQRFS---------------*/ 
 INSERT INTO `sjreal`.`pqrfs`
             (`tipo_PQRFs`,
              `descripcion_PQRFs`,
@@ -598,81 +976,10 @@ INSERT INTO `sjreal`.`pqrfs`
              `estado_PQRFs`,
              `Huesped_idHuesped`,
              `Rol_Empleado_idRol_Empleado`)
-VALUES ('tipo_PQRFs','descripcion_PQRFs','fecha_Radicado','estado_PQRFs','Huesped_idHuesped','Rol_Empleado_idRol_Empleado');        
+VALUES
+   ('Queja', 'El dia x me quede en la sucursal x y las toallas estaban sucias', '2023-02-01 12:30:00.00', 'Por resolver', 29, 1),
+   ('Pregunta', '¿Cuando abren una sucursal en Bucaramanga?', '2023-01-13 10:45:00.00', 'Resuelta', 11, 5),
+   ('Reclamo', 'El dia x me quede en la sucursal x y se me quedó un reloj negro', '2023-02-15 10:15:00.00', 'Por resolver', 10, 9);
+/*--------------------------------------------------------------------------------------------------------------------*/     
 
-
-INSERT INTO `sjreal`.`registro_salida_entrada`
-            (`idRegistro`,
-             `Huesped_idHuesped`,
-             `Hospedaje_idHospedaje`,
-             `tipo_Registro`,
-             `hora_registro`)
-VALUES ('idRegistro',
-        'Huesped_idHuesped',
-        'Hospedaje_idHospedaje',
-        'tipo_Registro',
-        'hora_registro');
-        
-        
-INSERT INTO `sjreal`.`parqueadero`
-            (`idParqueadero`,
-             `Sucursal_idSucursal`,
-             `Vehiculo_idVehiculo`,
-             `entrada_Vehiculo`,
-             `salida_Vehiculo`,
-             `ubicacion_Vehiculo`,
-             `Empleado_idRol_Empleado`)
-VALUES ('idParqueadero',
-        'Sucursal_idSucursal',
-        'Vehiculo_idVehiculo',
-        'entrada_Vehiculo',
-        'salida_Vehiculo',
-        'ubicacion_Vehiculo',
-        'Empleado_idRol_Empleado');
-           
-INSERT INTO `sjreal`.`detalle_pago`
-            (`Producto_idProducto`,
-             `Pago_idPago`,
-             `precio_Por_Dia_Hospedado`,
-             `precio_Total`)
-VALUES ('Producto_idProducto','Pago_idPago','precio_Por_Dia_Hospedado','precio_Total');
-        
-INSERT INTO `sjreal`.`pago`
-            (`Hospedaje_idHospedaje`,
-             `titular _Pago`,
-             `IDTitular_Pago`,
-             `medioDePago_Pago`,
-             `concepto_Pago`,
-             `total_Pago`,
-             `tipo_Cliente`)
-VALUES ('Hospedaje_idHospedaje','titular _Pago','IDTitular_Pago','medioDePago_Pago','concepto_Pago','total_Pago','tipo_Cliente');
-        
-INSERT INTO `sjreal`.`pago_recibo`
-            (`Recibo_idRecibo`,
-             `Responsable_idResponsable1`,
-             `fecha_Pago_Recibo`,
-             `monto_Recibo`,
-             `Pago_Con_Retraso`,
-             `motivo_Retraso`)
-VALUES ('Recibo_idRecibo','Responsable_idResponsable1','fecha_Pago_Recibo','monto_Recibo','Pago_Con_Retraso','motivo_Retraso');
-
-INSERT INTO `sjreal`.`pedido`
-            (`Proveedor_idProveedor`,
-             `Control_Inventario_idControl_Inventario`,
-             `cantidad_Producto`,
-             `fecha_Entrega`,
-             `precio_Total_Pedido`,
-             `precio_Unitario_Producto`)
-VALUES ('Proveedor_idProveedor','Control_Inventario_idControl_Inventario','cantidad_Producto','fecha_Entrega','precio_Total_Pedido','precio_Unitario_Producto');
-      
-INSERT INTO `sjreal`.`vehiculo`
-            (`Huesped_idHuesped`,
-             `placa_Vehiculo`,
-             `modelo_Vehiculo`,
-             `color_Vehiculo`)
-VALUES ('Huesped_idHuesped','placa_Vehiculo','modelo_Vehiculo','color_Vehiculo');
-        
-                                                                                
-        
-        
-        
+       
