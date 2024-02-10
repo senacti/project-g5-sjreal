@@ -49,6 +49,9 @@ tabsArrayopenModalDettalleButton.forEach(openModalDettalleButton => {
 })
 
 
+
+
+
 //MODAL EDITAR
 const tabsArrayopenModalEditarButton = Array.from(document.querySelectorAll("#openModalEditar"))
 // const openModalDettalleButton = document.getElementById('openModalDetalle');
@@ -104,6 +107,23 @@ function deleteProduct() {
 
 
 
+//MODAL CREAR
+const tabsArrayopenModalCrearButton = Array.from(document.querySelectorAll("#openModalCrear"))  //modalCrear
+// const openModalCrearButton = document.getElementById('openModalCrear');
+const closeModalCrear = document.querySelectorAll('.modal-close');
+const modalCrear = document.getElementById('modalCrear');
+tabsArrayopenModalCrearButton.forEach(openModalCrearButton => {
+  openModalCrearButton.addEventListener('click', () => {
+    modalCrear.classList.remove('hidden');
+  });
+
+  closeModalCrear.forEach((button) => {
+    button.addEventListener('click', () => {
+      modalCrear.classList.add('hidden');
+    });
+  });
+
+})
 
 
 

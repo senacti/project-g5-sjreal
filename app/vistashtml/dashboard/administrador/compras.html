@@ -15,7 +15,6 @@
     <div class="flex justify-between items-center">
       <div>
         <img src="../../../assets/images/Logo-proyecto(1).png" class="w-[70px] h-[70px]">
-        <img src="../../../assets/images/Logo-proyecto(1).png" class="w-[70px] h-[70px]">
       </div>
       <h1 class="text-xl font-semibold text-center flex-grow">Admin - Hotel JS Real</h1>
       <div class="flex space-x-4">
@@ -117,8 +116,8 @@
                   <th class="border border-gray-400 px-4 py-2">#</th>
                   <th class="border border-gray-400 px-4 py-2">Nombre</th>
                   <th class="border border-gray-400 px-4 py-2">Cargo</th>
-                  <th class="border border-gray-400 px-4 py-2">Horas</th>
-                  <th class="border border-gray-400 px-4 py-2">Sueldo</th>
+                  <th class="border border-gray-400 px-4 py-2">Cedula</th>
+                  <th class="border border-gray-400 px-4 py-2">Salario</th>
                   <th class="border border-gray-400 px-4 py-2">Dirección</th>
                   <th class="border border-gray-400 px-4 py-2 ">Acciones</th>
                 </tr>
@@ -126,11 +125,11 @@
               <tbody>
                 <tr class="bg-gray-100">
                   <td class="border border-gray-400 px-4 py-2">1</td>
-                  <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
-                  <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
-                  <td class="border border-gray-400 px-4 py-2">40</td>
-                  <td class="border border-gray-400 px-4 py-2">$1000</td>
-                  <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
+                  <td class="border border-gray-400 px-4 py-2">Esteban </td>
+                  <td class="border border-gray-400 px-4 py-2">Recepcionista</td>
+                  <td class="border border-gray-400 px-4 py-2">1032505578</td>
+                  <td class="border border-gray-400 px-4 py-2">1.500.000</td>
+                  <td class="border border-gray-400 px-4 py-2">Cll 75-b #17a 49s</td>
                   <td class="border border-gray-400 px-4 py-2 ">
                     <div class="flex flex-row  justify-evenly ">
                       <button id="openModalDetalle" class="bg-blue-400 rounded-xl p-1">
@@ -151,7 +150,7 @@
                   </td>
                 </tr>
                 <tr class="bg-gray-200">
-                  <td class="border border-gray-400 px-4 py-2">1</td>
+                  <td class="border border-gray-400 px-4 py-2">2</td>
                   <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
                   <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
                   <td class="border border-gray-400 px-4 py-2">40</td>
@@ -176,7 +175,7 @@
                   </td>
                 </tr>
                 <tr class="bg-gray-100">
-                  <td class="border border-gray-400 px-4 py-2">1</td>
+                  <td class="border border-gray-400 px-4 py-2">3</td>
                   <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
                   <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
                   <td class="border border-gray-400 px-4 py-2">40</td>
@@ -201,7 +200,7 @@
                   </td>
                 </tr>
                 <tr class="bg-gray-200">
-                  <td class="border border-gray-400 px-4 py-2">1</td>
+                  <td class="border border-gray-400 px-4 py-2">4</td>
                   <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
                   <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
                   <td class="border border-gray-400 px-4 py-2">40</td>
@@ -226,7 +225,7 @@
                   </td>
                 </tr>
                 <tr class="bg-gray-100">
-                  <td class="border border-gray-400 px-4 py-2">1</td>
+                  <td class="border border-gray-400 px-4 py-2">5</td>
                   <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
                   <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
                   <td class="border border-gray-400 px-4 py-2">40</td>
@@ -300,7 +299,7 @@
         <div class="modal-content py-4 text-left px-6  flex flex-col">
           <!-- Título del modal -->
           <div class="modal-header flex flex-row  items-center">
-            <h3 class="text-lg font-semibold">Detalles Producto ______</h3>
+            <h3 class="text-lg font-semibold">Detalle del Empledo ______</h3>
 
             <button id="closeModal"
               class=" modal-close my-3  ml-auto top-0  bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
@@ -320,7 +319,7 @@
                   <th class="border border-gray-400 px-4 py-2">Nombre</th>
                   <th class="border border-gray-400 px-4 py-2">Cargo</th>
                   <th class="border border-gray-400 px-4 py-2">Horas</th>
-                  <th class="border border-gray-400 px-4 py-2">Sueldo</th>
+                  <th class="border border-gray-400 px-4 py-2">Salario</th>
                   <th class="border border-gray-400 px-4 py-2">Dirección</th>
                   <th class="border border-gray-400 px-4 py-2">Dirección</th>
                 </tr>
@@ -377,23 +376,29 @@
                 <tr class="bg-gray-50">
                   <th class="border border-gray-400 px-4 py-2">#</th>
                   <th class="border border-gray-400 px-4 py-2">Nombre</th>
-                  <th class="border border-gray-400 px-4 py-2">Cargo</th>
-                  <th class="border border-gray-400 px-4 py-2">Horas</th>
-                  <th class="border border-gray-400 px-4 py-2">Sueldo</th>
-                  <th class="border border-gray-400 px-4 py-2">Dirección</th>
-                  <th class="border border-gray-400 px-4 py-2">Dirección</th>
+                  <th class="border border-gray-400 px-4 py-2">Cargo</th> 
+                  <th class="border border-gray-400 px-4 py-2">Dirección</th> 
+                  <th class="border border-gray-400 px-4 py-2">Fecha de Contratacion</th>
+                  <th class="border border-gray-400 px-4 py-2">Salario</th>
+                  <th class="border border-gray-400 px-4 py-2">Numero de contacto</th>
+                  <th class="border border-gray-400 px-4 py-2">Estado</th>
+                  <th class="border border-gray-400 px-4 py-2">Cedula</th>
+                  <th class="border border-gray-400 px-4 py-2">No de Cuenta</th>
                 </tr>
               </thead>
               <tbody>
                 <!-- Filas de datos -->
                 <tr class="bg-gray-100">
                   <td class="border border-gray-400 px-4 py-2">1</td>
-                  <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
-                  <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
-                  <td class="border border-gray-400 px-4 py-2">40</td>
-                  <td class="border border-gray-400 px-4 py-2">$1000</td>
-                  <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
-                  <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
+                  <td class="border border-gray-400 px-4 py-2">Esteban Granados</td>
+                  <td class="border border-gray-400 px-4 py-2">Recepcionista</td>
+                  <td class="border border-gray-400 px-4 py-2">Cll 75-b #17a 49s</td>
+                  <td class="border border-gray-400 px-4 py-2">05-06-2023</td>
+                  <td class="border border-gray-400 px-4 py-2">$1.500.000</td>
+                  <td class="border border-gray-400 px-4 py-2">312-551-2595</td>
+                  <td class="border border-gray-400 px-4 py-2">Activo</td>
+                  <td class="border border-gray-400 px-4 py-2">1.032.505.578</td>
+                  <td class="border border-gray-400 px-4 py-2">56.871.641</td>
 
                 </tr>
               </tbody>
@@ -444,7 +449,7 @@
         </div>
       </div>
     </div>
-    <!-- <script src="../JS/admin.js" defer> -->
+    <!-- <script src="../../../logicasJs/JS/admin.js" defer> -->
     <script src="../../../logicasJs/JS/admin.js" defer>
     </script>
 </body>

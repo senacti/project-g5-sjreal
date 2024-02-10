@@ -72,3 +72,29 @@ formulario.addEventListener('submit', (e) => {
 
 /*Boton para redirigir al dasboard*/
 
+// username
+//password
+function validarCredenciales() {
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	console.log(username);
+	console.log(password);
+	var usernameCorrecto = "admin";
+	var passwordCorrecto = "*Admin123";
+
+	if (username == usernameCorrecto && password == passwordCorrecto) {
+		console.log(usernameCorrecto);
+		console.log(passwordCorrecto);
+		// Si las credenciales son correctas, redirigir al usuario a otra página
+
+		// document.getElementById("../vistashtml/inicio/login.html").href = "../vistashtml/dashboard/administrador/inicio.html";
+		// location.href("C:/Users/esteb/Desktop/ProjectoSena/project-g5-sjreal/app/vistashtml/dashboard/administrador/inicio.html");
+		window.location.assign = "../../dashboard/administrador/inicio.html";
+		// window.location.assign = "app/vistahtml/dashboard/inicio.html";
+		// window.location.replace = "vistashtml/dashboard/administrador/inicio.html";
+
+		// document.getElementById("enlacePagina").style.display = "inline";
+	} else {
+		alert("Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.");
+	}
+}

@@ -104,7 +104,7 @@
             <h1 class="text-3xl  ">Empleados</h1>
           </div>
           <div class="flex justify-between mb-4 my-4">
-            <button class="bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600">Crear</button>
+            <button id="openModalCrear" class="bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600">Crear</button>
             <input class="border border-gray-300 px-4 py-2 ml-5 rounded w-full" type="text" placeholder="Buscar...">
             <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Buscar</button>
           </div>
@@ -115,30 +115,29 @@
                   <th class="border border-gray-400 px-4 py-2">#</th>
                   <th class="border border-gray-400 px-4 py-2">Nombre</th>
                   <th class="border border-gray-400 px-4 py-2">Cargo</th>
-                  <th class="border border-gray-400 px-4 py-2">Horas</th>
-                  <th class="border border-gray-400 px-4 py-2">Sueldo</th>
+                  <th class="border border-gray-400 px-4 py-2">Cedula</th>
+                  <th class="border border-gray-400 px-4 py-2">Salario</th>
                   <th class="border border-gray-400 px-4 py-2">Dirección</th>
                   <th class="border border-gray-400 px-4 py-2 ">Acciones</th>
                 </tr>
               </thead>
               <tbody>
-                <!-- Filas de datos -->
                 <tr class="bg-gray-100">
                   <td class="border border-gray-400 px-4 py-2">1</td>
-                  <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
-                  <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
-                  <td class="border border-gray-400 px-4 py-2">40</td>
-                  <td class="border border-gray-400 px-4 py-2">$1000</td>
-                  <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
+                  <td class="border border-gray-400 px-4 py-2">Esteban </td>
+                  <td class="border border-gray-400 px-4 py-2">Recepcionista</td>
+                  <td class="border border-gray-400 px-4 py-2">1032505578</td>
+                  <td class="border border-gray-400 px-4 py-2">1.500.000</td>
+                  <td class="border border-gray-400 px-4 py-2">Cll 75-b #17a 49s</td>
                   <td class="border border-gray-400 px-4 py-2 ">
                     <div class="flex flex-row  justify-evenly ">
                       <button id="openModalDetalle" class="bg-blue-400 rounded-xl p-1">
-                        <img src="../../../assets/images/bookmark.png" alt="imagen apra eliminar registro"
+                        <img src="../../../assets/images/bookmark.png" alt="imagen para eliminar registro"
                           class=" w-[36px] h-[36px]">
                       </button>
 
                       <button id="openModalEditar" class="bg-green-400 rounded-xl p-1">
-                        <img src="../../../assets/images/edit.png" alt="imagen apra eliminar registro" class=" w-[36px] h-[36px]">
+                        <img src="../../../assets/images/edit.png" alt="imagen para eliminar registro" class=" w-[36px] h-[36px]">
                       </button>
 
                       <button id="openModalEliminar" class="bg-red-400 rounded-xl p-1">
@@ -286,6 +285,77 @@
       </div>
     </div>
 
+
+    <!-- Modal Crear oculto por defecto -->
+    <div id="modalCrear" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
+      <!-- Fondo semitransparente -->
+      <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+
+      <!-- Contenedor del modal md:max-w-md  -->
+      <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
+        <!-- Contenido del modal -->
+        <div class="modal-content py-4 text-left px-6  flex flex-col">
+          <!-- Título del modal -->
+          <div class="modal-header flex flex-row  items-center">
+            <h3 class="text-lg font-semibold">Crear Empleado </h3>
+
+            <button id="closeModal"
+              class=" modal-close my-3  ml-auto top-0  bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+              X
+            </button>
+
+          </div>
+          <!-- Botones del modal (si es necesario) -->
+
+          <!-- Cuerpo del modal -->
+          <div class="modal-body">
+            <!-- Tu contenido aquí -->
+            <form class="max-w-lg mx-auto grid grid-cols-2 gap-4" action="#" method="POST">
+              <div class="mb-4">
+                  <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">Nombre</label>
+                  <input type="text" id="nombre" name="nombre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="mb-4">
+                  <label for="cargo" class="block text-gray-700 text-sm font-bold mb-2">Cargo</label>
+                  <input type="text" id="cargo" name="cargo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="mb-4">
+                  <label for="direccion" class="block text-gray-700 text-sm font-bold mb-2">Dirección</label>
+                  <input type="text" id="direccion" name="direccion" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="mb-4">
+                  <label for="fecha_contratacion" class="block text-gray-700 text-sm font-bold mb-2">Fecha de Contratación</label>
+                  <input type="date" id="fecha_contratacion" name="fecha_contratacion" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="mb-4">
+                  <label for="salario" class="block text-gray-700 text-sm font-bold mb-2">Salario</label>
+                  <input type="number" id="salario" name="salario" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="mb-4">
+                  <label for="numero_contacto" class="block text-gray-700 text-sm font-bold mb-2">Número de Contacto</label>
+                  <input type="tel" id="numero_contacto" name="numero_contacto" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="mb-4">
+                  <label for="cedula" class="block text-gray-700 text-sm font-bold mb-2">Cédula</label>
+                  <input type="text" id="cedula" name="cedula" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="mb-4">
+                  <label for="no_cuenta" class="block text-gray-700 text-sm font-bold mb-2">Número de Cuenta</label>
+                  <input type="text" id="no_cuenta" name="no_cuenta" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="col-span-2 flex items-center justify-center">
+                  <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Enviar</button>
+              </div>
+          </form>
+
+          </div>
+          <div class="modal-footer ">
+            <hr class="bg-black h-[2px] my-3 mb-2">
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Modal Detalle oculto por defecto -->
     <div id="modal" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
       <!-- Fondo semitransparente -->
@@ -315,23 +385,29 @@
                 <tr class="bg-gray-50">
                   <th class="border border-gray-400 px-4 py-2">#</th>
                   <th class="border border-gray-400 px-4 py-2">Nombre</th>
-                  <th class="border border-gray-400 px-4 py-2">Cargo</th>
-                  <th class="border border-gray-400 px-4 py-2">Horas</th>
-                  <th class="border border-gray-400 px-4 py-2">Sueldo</th>
-                  <th class="border border-gray-400 px-4 py-2">Dirección</th>
-                  <th class="border border-gray-400 px-4 py-2">Dirección</th>
+                  <th class="border border-gray-400 px-4 py-2">Cargo</th> 
+                  <th class="border border-gray-400 px-4 py-2">Dirección</th> 
+                  <th class="border border-gray-400 px-4 py-2">Fecha de Contratacion</th>
+                  <th class="border border-gray-400 px-4 py-2">Salario</th>
+                  <th class="border border-gray-400 px-4 py-2">Numero de contacto</th>
+                  <th class="border border-gray-400 px-4 py-2">Estado</th>
+                  <th class="border border-gray-400 px-4 py-2">Cedula</th>
+                  <th class="border border-gray-400 px-4 py-2">No de Cuenta</th>
                 </tr>
               </thead>
               <tbody>
                 <!-- Filas de datos -->
                 <tr class="bg-gray-100">
                   <td class="border border-gray-400 px-4 py-2">1</td>
-                  <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
-                  <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
-                  <td class="border border-gray-400 px-4 py-2">40</td>
-                  <td class="border border-gray-400 px-4 py-2">$1000</td>
-                  <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
-                  <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
+                  <td class="border border-gray-400 px-4 py-2">Esteban Granados</td>
+                  <td class="border border-gray-400 px-4 py-2">Recepcionista</td>
+                  <td class="border border-gray-400 px-4 py-2">Cll 75-b #17a 49s</td>
+                  <td class="border border-gray-400 px-4 py-2">05-06-2023</td>
+                  <td class="border border-gray-400 px-4 py-2">$1.500.000</td>
+                  <td class="border border-gray-400 px-4 py-2">312-551-2595</td>
+                  <td class="border border-gray-400 px-4 py-2">Activo</td>
+                  <td class="border border-gray-400 px-4 py-2">1.032.505.578</td>
+                  <td class="border border-gray-400 px-4 py-2">56.871.641</td>
 
                 </tr>
               </tbody>
@@ -344,6 +420,7 @@
         </div>
       </div>
     </div>
+
 
     <!-- Modal Editar oculto por defecto -->
     <div id="modalEditar" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
@@ -443,7 +520,8 @@
       </div>
     </div>
 
-    <script src="../JS/admin.js" defer>
+    <!-- <script src="../JS/admin.js" defer> -->
+    <script src="../../../logicasJs/JS/admin.js" defer>
     </script>
 
 </body>
