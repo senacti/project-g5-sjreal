@@ -74,27 +74,30 @@ formulario.addEventListener('submit', (e) => {
 
 // username
 //password
-function validarCredenciales() {
-	var username = document.getElementById("username").value;
-	var password = document.getElementById("password").value;
-	console.log(username);
-	console.log(password);
-	var usernameCorrecto = "admin";
-	var passwordCorrecto = "*Admin123";
+// Definir la función para validar las credenciales y manejar el evento submit del formulario
 
-	if (username == usernameCorrecto && password == passwordCorrecto) {
-		console.log(usernameCorrecto);
-		console.log(passwordCorrecto);
-		// Si las credenciales son correctas, redirigir al usuario a otra página
 
-		// document.getElementById("../vistashtml/inicio/login.html").href = "../vistashtml/dashboard/administrador/inicio.html";
-		// location.href("C:/Users/esteb/Desktop/ProjectoSena/project-g5-sjreal/app/vistashtml/dashboard/administrador/inicio.html");
-		window.location.assign = "../../dashboard/administrador/inicio.html";
-		// window.location.assign = "app/vistahtml/dashboard/inicio.html";
-		// window.location.replace = "vistashtml/dashboard/administrador/inicio.html";
-
-		// document.getElementById("enlacePagina").style.display = "inline";
-	} else {
-		alert("Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.");
-	}
-}
+// Asociar la función validarCredenciales al evento submit del formulario
+// document.addEventListener("DOMContentLoaded", function() {
+//     var formulario = document.getElementById("formulario");
+//     formulario.addEventListener("submit", validarCredenciales);
+// 	function validarCredenciales(event) {
+// 		// Evitar que el formulario se envíe automáticamente
+// 		event.preventDefault();
+		
+// 		// Obtener los valores de los campos de usuario y contraseña
+// 		var username = document.getElementById("username").value;
+// 		var password = document.getElementById("password").value;
+		
+// 		// Verificar las credenciales
+// 		var usernameCorrecto = "admin";
+// 		var passwordCorrecto = "*Admin123";
+	
+// 		if (username === usernameCorrecto && password === passwordCorrecto) {
+// 			console.log("Credenciales válidas");
+// 			// window.location.href = "../dashboard/administrador/inicio.html";
+// 		} else {
+// 			alert("Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.");
+// 		}
+// 	}
+// });

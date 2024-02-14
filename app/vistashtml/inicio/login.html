@@ -12,84 +12,95 @@
 </head>
 
 <body class="body">
-        <!-- HEADER - TOPBAR -->
-        <header class="header">
-            <nav class="navbar">
-                <div class="logo">
-                    <!-- <a href="../../../index.html" class=""><img src="./../assets/images//Logo-proyecto(1).png" alt="Logo del hotel"></a> -->
-                    <a href="../../../index.html" class=""><img src="../../assets/images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
-                    <p>San José Real</p>
-                </div>
-                <ul class="menu">
-                    <!-- <li><a href="../index.html">Inicio</a></li> -->
-                    <li><a href="../errors/404.html">Servicios</a></li>
-                    <li><a href="../inicio/reserva.html">Reservas</a></li>
-                    <li><a href="../errors/404.html">Acerca</a></li>
+    <!-- HEADER - TOPBAR -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <!-- <a href="../../../index.html" class=""><img src="./../assets/images//Logo-proyecto(1).png" alt="Logo del hotel"></a> -->
+                <a href="../../../index.html" class=""><img src="../../assets/images/Logo-proyecto(1).png"
+                        alt="Logo del hotel"></a>
+                <p>San José Real</p>
+            </div>
+            <ul class="menu">
+                <!-- <li><a href="../index.html">Inicio</a></li> -->
+                <li><a href="../errors/404.html">Servicios</a></li>
+                <li><a href="../inicio/reserva.html">Reservas</a></li>
+                <li><a href="../errors/404.html">Acerca</a></li>
+            </ul>
+
+            <div class="login">
+                <!-- <a href=""><img src="./images/logito.png" class="logo-login" alt="Logo de inicio de sesión"> </a> -->
+                <a href=""><img src="../../assets/images/perfilblanco.png" class="logo-login"
+                        alt="Logo de inicio de sesión"> </a>
+                <ul class="sesion">
+                    <li id="inicio-sesion"><a href="../inicio/login.html">
+                            <p>Inicia sesión </p>
+                        </a></li>
+                    <li id="inicio-registro"><a href="../inicio/registro.html">
+                            <p>Registrarse</p>
+                        </a></li>
+                    <!-- <button type="button" onclick="validarCredenciales()">Iniciar Sesión</button> -->
                 </ul>
-    
-                <div class="login">
-                    <!-- <a href=""><img src="./images/logito.png" class="logo-login" alt="Logo de inicio de sesión"> </a> -->
-                    <a href=""><img src="../../assets/images/perfilblanco.png" class="logo-login" alt="Logo de inicio de sesión"> </a>
-                    <ul class="sesion">
-                        <li id="inicio-sesion" ><a  href="../inicio/login.html" > <p>Inicia sesión </p> </a></li>
-                        <li id="inicio-registro" ><a  href="../inicio/registro.html"><p>Registrarse</p> </a></li>
-                        <!-- <button type="button" onclick="validarCredenciales()">Iniciar Sesión</button> -->
-                    </ul>
-                </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
     <!-- <div class="container"> -->
-        
-<div class="main"  style="background-image: url(../../assets/images/imagendifuminada.png);">
-</div>
-<section class="formulario">
-    <h1>Inicia sesión</h1>
-    <form action="#" method="post" id="formulario">
-        <ul class="form-container">
-            
-            <li id="group__user">
-                <label class="validar" id="" for="username">Usuario:</label>
-                <div class="usuario">
-                    <input class="validar_input" type="text" id="username" name="username" required>
-                    <span class="material-symbols-outlined">check_circle</span>
-                    <span class="material-symbols-outlined" id="false_symbols">cancel</span>
-                </div>
-                <p class="mensaje_error">El usuario tiene que ser de 4 a 16 carateres y solo puede contener letras, numeros, guión y guión bajo</p>
-            </li>
 
-            <li id="group__password">
-                <label class="validar" id="" for="password">Contraseña:</label>
-                <div class="contraseña">
-                    <input class="validar_input" type="password" id="password" name="password" required>
-                    <span class="material-symbols-outlined">check_circle</span>
-                    <span class="material-symbols-outlined" id="false_symbols">cancel</span>
+    <div class="main" style="background-image: url(../../assets/images/imagendifuminada.png);">
+    </div>
+    <section class="formulario">
+        <h1>Inicia sesión</h1>
+        <form  method="post" id="formulario">
+        <!-- <form action="../../logicasJs/JS/validarLogin.js" method="post" id="formulario"> -->
+            <ul class="form-container">
 
-                </div>
-                <p class="mensaje_error">La contraseña debe contener de 8 a 20 digitos, al menos 1 mayúscula, 1 minúscula, 1 número y 1 caracter especial</p>
-            </li>
-
-            <div class="btn-container">
-                <li class="li-buttons" id="iniciar-sesion">
-                    <button type="submit" class="btn btn-login" onclick="validarCredenciales()"><a >Iniciar sesión</a></button>
-                    
+                <li id="group__user">
+                    <label class="validar" id="" for="username">Usuario:</label>
+                    <div class="usuario">
+                        <input class="validar_input" type="text" id="username" name="username" required>
+                        <span class="material-symbols-outlined">check_circle</span>
+                        <span class="material-symbols-outlined" id="false_symbols">cancel</span>
+                    </div>
+                    <p class="mensaje_error">El usuario tiene que ser de 4 a 16 carateres y solo puede contener letras,
+                        numeros, guión y guión bajo</p>
                 </li>
-            
-                <li class="li-buttons">
-                    <button type="button" class="btn btn-cancel" onclick="showLoginForm()">Recuperar contraseña</button>
-                </li>
-            </div>
 
-            <div>
-                <p>¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
-                <p id="mensaje_fail" class="validar_login">Campos inválidos</p>
-            </div>
-        </ul>
-    </form>
-</section>
+                <li id="group__password">
+                    <label class="validar" id="" for="password">Contraseña:</label>
+                    <div class="contraseña">
+                        <input class="validar_input" type="password" id="password" name="password" required>
+                        <span class="material-symbols-outlined">check_circle</span>
+                        <span class="material-symbols-outlined" id="false_symbols">cancel</span>
+
+                    </div>
+                    <p class="mensaje_error">La contraseña debe contener de 8 a 20 digitos, al menos 1 mayúscula, 1
+                        minúscula, 1 número y 1 caracter especial</p>
+                </li>
+
+                <div class="btn-container">
+                    <li class="li-buttons" id="iniciar-sesion">
+                        <button type="submit" class="btn btn-login" onclick="validarCredenciales()"><a>Iniciar  
+                                sesión</a></button>
+
+                    </li>
+
+                    <li class="li-buttons">
+                        <button type="button" class="btn btn-cancel" onclick="showLoginForm()">Recuperar
+                            contraseña</button>
+                    </li>
+                </div>
+
+                <div>
+                    <p>¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
+                    <p id="mensaje_fail" class="validar_login">Campos inválidos</p>
+                </div>
+            </ul>
+        </form>
+    </section>
     <!-- </div> -->
-     
+
     <footer class="footer">
-    
+
         <div class="footer-content">
 
             <div id="about" class="footer-section">
@@ -118,30 +129,30 @@
     <!-- <script src="../../logicasJs/JS/validarLogin.js"></script> -->
     <script>
         function validarCredenciales() {
-	var username = document.getElementById("username").value;
-	var password = document.getElementById("password").value;
-	console.log(username);
-	console.log(password);
-	var usernameCorrecto = "admin";
-	var passwordCorrecto = "*Admin123";
+            document.getElementById("formulario").addEventListener("submit", function (event) {
+                event.preventDefault(); // Evitar el comportamiento predeterminado de recarga de página
+                // Aquí puedes realizar la validación de las credenciales y la redirección usando JavaScript
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                console.log(username);
+                console.log(password);
+                var usernameAdmin = "admin";
+                var passwordAdmin = "*Admin123";
+                var usernameRecepcionista = "recep";
+                var passwordRecepcionista = "*Recep123";
 
-	if (username == usernameCorrecto && password == passwordCorrecto) {
-		console.log(usernameCorrecto);
-		console.log(passwordCorrecto);
-		// Si las credenciales son correctas, redirigir al usuario a otra página
+                if (username == usernameAdmin && password == passwordAdmin) {
 
-		// document.getElementById("../vistashtml/inicio/login.html").href = "../vistashtml/dashboard/administrador/inicio.html";
-		// location.href("C:/Users/esteb/Desktop/ProjectoSena/project-g5-sjreal/app/vistashtml/dashboard/administrador/inicio.html");
-		location.assign = "registro.html";
-        // document.getElementById("registro.html").style.display = "inline";
-		// window.location.assign = "app/vistahtml/dashboard/inicio.html";
-		// window.location.replace = "vistashtml/dashboard/administrador/inicio.html";
+                    window.location.href = "../dashboard/administrador/inicio.html";
+                } else if(username == usernameRecepcionista && password == passwordRecepcionista) {
+                    window.location.href = "../dashboard/recepcionista/inicio.html";
+                    
+                }else{
+                    alert("Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.");
+                }
+            });
 
-		// document.getElementById("enlacePagina").style.display = "inline";
-	} else {
-		alert("Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.");
-	}
-}
+        }
 
     </script>
 </body>
