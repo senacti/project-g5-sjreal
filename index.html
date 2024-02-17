@@ -5,20 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="styleIndex.css">
-
-
-
 </head>
 <body>
     <!-- HEADER - TOPBAR -->
     <header class="header">
         <nav class="navbar">
             <div class="logo">
-                <a href="./index.html" class=""><img src="./app/assets/images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
-                <!-- <p>San José Real</p> -->
+                <a href="./index.html" class=""><img src="./app/assets/images/Logo-proyecto(1).png" alt="Logo del hotel"></a>                
             </div>
-            <ul class="menu">
-                <!-- <li><a href="../index.html">Inicio</a></li> -->
+            <ul class="menu">                
                 <li><a href="app/vistashtml/errors/404.html">Servicios</a></li>
                 <li><a href="app/vistashtml/inicio/reserva.html reserva.html">Reservas</a></li>
                 <li><a href="app/vistashtml/errors/500.html">Habitaciones</a></li>
@@ -37,110 +32,78 @@
     <!-- HOME -->
     <section class="home">
         <img class="img-home" src="./app/assets/images/habitacionfondoindex.jpg"  alt="imagen de inicio">
-        <!-- <div class="redes-sociales">
-            <a class="img-facebook" href=""><img  src="./app/assets/images/redes/facebookblanco.png"  alt="imagen de inicio"></a>
-            <a class="img-insta" href=""><img  src="./app/assets/images/redes/instagramsinfondoblanco.png"  alt="imagen de inicio"></a>
-            <a class="img-guasa" href=""><img  src="./app/assets/images/redes/whatsappblanco.png"  alt="imagen de inicio"></a>
-        </div> -->
-        <!-- <div class="contacto">
-                <div class="check-in"> 
-                    <img src="./app/assets/images/calendario/icons8-calendar.gif" alt="Logo del hotel">
-                    <div>
-                        <label for="checkin">Check-in:</label>
-                        <input type="date" id="checkin" name="checkin">
-                    </div>
-                    
+        <div class="container">
+          <div class="date-input-container">
+            <label for="date-input-1">FECHA DE<br>INGRESO</label>
+            <textarea id="date-input-1" class="date-input" readonly></textarea>
+            <div class="calendar-toggle">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+          </div>
+          <div class="calendar">
+            <div class="header">
+              <div class="month">Julio<br>2021</div>
+              <div class="btns">
+                <div class="btn today">hoy
+                  <i class="fas fa-calendar-day"></i>
                 </div>
-                <div class="check-out">
-                        <label for="checkout">Check-out:</label>
-                        <input type="date" id="checkout" name="checkout">
+                <div class="btn prev">antes
+                  <i class="fas fa-chevron-left"></i>
                 </div>
-                <div class="guests">
-                    <div class="">
-                        <label for="Huespedes">Personas</label>
-                        <input type="number" min="1" value="1">
-                    </div>
-                    <div class="">
-                        <label for="huesped-animal">Animales</label>
-                        <input type="number" min="0" value="0">
-                    </div>
-                    
-                    
+                <div class="btn next">despues
+                  <i class="fas fa-chevron-right"></i>
                 </div>
-        </div> -->
-        
-        wtff
+              </div>
+            </div>
+            <div class="weekdays">
+              <div class="day">Dom</div>
+              <div class="day">lun</div>
+              <div class="day">Mar</div>
+              <div class="day">Mie</div>
+              <div class="day">Jue</div>
+              <div class="day">Vie</div>
+              <div class="day">Sab</div>
+            </div>
+            <div class="days"></div>
+          </div>
+      
+          <div class="date-input-container">
+            <label for="date-output">FECHA DE<br>SALIDA</label>
+            <textarea id="date-output" class="date-input" readonly></textarea>
+            <div class="calendar-toggle">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+          </div>
+          <div class="calendar">
+            <div class="header">
+              <div class="month">Julio<br>2021</div>
+              <div class="btns">
+                <div class="btn today">hoy
+                  <i class="fas fa-calendar-day"></i>
+                </div>
+                <div class="btn prev">antes
+                  <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="btn next"> despues<i class="fas fa-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+            <div class="weekdays">
+              <div class="day">Dom</div>
+              <div class="day">Lun</div>
+              <div class="day">Mar</div>
+              <div class="day">Mie</div>
+              <div class="day">Jue</div>
+              <div class="day">Vie</div>
+              <div class="day">Sab</div>
+            </div>
+            <div class="days"></div>
+          </div>
+      </div>
+  
     </section>
     <!-- calendario -->
-    <div class="container">
-        <div class="date-input-container">
-          <label for="date-input-1">FECHA DE<br>INGRESO</label>
-          <textarea id="date-input-1" class="date-input" readonly></textarea>
-          <div class="calendar-toggle">
-            <i class="fas fa-calendar-alt"></i>
-          </div>
-        </div>
-        <div class="calendar">
-          <div class="header">
-            <div class="month">Julio<br>2021</div>
-            <div class="btns">
-              <div class="btn today">hoy
-                <i class="fas fa-calendar-day"></i>
-              </div>
-              <div class="btn prev">antes
-                <i class="fas fa-chevron-left"></i>
-              </div>
-              <div class="btn next">despues
-                <i class="fas fa-chevron-right"></i>
-              </div>
-            </div>
-          </div>
-          <div class="weekdays">
-            <div class="day">Dom</div>
-            <div class="day">lun</div>
-            <div class="day">Mar</div>
-            <div class="day">Mie</div>
-            <div class="day">Jue</div>
-            <div class="day">Vie</div>
-            <div class="day">Sab</div>
-          </div>
-          <div class="days"></div>
-        </div>
     
-        <div class="date-input-container">
-          <label for="date-output">FECHA DE<br>SALIDA</label>
-          <textarea id="date-output" class="date-input" readonly></textarea>
-          <div class="calendar-toggle">
-            <i class="fas fa-calendar-alt"></i>
-          </div>
-        </div>
-        <div class="calendar">
-          <div class="header">
-            <div class="month">Julio<br>2021</div>
-            <div class="btns">
-              <div class="btn today">hoy
-                <i class="fas fa-calendar-day"></i>
-              </div>
-              <div class="btn prev">antes
-                <i class="fas fa-chevron-left"></i>
-              </div>
-              <div class="btn next"> despues<i class="fas fa-chevron-right"></i>
-              </div>
-            </div>
-          </div>
-          <div class="weekdays">
-            <div class="day">Dom</div>
-            <div class="day">Lun</div>
-            <div class="day">Mar</div>
-            <div class="day">Mie</div>
-            <div class="day">Jue</div>
-            <div class="day">Vie</div>
-            <div class="day">Sab</div>
-          </div>
-          <div class="days"></div>
-        </div>
-    </div>
-
     <!-- HABITACIONES -->
     <!-- <section class="habitaciones">
         <div class="habitaciones-info">
