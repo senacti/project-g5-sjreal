@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Ventas Dashboard</title>
+  <title>Habitaciones Dashboard</title>
   <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
   <script src="https://cdn.tailwindcss.com/"></script>
 </head>
@@ -16,7 +16,7 @@
       <div>
         <img src="../../../assets/images/Logo-proyecto(1).png" class="w-[70px] h-[70px]">
       </div>
-      <h1 class="text-xl font-semibold text-center flex-grow">Recepcionista- Hotel JS Real</h1>
+      <h1 class="text-xl font-semibold text-center flex-grow">Admin - Hotel JS Real</h1>
       <div class="flex space-x-4">
         <!-- <button class="hover:text-blue-500">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -65,9 +65,9 @@
           </li>
           <li>
             <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
-              href="compras.html">
+              href="habitaciones.html">
               <img src="../../../assets/images/dashboard/icons8-compras.png" class="w-[40px] h-[40px] ml-2">
-              <span class="">Compras</span>
+              <span class="">Habitaciones</span>
             </a>
           </li>
           <li>
@@ -95,46 +95,46 @@
       </div>
 
       <!-- Área de contenido principal -->
-      <div class="w-full flex-col  bg-stone-200 p-4 mx-10 mt-5 rounded-lg  drop-shadow-2xl">
+      <div class="w-full flex-col bg-stone-200 p-4 mx-10 mt-5 rounded-lg  drop-shadow-2xl">
         <!-- Contenido principal -->
 
-        <div class="w-full bg-stone-200 p-4 m-auto">
+        <div class="w-full  bg-stone-200 p-4 m-auto">
 
           <div class="flex flex-row items-center py-4 border-b border-gray-400 space-x-4 ml-2">
-            <img src="../../../assets/images/dashboard/icons8-ventas.png" class=" w-[40px] h-[40px] ml-2">
-            <h1 class="text-3xl  ">Ventas</h1>
+            <img src="../../../assets/images/dashboard/icons8-compras.png" class=" w-[40px] h-[40px] ml-2">
+            <h1 class="text-3xl  ">Habitaciones</h1>
           </div>
           <div class="flex justify-between mb-4 my-4">
-            <button class="bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600">Crear</button>
+            <button id="openModalCrear" class="bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600">Crear</button> 
+            <!-- TODO el modal de crear de habitaciones  -->
             <input class="border border-gray-300 px-4 py-2 ml-5 rounded w-full" type="text" placeholder="Buscar...">
             <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Buscar</button>
           </div>
-          <div>
+          <!-- <div>
             <table class="border-collapse border border-gray-400 w-full">
               <thead>
                 <tr class="bg-gray-50">
                   <th class="border border-gray-400 px-4 py-2">#</th>
                   <th class="border border-gray-400 px-4 py-2">Nombre</th>
                   <th class="border border-gray-400 px-4 py-2">Cargo</th>
-                  <th class="border border-gray-400 px-4 py-2">Horas</th>
-                  <th class="border border-gray-400 px-4 py-2">Sueldo</th>
+                  <th class="border border-gray-400 px-4 py-2">Cedula</th>
+                  <th class="border border-gray-400 px-4 py-2">Salario</th>
                   <th class="border border-gray-400 px-4 py-2">Dirección</th>
                   <th class="border border-gray-400 px-4 py-2 ">Acciones</th>
                 </tr>
               </thead>
               <tbody>
-                <!-- Filas de datos -->
                 <tr class="bg-gray-100">
                   <td class="border border-gray-400 px-4 py-2">1</td>
-                  <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
-                  <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
-                  <td class="border border-gray-400 px-4 py-2">40</td>
-                  <td class="border border-gray-400 px-4 py-2">$1000</td>
-                  <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
+                  <td class="border border-gray-400 px-4 py-2">Esteban </td>
+                  <td class="border border-gray-400 px-4 py-2">Recepcionista</td>
+                  <td class="border border-gray-400 px-4 py-2">1032505578</td>
+                  <td class="border border-gray-400 px-4 py-2">1.500.000</td>
+                  <td class="border border-gray-400 px-4 py-2">Cll 75-b #17a 49s</td>
                   <td class="border border-gray-400 px-4 py-2 ">
                     <div class="flex flex-row  justify-evenly ">
                       <button id="openModalDetalle" class="bg-blue-400 rounded-xl p-1">
-                        <img src="../../../assets/images/bookmark.png" alt="imagen apra eliminar registro"
+                        <img src="../../../assets/images/bookmark.png" alt="imagen para eliminar registro"
                           class=" w-[36px] h-[36px]">
                       </button>
 
@@ -151,7 +151,7 @@
                   </td>
                 </tr>
                 <tr class="bg-gray-200">
-                  <td class="border border-gray-400 px-4 py-2">1</td>
+                  <td class="border border-gray-400 px-4 py-2">2</td>
                   <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
                   <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
                   <td class="border border-gray-400 px-4 py-2">40</td>
@@ -176,7 +176,7 @@
                   </td>
                 </tr>
                 <tr class="bg-gray-100">
-                  <td class="border border-gray-400 px-4 py-2">1</td>
+                  <td class="border border-gray-400 px-4 py-2">3</td>
                   <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
                   <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
                   <td class="border border-gray-400 px-4 py-2">40</td>
@@ -201,7 +201,7 @@
                   </td>
                 </tr>
                 <tr class="bg-gray-200">
-                  <td class="border border-gray-400 px-4 py-2">1</td>
+                  <td class="border border-gray-400 px-4 py-2">4</td>
                   <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
                   <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
                   <td class="border border-gray-400 px-4 py-2">40</td>
@@ -226,7 +226,7 @@
                   </td>
                 </tr>
                 <tr class="bg-gray-100">
-                  <td class="border border-gray-400 px-4 py-2">1</td>
+                  <td class="border border-gray-400 px-4 py-2">5</td>
                   <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
                   <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
                   <td class="border border-gray-400 px-4 py-2">40</td>
@@ -250,11 +250,65 @@
                     </div>
                   </td>
                 </tr>
-                <!-- Repite las filas de datos para las 6 filas restantes -->
+                
               </tbody>
             </table>
+          </div> -->
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <a href="habitaciones_sencillas.html">
+              <div class="bg-gray-100 p-4 rounded-md">
+                <div class="mb-4">
+                  <img src="../../../assets/images/habitacion4.jpeg" alt="Imagen de la habitación sencilla" class="w-full h-auto rounded-md">
+                </div>
+                <div>
+                  <h2 class="text-lg font-bold">Sencilla</h2>
+                  <p class="text-sm">Tipo de habitación: Habitación de lujo</p>
+                  <p class="text-sm">Precio por noche: $150</p>
+                  <p class="text-sm">Disponibles: 5</p>
+                </div>
+              </div>
+            </a>
+            <a href="">
+            <div class="bg-gray-100 p-4 rounded-md">
+              <div class="mb-4">
+                <img src="../../../assets/images/habitacion2index.jpg" alt="Imagen de la habitación doble" class="w-full h-auto rounded-md">
+              </div>
+              <div>
+                <h2 class="text-lg font-bold">Dobles</h2>
+                <p class="text-sm">Tipo de habitación: Habitación de lujo</p>
+                <p class="text-sm">Precio por noche: $150</p>
+                <p class="text-sm">Disponibles: 5</p>
+              </div>
+            </div>
+          </a>
+          <a href="">
+            <div class="bg-gray-100 p-4 rounded-md">
+              <div class="mb-4">
+                <img src="../../../assets/images/habitacion3.jpeg" alt="Imagen de la habitación suit" class="w-full h-auto rounded-md">
+              </div>
+              <div>
+                <h2 class="text-lg font-bold">Suits</h2>
+                <p class="text-sm">Tipo de habitación: Habitación de lujo</p>
+                <p class="text-sm">Precio por noche: $150</p>
+                <p class="text-sm">Disponibles: 5</p>
+              </div>
+            </div>
+          </a>
+          <a href="">
+            <div class="bg-gray-100 p-4 rounded-md">
+              <div class="mb-4">
+                <img src="../../../assets/images/home.jpg" alt="Imagen de la habitación familiar" class="w-full h-auto rounded-md">
+              </div>
+              <div>
+                <h2 class="text-lg font-bold">Familiar</h2>
+                <p class="text-sm">Tipo de habitación: Habitación de lujo</p>
+                <p class="text-sm">Precio por noche: $150</p>
+                <p class="text-sm">Disponibles: 5</p>
+              </div>
+            </div>
+          </a>
+            <!-- Repite este patrón para todas las habitaciones -->
           </div>
-
           <!-- Paginación -->
           <hr class="bg-black h-[2px] mt-4 mb-2">
           <div class=" flex flex-row-reverse ">
@@ -278,175 +332,182 @@
               << </button>
 
                 <!-- <button class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded p-1 mx-2">
-                 pag
-               </button> -->
+                  pag
+                </button> -->
           </div>
           <hr class="bg-black h-[2px] mt-1 mb-2">
 
+
         </div>
 
 
       </div>
     </div>
 
-  </div>
-  <!-- Modal Detalle oculto por defecto -->
-  <div id="modal" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
-    <!-- Fondo semitransparente -->
-    <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+    <!-- Modal Detalle oculto por defecto -->
+    <div id="modal" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
+      <!-- Fondo semitransparente -->
+      <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 
-    <!-- Contenedor del modal md:max-w-md  -->
-    <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
-      <!-- Contenido del modal -->
-      <div class="modal-content py-4 text-left px-6  flex flex-col">
-        <!-- Título del modal -->
-        <div class="modal-header flex flex-row  items-center">
-          <h3 class="text-lg font-semibold">Detalles Producto ______</h3>
+      <!-- Contenedor del modal md:max-w-md  -->
+      <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
+        <!-- Contenido del modal -->
+        <div class="modal-content py-4 text-left px-6  flex flex-col">
+          <!-- Título del modal -->
+          <div class="modal-header flex flex-row  items-center">
+            <h3 class="text-lg font-semibold">Detalle del Empledo ______</h3>
 
-          <button id="closeModal"
-            class=" modal-close my-3  ml-auto top-0  bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
-            X
-          </button>
+            <button id="closeModal"
+              class=" modal-close my-3  ml-auto top-0  bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+              X
+            </button>
 
-        </div>
-        <!-- Botones del modal (si es necesario) -->
+          </div>
+          <!-- Botones del modal (si es necesario) -->
 
-        <!-- Cuerpo del modal -->
-        <div class="modal-body">
-          <!-- Tu contenido aquí -->
-          <table class="border-collapse border border-gray-400 w-full">
-            <thead>
-              <tr class="bg-gray-50">
-                <th class="border border-gray-400 px-4 py-2">#</th>
-                <th class="border border-gray-400 px-4 py-2">Nombre</th>
-                <th class="border border-gray-400 px-4 py-2">Cargo</th>
-                <th class="border border-gray-400 px-4 py-2">Horas</th>
-                <th class="border border-gray-400 px-4 py-2">Sueldo</th>
-                <th class="border border-gray-400 px-4 py-2">Dirección</th>
-                <th class="border border-gray-400 px-4 py-2">Dirección</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Filas de datos -->
-              <tr class="bg-gray-100">
-                <td class="border border-gray-400 px-4 py-2">1</td>
-                <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
-                <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
-                <td class="border border-gray-400 px-4 py-2">40</td>
-                <td class="border border-gray-400 px-4 py-2">$1000</td>
-                <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
-                <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
+          <!-- Cuerpo del modal -->
+          <div class="modal-body">
+            <!-- Tu contenido aquí -->
+            <table class="border-collapse border border-gray-400 w-full">
+              <thead>
+                <tr class="bg-gray-50">
+                  <th class="border border-gray-400 px-4 py-2">#</th>
+                  <th class="border border-gray-400 px-4 py-2">Nombre</th>
+                  <th class="border border-gray-400 px-4 py-2">Cargo</th>
+                  <th class="border border-gray-400 px-4 py-2">Horas</th>
+                  <th class="border border-gray-400 px-4 py-2">Salario</th>
+                  <th class="border border-gray-400 px-4 py-2">Dirección</th>
+                  <th class="border border-gray-400 px-4 py-2">Dirección</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Filas de datos -->
+                <tr class="bg-gray-100">
+                  <td class="border border-gray-400 px-4 py-2">1</td>
+                  <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
+                  <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
+                  <td class="border border-gray-400 px-4 py-2">40</td>
+                  <td class="border border-gray-400 px-4 py-2">$1000</td>
+                  <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
+                  <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
 
-              </tr>
-            </tbody>
-          </table>
+                </tr>
+              </tbody>
+            </table>
 
-        </div>
-        <div class="modal-footer ">
-          <hr class="bg-black h-[2px] my-3 mb-2">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Editar oculto por defecto -->
-  <div id="modalEditar" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
-    <!-- Fondo semitransparente -->
-    <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
-
-    <!-- Contenedor del modal md:max-w-md  -->
-    <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
-      <!-- Contenido del modal -->
-      <div class="modal-content py-4 text-left px-6  flex flex-col">
-        <!-- Título del modal -->
-        <div class="modal-header flex flex-row  items-center">
-          <h3 class="text-lg font-semibold">Editar Producto ______</h3>
-
-          <button id="closeModal"
-            class=" modal-close my-3  ml-auto top-0  bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
-            X
-          </button>
-
-        </div>
-        <!-- Botones del modal (si es necesario) -->
-
-        <!-- Cuerpo del modal -->
-        <div class="modal-body">
-          <!-- Tu contenido aquí -->
-          <table class="border-collapse border border-gray-400 w-full">
-            <thead>
-              <tr class="bg-gray-50">
-                <th class="border border-gray-400 px-4 py-2">#</th>
-                <th class="border border-gray-400 px-4 py-2">Nombre</th>
-                <th class="border border-gray-400 px-4 py-2">Cargo</th>
-                <th class="border border-gray-400 px-4 py-2">Horas</th>
-                <th class="border border-gray-400 px-4 py-2">Sueldo</th>
-                <th class="border border-gray-400 px-4 py-2">Dirección</th>
-                <th class="border border-gray-400 px-4 py-2">Dirección</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Filas de datos -->
-              <tr class="bg-gray-100">
-                <td class="border border-gray-400 px-4 py-2">1</td>
-                <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
-                <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
-                <td class="border border-gray-400 px-4 py-2">40</td>
-                <td class="border border-gray-400 px-4 py-2">$1000</td>
-                <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
-                <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
-
-              </tr>
-            </tbody>
-          </table>
-
-        </div>
-        <div class="modal-footer ">
-          <hr class="bg-black h-[2px] my-3 mb-2">
+          </div>
+          <div class="modal-footer ">
+            <hr class="bg-black h-[2px] my-3 mb-2">
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Modal Eliminar oculto por defecto -->
-  <div id="modalEliminar" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
-    <!-- Fondo semitransparente  -->
-    <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+    <!-- Modal Editar oculto por defecto -->
+    <div id="modalEditar" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
+      <!-- Fondo semitransparente -->
+      <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 
-    <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
+      <!-- Contenedor del modal md:max-w-md  -->
+      <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
+        <!-- Contenido del modal -->
+        <div class="modal-content py-4 text-left px-6  flex flex-col">
+          <!-- Título del modal -->
+          <div class="modal-header flex flex-row  items-center">
+            <h3 class="text-lg font-semibold">Editar Producto ______</h3>
 
+            <button id="closeModal"
+              class=" modal-close my-3  ml-auto top-0  bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+              X
+            </button>
 
-      <div class="bg-white p-8 rounded shadow-lg">
-        <h2 class="text-xl font-semibold mb-4">¿Seguro que deseas eliminar este producto?</h2>
-        <p class="mb-4">Esta acción no se puede deshacer.</p>
-        <div class="flex justify-end">
-          <button class=" modal-close bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-2 px-4 mr-2 rounded">
-            Cancelar
-          </button>
-          <button id="closeModal" onclick="deleteProduct()"
-            class=" modal-close bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded">
-            Eliminar
-          </button>
+          </div>
+          <!-- Botones del modal (si es necesario) -->
+
+          <!-- Cuerpo del modal -->
+          <div class="modal-body">
+            <!-- Tu contenido aquí -->
+            <table class="border-collapse border border-gray-400 w-full">
+              <thead>
+                <tr class="bg-gray-50">
+                  <th class="border border-gray-400 px-4 py-2">#</th>
+                  <th class="border border-gray-400 px-4 py-2">Nombre</th>
+                  <th class="border border-gray-400 px-4 py-2">Cargo</th> 
+                  <th class="border border-gray-400 px-4 py-2">Dirección</th> 
+                  <th class="border border-gray-400 px-4 py-2">Fecha de Contratacion</th>
+                  <th class="border border-gray-400 px-4 py-2">Salario</th>
+                  <th class="border border-gray-400 px-4 py-2">Numero de contacto</th>
+                  <th class="border border-gray-400 px-4 py-2">Estado</th>
+                  <th class="border border-gray-400 px-4 py-2">Cedula</th>
+                  <th class="border border-gray-400 px-4 py-2">No de Cuenta</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Filas de datos -->
+                <tr class="bg-gray-100">
+                  <td class="border border-gray-400 px-4 py-2">1</td>
+                  <td class="border border-gray-400 px-4 py-2">Esteban Granados</td>
+                  <td class="border border-gray-400 px-4 py-2">Recepcionista</td>
+                  <td class="border border-gray-400 px-4 py-2">Cll 75-b #17a 49s</td>
+                  <td class="border border-gray-400 px-4 py-2">05-06-2023</td>
+                  <td class="border border-gray-400 px-4 py-2">$1.500.000</td>
+                  <td class="border border-gray-400 px-4 py-2">312-551-2595</td>
+                  <td class="border border-gray-400 px-4 py-2">Activo</td>
+                  <td class="border border-gray-400 px-4 py-2">1.032.505.578</td>
+                  <td class="border border-gray-400 px-4 py-2">56.871.641</td>
+
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <div class="modal-footer ">
+            <hr class="bg-black h-[2px] my-3 mb-2">
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!--  Modal de mensaje de eliminado exitosamente -->
-  <div id="modalMensajeEliminar" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
-    <!-- Fondo semitransparente  -->
-    <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+    <!-- Modal Eliminar oculto por defecto -->
+    <div id="modalEliminar" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
+      <!-- Fondo semitransparente  -->
+      <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 
-    <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
+      <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
 
-      <div class="bg-white p-8 rounded shadow-lg">
-        <h2 class="text-xl font-semibold mb-4">Producto eliminado exitosamente</h2>
 
+        <div class="bg-white p-8 rounded shadow-lg">
+          <h2 class="text-xl font-semibold mb-4">¿Seguro que deseas eliminar este producto?</h2>
+          <p class="mb-4">Esta acción no se puede deshacer.</p>
+          <div class="flex justify-end">
+            <button
+              class=" modal-close bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-2 px-4 mr-2 rounded">
+              Cancelar
+            </button>
+            <button id="closeModal" onclick="deleteProduct()"
+              class=" modal-close bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded">
+              Eliminar
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <script src="../../../logicasJs/JS/admin.js" defer>
-  </script>
+    <!--  Modal de mensaje de eliminado exitosamente -->
+    <div id="modalMensajeEliminar" class="hidden fixed inset-0 flex items-center justify-center w-[¨90%] z-50">
+      <!-- Fondo semitransparente  -->
+      <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+
+      <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
+
+        <div class="bg-white p-8 rounded shadow-lg">
+          <h2 class="text-xl font-semibold mb-4">Producto eliminado exitosamente</h2>
+
+        </div>
+      </div>
+    </div>
+    <!-- <script src="../../../logicasJs/JS/admin.js" defer> -->
+    <script src="../../../logicasJs/JS/admin.js" defer>
+    </script>
 </body>
 
 </html>
