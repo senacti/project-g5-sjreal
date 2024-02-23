@@ -35,13 +35,20 @@ font-family: 'Poppins', sans-serif;
 } */
 
 /* Contenedor principal */
+.calendars-container {
+  position: absolute; /* Cambia de fixed a absolute */
+  top: 50%; 
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 999; 
+}
 .container {
   width: 100%;
-  min-height: 100vh;
+  height: 0%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 20px;
+  padding-right: 1px;
   /* z-index: 1; */
   position: relative;
 }
@@ -49,28 +56,29 @@ font-family: 'Poppins', sans-serif;
 /* Estilos para el contenedor del input de fecha */
 .date-input-container {
   width: 190px;
-  height: 254px;
-  background: #CED8E2;
+  background:#9C9EA2;
   transition: all 0.4s;
   border-radius: 10px;
   text-align: center;
   margin-right: 20px;
   margin-top: 20px;
+  display: flex; /* Utiliza flexbox */
+  flex-direction: column; /* Alinea los elementos en columna */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
 }
 
 .date-input {
+  font-size: 25px;
+  font-family: 'delgada';
   width: 100%; /* Ajuste del ancho */
-  height: 12px; /* Ajuste de la altura */
-  margin-top: 10px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  margin-top: 10px; /* Espacio entre el título y el input */
 }
-
 /* Estilos para el contenedor del calendario */
-.calendar-container {
-  width: 15px; /* Ajuste del ancho */
-  margin-top: 20px; /* Ajuste del margen superior */
+.calendario-container {
+  position: relative;
+  margin-top: 50px; /* Ajusta según sea necesario */
+  margin-bottom: 50px; /* Ajusta según sea necesario */
 }
 
 /* Estilos para el calendario */
@@ -90,7 +98,7 @@ font-family: 'Poppins', sans-serif;
   align-items: center;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #9C9EA2;
 }
 
 .calendar .header .month {
@@ -189,16 +197,22 @@ font-family: 'Poppins', sans-serif;
 }
 
 @font-face {
-  font-family: 'EleganTech';
-  src: url('fonts/EleganTech.ttf') format('truetype');
-  font-family: 'date';
-  src: url('fonts/Nesdate\ October\ Ten\ Font\ by\ Situjuh\ \(7NTypes\)_D.otf') format('truetype');
+  
+
+  font-family: 'oscura';
+  src:url('app/assets/fonts2/Muli-Bold.ttf') format('truetype');
+  
+  font-family: 'delgada';
+  src: url('app/assets/fonts2/Muli-ExtraLight.ttf') format('truetype');
+
+  font-family:'mediana';
+  src: url('app/assets/fonts2/Muli-SemiBold.ttf') format('truetype');
 }
 
 .date-input-container {
   width: 190px;
   height: 254px;
-  background: #CED8E2;
+  background: #CACACD;
   transition: all 0.4s;
   border-radius: 10px;
   text-align: center;
@@ -207,21 +221,21 @@ font-family: 'Poppins', sans-serif;
 }
 
 .date-input {
-  width: 190px;
+  width: 3px;
   height: 254px;
-  margin-top: 88px;
-  background: #CED8E2;
-  font-size: 22px;
+  margin-top: 3px;
+  background: #CACACD;
+  font-size: 25px;
   text-align: center;
-  font-family: 'date';
-  margin-right: 88px;
+  font-family: 'mediana';
+  display: table-cell; 
+  vertical-align: middle; 
 }
-
 .date-input-container label {
   font-size: 20px;
   font-weight: 400;
   text-align: center;
-  background: #CED8E2;
+  background: #CACACD;
   transition: all 0.4s;
   border-radius: 10px;
   text-align: center;
@@ -260,7 +274,7 @@ font-family: 'Poppins', sans-serif;
   margin-top: 10px;
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #CACACD;
   border-radius: 5px;
 }
 
@@ -394,6 +408,17 @@ header a {
     background-position: center;
     filter: brightness(50%);
   }
+  .calendario-overlay {
+    position: absolute;
+    top: 50%;
+    right: 5%; /* Ajusta el valor según sea necesario */
+    transform: translateY(-50%);
+    width: 300px; /* Ajusta el ancho según sea necesario */
+    padding: 20px; /* Añade un espacio alrededor del calendario */
+    background-color: rgba(255, 255, 255, 0.9); /* Color de fondo para el contenedor del calendario */
+    border-radius: 10px; /* Agrega bordes redondeados al contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega sombra al contenedor */
+}
 
   /* .img-guasa img{
     width: 70px;
@@ -472,7 +497,7 @@ header a {
   }
   
   .habitaciones .habitaciones-info {
-    background-color: rgba(128, 128, 128, 0.7);
+    background-color: #CED8E2;
     width: 20%;
     height: 30%;
     margin-left: 3%;
@@ -572,15 +597,20 @@ header a {
 }
 /* seccion de busqueda de habitaciones*/ 
 .busqueda-fechas {
-  background-color: #f2f2f2;
+  background-color: #2E4B5F;
   padding: 20px;
   border-radius: 5px;
+  text-align: center;
+  color: #f1f1fb;
   margin-top: 20px;
+  align-items: center; 
+  font-weight: 300; 
 }
 
  .busqueda-fechas h3 {
-  font-size: 24px;
+  font-size: 30px;
   margin-bottom: 10px;
+  font-family: 'oscura';
 }
 
  .busqueda-fechas form {
