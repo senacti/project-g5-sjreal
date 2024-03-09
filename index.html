@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio</title>
   <link rel="stylesheet" href="styleIndex.css">
+  <link rel="stylesheet" href="stylesCalendar.css">
 </head>
 
 <body>
@@ -47,48 +48,84 @@
           ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia 
           consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque 
           porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur 
-          adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, 
-          ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, 
-          quis nostrum[d] exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid 
-          ex ea commodi consequatur? [D]Quis autem vel eum i[r]ure reprehenderit, qui in ea
-           voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem 
-           eum fugiat, quo voluptas nulla pariatur?
+          
 
         </p>
       </div>
+
       <div class="calendario">
-        <p></p>
+        <div class="container">
+          <div class="date-input-container">
+            <label for="date-input-1">FECHA DE<br>INGRESO</label>
+            <textarea id="date-input-1" class="date-input" readonly></textarea>
+            <div class="calendar-toggle">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+          </div>
+          <div class="calendar">
+            <div class="header">
+              <div class="month">Julio<br>2021</div>
+              <div class="btns">
+                <div class="btn today">hoy
+                  <i class="fas fa-calendar-day"></i>
+                </div>
+                <div class="btn prev">antes
+                  <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="btn next">despues
+                  <i class="fas fa-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+            <div class="weekdays">
+              <div class="day">Dom</div>
+              <div class="day">lun</div>
+              <div class="day">Mar</div>
+              <div class="day">Mie</div>
+              <div class="day">Jue</div>
+              <div class="day">Vie</div>
+              <div class="day">Sab</div>
+            </div>
+            <div class="days"></div>
+          </div>
+      
+          <div class="date-input-container">
+            <label for="date-output">FECHA DE<br>SALIDA</label>
+            <textarea id="date-output" class="date-input" readonly></textarea>
+            <div class="calendar-toggle">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+          </div>
+          <div class="calendar">
+            <div class="header">
+              <div class="month">Julio<br>2021</div>
+              <div class="btns">
+                <div class="btn today">hoy
+                  <i class="fas fa-calendar-day"></i>
+                </div>
+                <div class="btn prev">antes
+                  <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="btn next"> despues<i class="fas fa-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+            <div class="weekdays">
+              <div class="day">Dom</div>
+              <div class="day">Lun</div>
+              <div class="day">Mar</div>
+              <div class="day">Mie</div>
+              <div class="day">Jue</div>
+              <div class="day">Vie</div>
+              <div class="day">Sab</div>
+            </div>
+            <div class="days"></div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-  <section class="map">
   
-    <div class="title-map">
-      <h1>Encuentros aquí</h1>
-      <img src="./app/assets/images/gifs/ubi.gif" alt="gif de ubicacion">
-    </div>
-    <div class="content-map">
-      <div class="info-map">
-        <h1>ubicacion</h1>
-        <br>
-        <h1>Cl. 6a #7-2 a 7-50, Sibaté, Cundinamarca</h1>
-        <h2>4°29'15.1"N 74°15'37.7"W</h2>
-        <br>
-        <br>
-        <p>ubicado en el centro de de sibate, con posibles salidas a donde quieras ir,<br> parques, zonas culturales, zona
-          comercial a menos de 2 cuadras.</p>
-      </div>
-      <div class="map-content">
-  
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3977.5871233282396!2d-74.26304612502203!3d4.487521695486818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwMjknMTUuMSJOIDc0wrAxNSczNy43Ilc!5e0!3m2!1ses!2sco!4v1708658396182!5m2!1ses!2sco"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  
-  </section>
-
   <section class="habitaciones">
   
     <div class="habitaciones-info">
@@ -153,6 +190,34 @@
         </div>
       </div>
   
+    </div>
+  
+  </section>
+
+  <section class="map">
+  
+    <div class="title-map">
+      <h1>Encuentros aquí</h1>
+      <img src="./app/assets/images/gifs/ubi.gif" alt="gif de ubicacion">
+    </div>
+    <div class="content-map">
+      <div class="info-map">
+        <h1>ubicacion</h1>
+        <br>
+        <h1>Cl. 6a #7-2 a 7-50, Sibaté, Cundinamarca</h1>
+        <h2>4°29'15.1"N 74°15'37.7"W</h2>
+        <br>
+        <br>
+        <p>ubicado en el centro de de sibate, con posibles salidas a donde quieras ir,<br> parques, zonas culturales, zona
+          comercial a menos de 2 cuadras.</p>
+      </div>
+      <div class="map-content">
+  
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3977.5871233282396!2d-74.26304612502203!3d4.487521695486818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwMjknMTUuMSJOIDc0wrAxNSczNy43Ilc!5e0!3m2!1ses!2sco!4v1708658396182!5m2!1ses!2sco"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
   
   </section>
