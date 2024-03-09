@@ -1,4 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* 
+FUENTES  
+Montserrat      ( para parrafos largos ) 
+Rubik           (para subtitulos)
+Archivo Black   (para titulos)
+
+PALETA DE COLORES 
+
+#2E4B5F
+#B9AE9D
+#CED8E2
+#6C5B4D
+
+*/ 
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 
 * {
     margin: 0;
@@ -15,6 +31,8 @@ header {
   position: sticky;
   top: 0;
 }
+
+
 
 header a {
   text-decoration: none;
@@ -48,7 +66,13 @@ header a {
   list-style: none;
   display: flex;
   gap: 20px;
+
+  font-family: "Montserrat";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  
 }
+
 
 
 .login {
@@ -62,6 +86,16 @@ header a {
   height: 50px;
   padding-top: 6px;
   
+}
+
+.encabezado{
+
+  font-family: "Archivo Black";
+}
+
+.parrafo{
+  font-family: "Montserrat";
+line-height: normal;
 }
 
 .menu  a { 
@@ -273,8 +307,8 @@ header a {
 
  .busqueda-fechas h3 {
   font-size: 30px;
-  margin-bottom: 10px;
-  font-family: 'oscura';
+  margin-bottom: 5px;
+  font-family: 'Montserrat';
 }
 
  .busqueda-fechas form {
