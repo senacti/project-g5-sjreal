@@ -401,3 +401,48 @@ line-height: normal;
   width: 100%;
   height: 400px;
 }
+
+
+
+
+
+/* Reservaas*/
+.reserva-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.reserva-form-group {
+  margin-bottom: 20px;
+}
+
+.reserva-form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.reserva-form-group input[type="number"],
+.reserva-form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.reserva-submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reserva-submit:hover {
+  background-color: #0056b3;
+}
+

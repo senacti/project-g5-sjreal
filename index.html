@@ -128,7 +128,7 @@
   
   <section class="habitaciones">
   
-    <div class="habitaciones-info">
+    <!-- <div class="habitaciones-info">
       <div class="habitacion-title">
         <h2>Hotel JS Real - Sibaté - Colombia</h2>
       </div>
@@ -136,10 +136,56 @@
       <h4>Cll75 B #17a 49 Sur</h4>
       <p>Cel: 3125512595</p>
       <section class="busqueda-fechas">
-        <h3>RESERVA AHORA</h3>
+        <a id="inicia-sesion" href="app/vistashtml/inicio/formularioReserva.html">
+          <button>
+            <h3>RESERVA AHORA</h3>
+          </button>
+        </a>
+        
   
       </section>
-    </div>
+    </div> -->
+    <section class="reserva-container">
+      <h2>Formulario de Reserva de Hotel</h2>
+      <form action="#" method="POST" class="reserva-form" id="reserva-form">
+        <div class="reserva-form-group">
+          <label for="reserva-cantidad_personas">Cantidad de Personas:</label>
+          <input type="number" id="reserva-cantidad_personas" name="reserva-cantidad_personas" min="1" required>
+        </div>
+        <div class="reserva-form-group">
+          <label for="reserva-num_noches">Número de Noches:</label>
+          <input type="number" id="reserva-num_noches" name="reserva-num_noches" min="1" required>
+        </div>
+        <div class="reserva-form-group">
+          <label for="reserva-tipo_habitacion">Tipo de Habitación:</label>
+          <select id="reserva-tipo_habitacion" name="reserva-tipo_habitacion" required>
+            <option value="">Selecciona el tipo de habitación</option>
+            <option value="individual">Individual</option>
+            <option value="doble">Doble</option>
+            <option value="suite">Suite</option>
+          </select>
+        </div>
+        <a class="reserva-submit" href="app/vistashtml/inicio/formularioReserva.html">Reservar<button type="submit" onclick="enviarFormulario()" ></button></a>
+        <!-- <button class="reserva-submit" type="submit" onclick="enviarFormulario()" ></button> -->
+      </form>
+    </section>
+    <!-- <script>
+      function enviarFormulario() {
+        var formulario = document.getElementById("reserva-form");
+        var datos = new FormData(formulario);
+        console.log("xdddddddddd");
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "app/vistashtml/inicio/formularioReserba.html", true);
+        xhr.onload = function () {
+          if (xhr.status == 200) {
+            // Aquí puedes manejar la respuesta del servidor si es necesario
+            console.log(xhr.responseText);
+          }
+        };
+        console.log("xdddddddddd");
+        xhr.send(datos);
+      }
+    </script> -->
   
     <div class="habitacion-content">
   
@@ -191,7 +237,7 @@
       </div>
   
     </div>
-  
+    
   </section>
 
   <section class="map">
