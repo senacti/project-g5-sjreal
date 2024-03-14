@@ -45,6 +45,7 @@ header a {
   align-items: center;
   padding: 10px 20px;
   background-color: rgba(43, 49, 52, 0.5);
+  z-index: 1000;
 
 }
 
@@ -123,13 +124,18 @@ line-height: normal;
 
    
 .home {
+  
   display: flex;
   margin: 2em 5vw;
   padding: 1em;
-  height: 70vh; /*Esto es una mala practica, añadir altura explícita*/
+  height: 80vh; 
   align-items: center;
   justify-content: center;
+  
 }
+
+
+
 
 .bienvenida {
   flex: 1 1 50%;
