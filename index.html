@@ -45,7 +45,19 @@
   
     <section class="home">
 
-      
+      <div class="bienvenida">
+        <h2 class="encabezado">Sobre nosotros</h2>
+        <p class="parrafo">
+          Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
+          doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore
+          veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim
+          ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia
+          consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque
+          porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur
+
+
+        </p>
+      </div>
    
 
       <div class="calendario">
@@ -122,24 +134,8 @@
   </main>
   
   <section class="habitaciones">
-  
-    <!-- <div class="habitaciones-info">
-      <div class="habitacion-title">
-        <h2>Hotel JS Real - Sibaté - Colombia</h2>
-      </div>
-  
-      <h4>Cll75 B #17a 49 Sur</h4>
-      <p>Cel: 3125512595</p>
-      <section class="busqueda-fechas">
-        <a id="inicia-sesion" href="app/vistashtml/inicio/formularioReserva.html">
-          <button>
-            <h3>RESERVA AHORA</h3>
-          </button>
-        </a>
-        
-  
-      </section>
-    </div> -->
+
+
     <section class="reserva-container">
       <h2>Formulario de Reserva de Hotel</h2>
       <form action="#" method="POST" class="reserva-form" id="reserva-form">
@@ -160,79 +156,45 @@
             <option value="suite">Suite</option>
           </select>
         </div>
-        <a class="reserva-submit" href="app/vistashtml/inicio/formularioReserva.html">Reservar<button type="submit" onclick="enviarFormulario()" ></button></a>
-        <!-- <button class="reserva-submit" type="submit" onclick="enviarFormulario()" ></button> -->
+        <a class="reserva-submit" href="app/vistashtml/inicio/formularioReserva.html">Reservar<button type="submit"
+            onclick="enviarFormulario()"></button></a>
+        <button class="reserva-submit" type="submit" onclick="enviarFormulario()"></button>
       </form>
     </section>
-    <!-- <script>
-      function enviarFormulario() {
-        var formulario = document.getElementById("reserva-form");
-        var datos = new FormData(formulario);
-        console.log("xdddddddddd");
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "app/vistashtml/inicio/formularioReserba.html", true);
-        xhr.onload = function () {
-          if (xhr.status == 200) {
-            // Aquí puedes manejar la respuesta del servidor si es necesario
-            console.log(xhr.responseText);
-          }
-        };
-        console.log("xdddddddddd");
-        xhr.send(datos);
-      }
-    </script> -->
-  
+
     <div class="habitacion-content">
-  
+
       <div class="habitacion">
-        <img src="./app/assets/images/habitacion3index.jpg" alt="imagen habitacion 1">
-  
-        <div class="habitacion-txt">
-          <h3>Habitacion Familiar</h3>
-          <div>
-            <img class="estrellita" src="./app/assets/images/icons8-star-48.png">
-            <img class="estrellita" src="./app/assets/images/icons8-star-48.png">
-            <img class="estrellita" src="./app/assets/images/icons8-star-48.png">
-            <img class="estrellita" src="./app/assets/images/icons8-star-48.png">
-          </div>
-          <p class="precio"> $200000</p>
-  
-        </div>
+        <a href="app/vistashtml/inicio/habitacionesSencilla.html">
+        <button class="button-habitacion">
+          <img src="./app/assets/images/habitacion3index.jpg" alt="imagen habitacion 1">
+          
+        </button>
+        Sencila
+      </a>
       </div>
-  
+
       <div class="habitacion">
-        <img src="./app/assets/images/habitacion2index.jpg" alt="imagen habitacion 2">
-        <div class="habitacion-txt">
-          <h3>Habitacion Sencilla</h3>
-          <div>
-            <img class="estrellita" src="./app/assets/images/icons8-star-48.png">
-            <img class="estrellita" src="./app/assets/images/icons8-star-48.png">
-            <img class="estrellita" src="./app/assets/images/icons8-star-48.png">
-          </div>
-          <p class="precio"> $200000</p>
-  
-        </div>
+        <a href="app/vistashtml/inicio/habitacionesDoble.html">
+        <button class="button-habitacion">
+          <img src="./app/assets/images/habitacion2index.jpg" alt="imagen habitacion 2">
+          
+        </button>
+        Doble
+      </a>
       </div>
-  
+
       <div class="habitacion">
-        <img src="./app/assets/images/hab1.jpg" alt=" imagen habitacion 3">
-        <div class="habitacion-txt">
-          <h3>Habitacion Doble</h3>
-          <div>
-            <img class="estrellita" src="./app/assets/images/icons8-star-48.png">
-            <img class="estrellita" src="./app/assets/images/icons8-star-48.png">
-            <img class="estrellita" src="./app/assets/images/icons8-star-48.png">
-            <img class="estrellita" src="./app/assets/images/icons8-star-48.png">
-            <img class="estrellita" src="./app/assets/images/icons8-star-48.png">
-          </div>
-  
-          <p class="precio"> $200000</p>
-  
-        </div>
+        <a href="app/vistashtml/inicio/habitacionesFamiliar.html">
+        <button class="button-habitacion">
+          <img src="./app/assets/images/hab1.jpg" alt=" imagen habitacion 3">
+          
+        </button>
+        Familiar
+        </a>
       </div>
-  
+
     </div>
-    
   </section>
 
   <section class="map">

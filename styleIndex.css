@@ -45,7 +45,6 @@ header a {
   align-items: center;
   padding: 10px 20px;
   background-color: rgba(43, 49, 52, 0.5);
-  z-index: 1000;
 
 }
 
@@ -124,18 +123,13 @@ line-height: normal;
 
    
 .home {
-  
   display: flex;
   margin: 2em 5vw;
   padding: 1em;
-  height: 80vh; 
+  height: 70vh; /*Esto es una mala practica, añadir altura explícita*/
   align-items: center;
   justify-content: center;
-  
 }
-
-
-
 
 .bienvenida {
   flex: 1 1 50%;
@@ -165,16 +159,7 @@ line-height: normal;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega sombra al contenedor */
 }
 
-  .footer .redes-sociales-footer {
-    display: flex;
-    justify-content:  center; 
-    align-items: center; 
-    top: 0;
-    left: 0; 
-    width: 90%; 
-    height: 100%; 
-   
-}
+
 
   .estrellita {
     width: 25px;
@@ -194,64 +179,48 @@ line-height: normal;
     flex-direction: column;
   }
 
+
+/* Habitacones */
+
   .habitaciones {
-    position: relative;
     display: flex;
-    flex-direction: row;
-  }
-  
-  .habitaciones .habitaciones-info {
-    background-color: #CED8E2;
-    width: 20%;
-    height: 30%;
-    margin-left: 3%;
-    margin-top: 10px;
-    padding: 20px;
-    position: sticky;
-    bottom: 60px;
-    top: 100px;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
   }
   
   .habitaciones .habitacion-content {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
     justify-content: flex-end;
+    justify-items: center;
     width: 75%;
+    height: auto;
     margin: 0 auto;
-    margin-right: 0;
+
   }
+
   
   .habitacion {
     flex-basis: calc(33.33% - 20px);
-    margin: 10px;
+    padding: 10px;
     background-color: #f4f4f4;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 505px;
+    transition: transform 0.3s ease;
   }
-  
+  .habitaciones .habitacion-content .habitacion button:hover img {
+    cursor: pointer;
+  }
+
+  .habitaciones .habitacion-content  .habitacion:hover  {
+    transform: scale(1.1);
+    cursor: pointer;
+  }  
   .habitacion img {
-    max-width: 100%;
-    height: auto;
+    max-width: 700px;
+    height: 350px;
+    width: 400px;
   }
-  
-  .habitacion-txt {
-    padding: 10px;
-  }
-  
-  .habitacion h2,
-  .habitacion p {
-    margin: 5px 0;
-    border-bottom: 1px solid white;
-  }
-  .habitacion-title{
-    border-bottom: 1px solid white;
-  }
-  .precio {
-    font-weight: bold;
-  }
-
-
 
 /* footer */
 
