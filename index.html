@@ -60,7 +60,6 @@
       </div>
    
 
-      <div class="calendario">
         <div class="container">
           <div class="date-input-container">
             <label for="date-input-1">FECHA DE<br>INGRESO</label>
@@ -129,15 +128,14 @@
             <div class="days"></div>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
   </main>
   
   <section class="habitaciones">
 
-
-    <section class="reserva-container">
-      <h2>Formulario de Reserva de Hotel</h2>
+    <div class="reserva-container">
+      <h3>¿Cuántos son y por cuántos dias?</h3>
       <form action="#" method="POST" class="reserva-form" id="reserva-form">
         <div class="reserva-form-group">
           <label for="reserva-cantidad_personas">Cantidad de Personas:</label>
@@ -156,78 +154,60 @@
             <option value="suite">Suite</option>
           </select>
         </div>
-        <a class="reserva-submit" href="app/vistashtml/inicio/formularioReserva.html">Reservar<button type="submit"
+        <a class="reserva-submit" href="app/vistashtml/inicio/formularioReserva.html">Consultar<button type="submit"
             onclick="enviarFormulario()"></button></a>
-        <button class="reserva-submit" type="submit" onclick="enviarFormulario()"></button>
       </form>
-    </section>
-
-    <div class="habitacion-content">
-
-      <div class="habitacion">
-        <a href="app/vistashtml/inicio/habitacionesSencilla.html">
-        <button class="button-habitacion">
-          <img src="./app/assets/images/habitacion3index.jpg" alt="imagen habitacion 1">
-          
-        </button>
-        Sencila
-      </a>
-      </div>
-
-      <div class="habitacion">
-        <a href="app/vistashtml/inicio/habitacionesDoble.html">
-        <button class="button-habitacion">
-          <img src="./app/assets/images/habitacion2index.jpg" alt="imagen habitacion 2">
-          
-        </button>
-        Doble
-      </a>
-      </div>
-
-      <div class="habitacion">
-        <a href="app/vistashtml/inicio/habitacionesFamiliar.html">
-        <button class="button-habitacion">
-          <img src="./app/assets/images/hab1.jpg" alt=" imagen habitacion 3">
-          
-        </button>
-        Familiar
-        </a>
-      </div>
-
     </div>
+  
+    <div class="habitacion clearfix">
+      <a class="media-image" href="app/vistashtml/inicio/habitacionesSencilla.html"></a>
+      <div class="media-body">
+        <h4>Habitacion sencilla</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+          Autem dolorum enim quos nulla tempora quis vel nam incidunt 
+          voluptatum delectus voluptas voluptatem consequuntur assumenda 
+          laudantium neque aliquam, dicta rerum. Reprehenderit?
+        </p>
+      </div>
+    </div>
+  
+    <div class="habitacion clearfix">
+      <a class="media-image" href="app/vistashtml/inicio/habitacionesDoble.html"></a>
+      <div class="media-body">
+        <h4>Habitacion doble</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+          Autem dolorum enim quos nulla tempora quis vel nam incidunt 
+          voluptatum delectus voluptas voluptatem consequuntur assumenda 
+          laudantium neque aliquam, dicta rerum. Reprehenderit?
+        </p>
+      </div>
+    </div>
+
   </section>
 
   <section class="map">
   
     <div class="title-map">
-      <h1>Encuentros aquí</h1>
-      <img src="./app/assets/images/gifs/ubi.gif" alt="gif de ubicacion">
+      <h1>Estamos ubicados aquí</h1>
+      <!-- <img src="./app/assets/images/gifs/ubi.gif" alt="gif de ubicacion"> -->
+      <h2>Cr 7a #5A-49, Sibaté, Cundinamarca.</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Possimus voluptates maxime voluptatibus nulla odit deleniti
+        architecto, amet natus? Repudiandae expedita, fugit minus
+        tempora laudantium corporis labore ipsa cumque quos velit?</p>
     </div>
-    <div class="content-map">
-      <div class="info-map">
-        <h1>ubicacion</h1>
-        <br>
-        <h1>Cl. 6a #7-2 a 7-50, Sibaté, Cundinamarca</h1>
-        <h2>4°29'15.1"N 74°15'37.7"W</h2>
-        <br>
-        <br>
-        <p>ubicado en el centro de de sibate, con posibles salidas a donde quieras ir,<br> parques, zonas culturales, zona
-          comercial a menos de 2 cuadras.</p>
-      </div>
-      <div class="map-content">
-  
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3977.5871233282396!2d-74.26304612502203!3d4.487521695486818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwMjknMTUuMSJOIDc0wrAxNSczNy43Ilc!5e0!3m2!1ses!2sco!4v1708658396182!5m2!1ses!2sco"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+    
+    <div class="map-content">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3977.5871233282396!2d-74.26304612502203!3d4.487521695486818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwMjknMTUuMSJOIDc0wrAxNSczNy43Ilc!5e0!3m2!1ses!2sco!4v1708658396182!5m2!1ses!2sco"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   
   </section>
 
   <footer class="footer">
-  
-    <div class="footer-content">
   
       <div class="footer-section">
         <h3>Información</h3>
@@ -235,21 +215,21 @@
         <p>Servicios</p>
         <p>Contacto</p>
       </div>
+
       <div class="footer-section">
         <h3>Habitaciones</h3>
         <p>Habitaciones y tarifas</p>
         <p>Reservas</p>
       </div>
+
       <div class="footer-section">
         <h3>Redes Sociales</h3>
       </div>
-    </div>
+
     <div class="footer-bottom">
       <p>&copy; 2023 Hotel XYZ. Todos los derechos reservados.</p>
     </div>
   </footer>
-  <footer>
-  </footer>
-
+  
 </body>
 </html>

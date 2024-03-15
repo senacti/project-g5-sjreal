@@ -1,4 +1,3 @@
-
 /* 
 FUENTES  
 Montserrat      ( para parrafos largos ) 
@@ -6,33 +5,26 @@ Rubik           (para subtitulos)
 Archivo Black   (para titulos)
 
 PALETA DE COLORES 
-
 #2E4B5F
 #B9AE9D
 #CED8E2
 #6C5B4D
-
 */ 
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0;  
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    font-family: 'Playfair Display SC', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /*_________________________Header_________________________*/
-
 header {
   position: sticky;
   top: 0;
 }
-
-
 
 header a {
   text-decoration: none;
@@ -48,7 +40,6 @@ header a {
 
 }
 
-
 .logo img {
   width: 70px;
   height: 67px;
@@ -56,24 +47,15 @@ header a {
   font-family: Impact,'Arial Narrow Bold', sans-serif;
 }
 
-.logo p {  
-  font-size: 10px;
-  color: #ffffff;
-  padding-bottom: 10px;
-}
-
 .menu {
   list-style: none;
   display: flex;
   gap: 20px;
-
   font-family: "Montserrat";
   font-optical-sizing: auto;
   font-weight: 400;
   
 }
-
-
 
 .login {
   display: flex;
@@ -89,29 +71,16 @@ header a {
 }
 
 .encabezado{
-
   font-family: "Archivo Black";
 }
 
-.parrafo{
-  font-family: "Montserrat";
-line-height: normal;
-}
-
-.menu  a { 
+.menu a { 
   transition: font-size 0.5s, font-weight 0.5s;
 }
 
-.menu  a:hover { 
+.menu a:hover { 
   font-size: 20px;
   font-weight: 600;
-}
-
-#inicio-sesion p:hover{
-  color: #007bff;
-}
-#inicio-registro p:hover{
-  color: #007bff;
 }
 
 .principal {
@@ -121,277 +90,97 @@ line-height: normal;
   color: white;
 }
 
-   
 .home {
   display: flex;
   margin: 2em 5vw;
   padding: 1em;
   height: 70vh; /*Esto es una mala practica, añadir altura explícita*/
   align-items: center;
-  justify-content: center;
 }
 
 .bienvenida {
   flex: 1 1 50%;
 }
 
-.calendario {
-  flex: 1 1 50%;
-  background-image: url(../../Users/usuario/Downloads/e1354e08-b886-42a2-a9d6-e724aaf28aa2.png);
-}
-  
-.carousel-item {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
+/*------------------ Habitaciones -----------------------*/
+ 
+.habitaciones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
-  height: 90vh;
+  margin: 1.5em 0.5em;
+  padding: 1em 2em;
+  gap: 1.5em;
 }
 
-  .calendario-overlay {
-    position: absolute;
-    top: 50%;
-    right: 5%; /* Ajusta el valor según sea necesario */
-    transform: translateY(-50%);
-    width: 300px; /* Ajusta el ancho según sea necesario */
-    padding: 20px; /* Añade un espacio alrededor del calendario */
-    background-color: rgba(255, 255, 255, 0.9); /* Color de fondo para el contenedor del calendario */
-    border-radius: 10px; /* Agrega bordes redondeados al contenedor */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega sombra al contenedor */
+.clearfix::before,
+.clearfix::after {
+display: table;
+content: " ";
 }
 
-
-
-  .estrellita {
-    width: 25px;
-    height: 25px;
-  }
-
-    .check-in{
-    display: flex;
-    flex-direction: row;
-  }
-   .check-out{
-    display: flex;
-    flex-direction: column;
-  }
-   .guests{
-    display: flex;
-    flex-direction: column;
-  }
-
-
-/* Habitacones */
-
-  .habitaciones {
-    display: flex;
-  }
-  
-  .habitaciones .habitacion-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-
-    justify-content: flex-end;
-    justify-items: center;
-    width: 75%;
-    height: auto;
-    margin: 0 auto;
-
-  }
-
-  
-  .habitacion {
-    flex-basis: calc(33.33% - 20px);
-    padding: 10px;
-    background-color: #f4f4f4;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 505px;
-    transition: transform 0.3s ease;
-  }
-  .habitaciones .habitacion-content .habitacion button:hover img {
-    cursor: pointer;
-  }
-
-  .habitaciones .habitacion-content  .habitacion:hover  {
-    transform: scale(1.1);
-    cursor: pointer;
-  }  
-  .habitacion img {
-    max-width: 700px;
-    height: 350px;
-    width: 400px;
-  }
-
-/* footer */
-
-.footer {
-  background-color: whitesmoke;  /*#e8dac0*/
-  color: black;
-  padding: 30px 0;
-  position: relative;
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* Centra verticalmente */
-  /* max-width: 1200px; */
-  margin: 0 auto;
-  padding: 0 20px;
+.habitacion {
+  float: left;
+  padding: 1em;
+  background-color: #f4f4f4;
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  clear: left;
 }
 
-.footer-section {
-  flex: 1;
-  margin-right: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra horizontalmente */
+.media-image {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-image: url("app/assets/images/habitacion2index.jpg");
+  background-size: cover;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin-right: 1em;
+}
+
+.media-body {
+  overflow: auto;
   text-align: center;
 }
 
-.footer-section h3 {
-  margin-bottom: 10px;
-}
-
-.footer-section p {
-  margin: 5px 0;
-}
-
-.footer-bottom {
-  margin-top: 20px;
+.media-body h4 {
   text-align: center;
+  padding-bottom: .5em;
 }
 
-@media  (max-width: 1050px) {
-  header .reserva .input-group {
-    display: none;
-
-  }
-}
-/* seccion de busqueda de habitaciones*/ 
-.busqueda-fechas {
-  background-color: #2E4B5F;
-  padding: 20px;
-  border-radius: 5px;
-  text-align: center;
-  color: #f1f1fb;
-  margin-top: 20px;
-  align-items: center; 
-  font-weight: 300; 
-}
-
- .busqueda-fechas h3 {
-  font-size: 30px;
-  margin-bottom: 5px;
-  font-family: 'Montserrat';
-}
-
- .busqueda-fechas form {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.busqueda-fechas label {
-  font-size: 16px;
-  margin-right: 10px;
-  margin-bottom: 5px;
-}
-
- .busqueda-fechas input[type="date"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.busqueda-fechas input[type="submit"] {
-  position: relative;
-  flex-wrap: wrap;
-  background-color: #007BFF;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+.habitaciones .habitacion-content .habitacion button:hover img {
   cursor: pointer;
 }
 
- .busqueda-fechas input[type="submit"]:hover {
-  background-color: #0056b3;
+.habitaciones .habitacion-content .habitacion:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-.map {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px solid #000; /* Ancho, estilo (solid, dashed, dotted, etc.), y color */
-  background-color: #d0e9e3;
-  transition: background-color 0.5s ease;
-  border-width: 0.5px; 
-  border-radius: 4px;
-  /* border-style: solid; */
-  border-color: #657470;
-  box-shadow: 2px 2px 4px rgba(101, 116, 112, 0.2);
-  transition: box-shadow 0.5s ease;
-  padding: 50px;
-  margin: 50px;
-  
-  
-  
-}
-.map:hover {
-  background-color: #c8e2dc;
-  box-shadow: 0px 0px 20px rgba(101, 116, 112, 0.6);
-}
+/*----------Reservas----------*/
 
-.title-map {
-  flex: 1;
-  padding: 20px;
-}
-
-.content-map {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: start;
-  gap: .5em;
-
-}
-
-.map-content {
-  position: relative;
-  
-  padding: .5em;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
-  transition: box-shadow 0.3s ease; 
-  transition: transform 0.5s ease;
-}
-.map-content:hover{
-  transform: scale(1.2);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); 
-  z-index: 20;
-}
-.map-detail {
-  width: 100%;
-  height: 400px;
-}
-
-
-
-
-
-/* Reservaas*/
 .reserva-container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px !important;
+  padding: 1em;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
+.reserva-container h3 {
+  margin: .5em .1em;
+}
+
 .reserva-form-group {
-  margin-bottom: 20px;
+  margin-bottom: 1.3em;
 }
 
 .reserva-form-group label {
@@ -408,11 +197,11 @@ line-height: normal;
 }
 
 .reserva-submit {
+  display: block;
   width: 100%;
-  padding: 10px;
-  background-color: #007bff;
+  padding: 0.8em;
+  background-color: #2E4B5F;
   color: #fff;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -421,3 +210,91 @@ line-height: normal;
   background-color: #0056b3;
 }
 
+.reserva-submit button {
+  display: none;
+}
+
+/* footer */
+
+.footer {
+  display: grid;
+  background-color: whitesmoke;  /*#e8dac0*/
+  color: black;
+  padding: 30px 0;
+}
+
+.footer-section {
+  grid-template-columns: repeat(3, 1fr);
+  margin-right: 20px;
+
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  margin: 5px 0;
+}
+
+.footer-bottom {
+  grid-row: span 1;
+}
+
+/*----------Mapa----------*/ 
+
+.map {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #CED8E2;
+  border-radius: 10px;
+  box-shadow: 10px 10px 4px rgba(101, 116, 112, 0.2);
+  transition: box-shadow 0.5s ease;
+  padding: 2em;
+  margin: 1.5em 2em;
+  font-family: 'Archivo Black';
+}
+
+.title-map {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.title-map > h1 {
+  flex-basis: 25%;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+.title-map > h2 {
+  flex-basis: 25%;
+}
+
+.title-map {
+  flex-basis: 50%;
+}
+
+.map-content {
+  position: relative;
+  padding: .5em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease; 
+  transition: transform 0.5s ease;
+}
+.map-content:hover{
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); 
+  z-index: 20;
+}
+.map-detail {
+  width: 100%;
+  height: 400px;
+}
+
+.map:hover {
+  background-color: #bccfe2;
+  box-shadow: 0px 0px 20px rgba(101, 113, 116, 0.6);
+}
