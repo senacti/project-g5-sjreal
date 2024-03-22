@@ -198,16 +198,30 @@ line-height: normal;
     margin: 0 auto;
 
   }
-
+ 
   
   .habitacion {
     flex-basis: calc(33.33% - 20px);
     padding: 10px;
-    background-color: #f4f4f4;
+    background-color: #f1f3f5;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 505px;
     transition: transform 0.3s ease;
+    position: relative;
   }
+
+
+  
+  .tipo-habitacion {
+    font-family: "Montserrat"; /* Tipo de letra */
+    font-size: 16px; /* Tamaño del texto */
+    display: block; /* Para que ocupe el ancho completo */
+    text-align: center; /* Para centrar horizontalmente */
+    margin-top: 5px; /* Ajuste de espaciado */
+    color: #000;
+  }
+  
+
   .habitaciones .habitacion-content .habitacion button:hover img {
     cursor: pointer;
   }
@@ -326,7 +340,7 @@ line-height: normal;
   justify-content: space-between;
   align-items: center;
   border: 2px solid #000; /* Ancho, estilo (solid, dashed, dotted, etc.), y color */
-  background-color: #d0e9e3;
+  background-color: #CED8E2;
   transition: background-color 0.5s ease;
   border-width: 0.5px; 
   border-radius: 4px;
@@ -388,7 +402,9 @@ line-height: normal;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
+  background-color: #CED8E2;
+  height: 400px;
+} 
 
 .reserva-form-group {
   margin-bottom: 20px;
@@ -403,14 +419,14 @@ line-height: normal;
 .reserva-form-group select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #CED8E2;
   border-radius: 5px;
 }
 
 .reserva-submit {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #2E4B5F;
   color: #fff;
   border: none;
   border-radius: 5px;
