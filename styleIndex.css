@@ -119,97 +119,10 @@ display: table;
 content: " ";
 }
 
-<<<<<<< HEAD
 .clearfix::after {
   display: block;
   content: "";
   clear: both;
-=======
-
-
-  .estrellita {
-    width: 25px;
-    height: 25px;
-  }
-
-    .check-in{
-    display: flex;
-    flex-direction: row;
-  }
-   .check-out{
-    display: flex;
-    flex-direction: column;
-  }
-   .guests{
-    display: flex;
-    flex-direction: column;
-  }
-
-
-/* Habitacones */
-
-  .habitaciones {
-    display: flex;
-  }
-  
-  .habitaciones .habitacion-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-
-    justify-content: flex-end;
-    justify-items: center;
-    width: 75%;
-    height: auto;
-    margin: 0 auto;
-
-  }
- 
-  
-  .habitacion {
-    flex-basis: calc(33.33% - 20px);
-    padding: 10px;
-    background-color: #f1f3f5;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 505px;
-    transition: transform 0.3s ease;
-    position: relative;
-  }
-
-
-  
-  .tipo-habitacion {
-    font-family: "Montserrat"; /* Tipo de letra */
-    font-size: 16px; /* Tamaño del texto */
-    display: block; /* Para que ocupe el ancho completo */
-    text-align: center; /* Para centrar horizontalmente */
-    margin-top: 5px; /* Ajuste de espaciado */
-    color: #000;
-  }
-  
-
-  .habitaciones .habitacion-content .habitacion button:hover img {
-    cursor: pointer;
-  }
-
-  .habitaciones .habitacion-content  .habitacion:hover  {
-    transform: scale(1.1);
-    cursor: pointer;
-  }  
-  .habitacion img {
-    max-width: 700px;
-    height: 350px;
-    width: 400px;
-  }
-
-/* footer */
-
-.footer {
-  background-color: whitesmoke;  /*#e8dac0*/
-  color: black;
-  padding: 30px 0;
-  position: relative;
->>>>>>> 60e8a9064f1ff20cc93c4ac8e1d562ebcaf6da88
 }
 
 .habitacion {
@@ -252,34 +165,7 @@ content: " ";
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 /*----------Reservas----------*/
-=======
-.map {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px solid #000; /* Ancho, estilo (solid, dashed, dotted, etc.), y color */
-  background-color: #CED8E2;
-  transition: background-color 0.5s ease;
-  border-width: 0.5px; 
-  border-radius: 4px;
-  /* border-style: solid; */
-  border-color: #657470;
-  box-shadow: 2px 2px 4px rgba(101, 116, 112, 0.2);
-  transition: box-shadow 0.5s ease;
-  padding: 50px;
-  margin: 50px;
-  
-  
-  
-}
-.map:hover {
-  background-color: #c8e2dc;
-  box-shadow: 0px 0px 20px rgba(101, 116, 112, 0.6);
-}
->>>>>>> 60e8a9064f1ff20cc93c4ac8e1d562ebcaf6da88
 
 .reserva-container {
   box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
@@ -287,9 +173,7 @@ content: " ";
   padding: 1em;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #CED8E2;
-  height: 400px;
-} 
+}
 
 .reserva-container h3 {
   margin: .5em .1em;
@@ -308,18 +192,14 @@ content: " ";
 .reserva-form-group select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #CED8E2;
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .reserva-submit {
   display: block;
   width: 100%;
-<<<<<<< HEAD
   padding: 0.8em;
-=======
-  padding: 10px;
->>>>>>> 60e8a9064f1ff20cc93c4ac8e1d562ebcaf6da88
   background-color: #2E4B5F;
   color: #fff;
   border-radius: 5px;
@@ -403,10 +283,6 @@ content: " ";
   border-radius: 5px;
   transition: box-shadow 0.3s ease; 
   transition: transform 0.5s ease;
-}
-
-.map-content iframe {
-  width: 100%;
 }
 .map-content:hover{
   transform: scale(1.05);
