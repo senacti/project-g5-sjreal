@@ -91,6 +91,13 @@
               <span class="">Inventario</span>
             </a>
           </li>
+          <li>
+            <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
+              href="pqrs.html">
+              <img src="../../../assets/images/dashboard/icons8-empleado.png" class="w-[40px] h-[40px] ml-2">
+              <span class="">PQRS</span>
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -311,14 +318,27 @@
           <div class="modal-body">
             <!-- Tu contenido aquí -->
             <form class="max-w-lg mx-auto grid grid-cols-2 gap-4" action="#" method="POST">
-              <div class="mb-4">
-                  <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">Nombre</label>
-                  <input type="text" id="nombre" name="nombre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              <div class="mb-4 col-span-2">
+                <label for="cargo" class="block  text-gray-700 text-sm font-bold mb-2">Cargo</label>
+                <input type="text" id="cargo" name="cargo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
               </div>
               <div class="mb-4">
-                  <label for="cargo" class="block text-gray-700 text-sm font-bold mb-2">Cargo</label>
-                  <input type="text" id="cargo" name="cargo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                  <label for="primer_nombre" class="block text-gray-700 text-sm font-bold mb-2"> Primer Nombre</label>
+                  <input type="text" id="primer_nombre" name="primer_nombre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
               </div>
+              <div class="mb-4">
+                  <label for="segundo_nombre" class="block text-gray-700 text-sm font-bold mb-2">Segundo Nombre</label>
+                  <input type="text" id="segundo_nombre" name="segundo_nombre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="mb-4">
+                  <label for="primer_apellido" class="block text-gray-700 text-sm font-bold mb-2">Primer Apellido</label>
+                  <input type="text" id="primer_apellido" name="primer_apellido" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="mb-4">
+                  <label for="segundo_apellido" class="block text-gray-700 text-sm font-bold mb-2">Segundo Apellido</label>
+                  <input type="text" id="nombre" name="segundo_apellido" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              
               <div class="mb-4">
                   <label for="direccion" class="block text-gray-700 text-sm font-bold mb-2">Dirección</label>
                   <input type="text" id="direccion" name="direccion" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
@@ -343,8 +363,16 @@
                   <label for="no_cuenta" class="block text-gray-700 text-sm font-bold mb-2">Número de Cuenta</label>
                   <input type="text" id="no_cuenta" name="no_cuenta" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
               </div>
+              <div class="mb-4">
+                  <label for="telefono" class="block text-gray-700 text-sm font-bold mb-2">Telefono (cel)</label>
+                  <input type="text" id="telefono" name="telefono" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="mb-4">
+                  <label for="correo" class="block text-gray-700 text-sm font-bold mb-2">Correo</label>
+                  <input type="text" id="correo" name="correo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
               <div class="col-span-2 flex items-center justify-center">
-                  <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Enviar</button>
+                  <button type="submit" class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Crear</button>
               </div>
           </form>
 

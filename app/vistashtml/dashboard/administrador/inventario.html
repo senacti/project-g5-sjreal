@@ -100,6 +100,14 @@
                             <span class="">Inventario</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
+                            href="pqrs.html">
+                            <img src="../../../assets/images/dashboard/icons8-empleado.png"
+                                class="w-[40px] h-[40px] ml-2">
+                            <span class="">PQRS</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
 
@@ -661,44 +669,35 @@
                                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                             </div>
                             <div class="mb-4">
-                                <label for="cargo" class="block text-gray-700 text-sm font-bold mb-2">Precio</label>
-                                <input type="text" id="cargo" name="cargo"
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            </div>
-                            <div class="mb-4">
-                                <label for="direccion" class="block text-gray-700 text-sm font-bold mb-2">Estado</label>
-                                <input type="text" id="direccion" name="direccion"
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            </div>
-                            <div class="mb-4">
-                                <label for="fecha_contratacion"
-                                    class="block text-gray-700 text-sm font-bold mb-2">Maximo producto</label>
-                                <input type="text" id="fecha_contratacion" name="fecha_contratacion"
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            </div>
-                            <div class="mb-4">
-                                <label for="salario" class="block text-gray-700 text-sm font-bold mb-2">Minimo
-                                    Producto</label>
-                                <input type="number" id="salario" name="salario"
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            </div>
-                            <div class="mb-4">
-                                <label for="numero_contacto"
-                                    class="block text-gray-700 text-sm font-bold mb-2">Categoria</label>
-                                <input type="text" id="numero_contacto" name="numero_contacto"
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            </div>
-                            <div class="mb-4">
-                                <label for="cedula"
+                                <label for="descripcion"
                                     class="block text-gray-700 text-sm font-bold mb-2">Descripción</label>
-                                <input type="text" id="cedula" name="cedula"
+                                <input type="text" id="descripcion" name="descripcion"
                                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                             </div>
                             <div class="mb-4">
-                                <label for="no_cuenta" class="block text-gray-700 text-sm font-bold mb-2">Stock</label>
-                                <input type="text" id="no_cuenta" name="no_cuenta"
+                                <label for="precio" class="block text-gray-700 text-sm font-bold mb-2">Precio</label>
+                                <input type="text" id="precio" name="precio"
                                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                             </div>
+                            <div class="mb-4">
+                                <label for="estado_producto" class="block text-gray-700 text-sm font-bold mb-2">Estado
+                                    Producto</label>
+                                <input type="text" id="estado_producto" name="estado_producto"
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            </div>
+                            <div class="mb-4">
+                                <label for="existencias"
+                                    class="block text-gray-700 text-sm font-bold mb-2">Existencias</label>
+                                <input type="text" id="existencias" name="existencias"
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            </div>
+                            <div class="mb-4">
+                                <label for="tipo_producto" class="block text-gray-700 text-sm font-bold mb-2">Tipo
+                                    Pordducto</label>
+                                <input type="text" id="tipo_producto" name="tipo_producto"
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            </div>
+
                             <div class="col-span-2 flex items-center justify-center">
                                 <button type="submit"
                                     class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Crear</button>
