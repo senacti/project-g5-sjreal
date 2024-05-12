@@ -92,6 +92,7 @@ const initializeCalendar = (calendarIndex) => {
 // Agrega clic a los dias 
 daysContainer.addEventListener("click", (event) => {
     const selectedDay = event.target.textContent;
+     console.log(selectedDay);
     if (selectedDay) {
       const selectedDate = new Date(currentYear, currentMonth, selectedDay);
       const formattedDay = selectedDate.getDate();
@@ -103,6 +104,7 @@ daysContainer.addEventListener("click", (event) => {
       calendarContainer.classList.remove("show-calendar");
     }
   });
+ 
   // muestra o oculta el calendario cuando le doy clik en fecha de ingreso 
   dateInput.addEventListener("click", () => {
     calendarContainer.classList.toggle("show-calendar");
@@ -120,3 +122,5 @@ calendarToggles.forEach((toggle, index) => {
     calendarContainers[index].classList.toggle("show-calendar");
   });
 });
+
+

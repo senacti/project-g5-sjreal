@@ -78,26 +78,26 @@ formulario.addEventListener('submit', (e) => {
 
 
 // Asociar la función validarCredenciales al evento submit del formulario
-// document.addEventListener("DOMContentLoaded", function() {
-//     var formulario = document.getElementById("formulario");
-//     formulario.addEventListener("submit", validarCredenciales);
-// 	function validarCredenciales(event) {
-// 		// Evitar que el formulario se envíe automáticamente
-// 		event.preventDefault();
+document.addEventListener("DOMContentLoaded", function() {
+    var formulario = document.getElementById("formulario");
+    formulario.addEventListener("submit", validarCredenciales);
+	function validarCredenciales(event) {
+		// Evitar que el formulario se envíe automáticamente
+		event.preventDefault();
 		
-// 		// Obtener los valores de los campos de usuario y contraseña
-// 		var username = document.getElementById("username").value;
-// 		var password = document.getElementById("password").value;
+		// Obtener los valores de los campos de usuario y contraseña
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
 		
-// 		// Verificar las credenciales
-// 		var usernameCorrecto = "admin";
-// 		var passwordCorrecto = "*Admin123";
+		// Verificar las credenciales
+		var usernameCorrecto = "admin";
+		var passwordCorrecto = "*Admin123";
 	
-// 		if (username === usernameCorrecto && password === passwordCorrecto) {
-// 			console.log("Credenciales válidas");
-// 			// window.location.href = "../dashboard/administrador/inicio.html";
-// 		} else {
-// 			alert("Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.");
-// 		}
-// 	}
-// });
+		if (username === usernameCorrecto && password === passwordCorrecto) {
+			console.log("Credenciales válidas");
+			// window.location.href = "../dashboard/administrador/inicio.html";
+		} else {
+			alert("Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.");
+		}
+	}
+});

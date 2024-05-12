@@ -1,0 +1,90 @@
+/*_________________________Header_________________________*/
+
+header {
+    top: 0;
+    margin-bottom: 5%;
+  }
+  
+  
+  
+  header a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(43, 49, 52, 0.5);
+  
+  }
+  
+  
+  .logo img {
+    width: 70px;
+    height: 67px;
+    background: inherit;
+    font-family: Impact,'Arial Narrow Bold', sans-serif;
+  }
+  
+  .logo p {  
+    font-size: 10px;
+    color: #ffffff;
+    padding-bottom: 10px;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  
+    font-family: "Montserrat";
+    font-optical-sizing: auto;
+    font-weight: 400;
+    
+  }
+  
+  
+  
+  .login {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }  
+  
+  .login .logo-login {
+    width: 50px;
+    height: 50px;
+    padding-top: 6px;
+    
+  }
+  
+
+
+  /* ------------------------- Hbitacion sencilla ------------------------*/
+
+  .habitacion-sencilla {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    
+    border-bottom: 1px solid black;
+  }
+  
+  .imagen {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .descripcion {
+    flex: 2;
+  }
+  
+  .precio {
+    flex: 1;
+    text-align: right;
+  }

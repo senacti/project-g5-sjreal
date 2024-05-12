@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Reserva</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <!-- <link rel="stylesheet" href="../CSS/styleRegistro.css"> -->
+  <link rel="stylesheet" href="../../disenoscss/inicio/styleFormualrioReservaInicio.css">
+</head>
+
+<body class="body">
+  <!-- HEADER - TOPBAR -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../../../index.html" class=""><img src="../../assets/images/Logo-proyecto(1).png"
+            alt="Logo del hotel"></a>
+        <p>San José Real</p>
+      </div>
+      <ul class="menu">
+        <!-- <li><a href="../index.html">Inicio</a></li> -->
+        <li><a href="../errors/404.html">Servicios</a></li>
+        <li><a href="../inicio/reserva.html">Reservas</a></li>
+        <li><a href="../errors/404.html">Acerca</a></li>
+      </ul>
+
+      <div class="login">
+        <!-- <a href=""><img src="./images/logito.png" class="logo-login" alt="Logo de inicio de sesión"> </a> -->
+        <a href=""><img src="../../assets/images/perfilblanco.png" class="logo-login" alt="Logo de inicio de sesión">
+        </a>
+        <ul class="sesion">
+          <li id="inicio-sesion"><a href="login.html">
+              <p>Inicia sesión </p>
+            </a></li>
+          <li id="inicio-registro"><a href="registro.html">
+              <p>Registrarse</p>
+            </a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- <script>
+      // Recuperar los datos de la URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const nombre = urlParams.get('nombre');
+  
+      // Mostrar los datos recibidos
+      document.getElementById("resultado").innerHTML = "¡Hola, " + nombre + "! Gracias por enviar el formulario.";
+    </script> -->
+  <!-- <div id="resultado"></div> -->
+  <div class="form-reserva-container">
+    <section class="form-reserva-left-section">
+      <h2>Datos del Responsable del Hospedaje</h2>
+      <form action="#" method="POST" class="form-reserva-responsable-form">
+        <div class="form-reserva-form-group">
+          <label for="form-reserva-nombre">Nombre:</label>
+          <input type="text" id="form-reserva-nombre" name="form-reserva-nombre" required>
+        </div>
+        <div class="form-reserva-form-group">
+          <label for="form-reserva-apellidos">Apellidos:</label>
+          <input type="text" id="form-reserva-apellidos" name="form-reserva-apellidos" required>
+        </div>
+        <div class="form-reserva-form-group">
+          <label for="form-reserva-correo">Correo Electrónico:</label>
+          <input type="email" id="form-reserva-correo" name="form-reserva-correo" required>
+        </div>
+        <div class="form-reserva-form-group">
+          <label for="form-reserva-confirmar_correo">Confirmar Correo Electrónico:</label>
+          <input type="email" id="form-reserva-confirmar_correo" name="form-reserva-confirmar_correo" required>
+        </div>
+        <div class="form-reserva-form-group">
+          <label for="form-reserva-ciudad">Ciudad:</label>
+          <input type="text" id="form-reserva-ciudad" name="form-reserva-ciudad" required>
+        </div>
+        <div class="form-reserva-form-group">
+          <label for="form-reserva-telefono">Teléfono:</label>
+          <input type="tel" id="form-reserva-telefono" name="form-reserva-telefono" required>
+        </div>
+        <div class="form-reserva-form-group">
+          <label for="form-reserva-comentario">Comentario:</label>
+          <textarea id="form-reserva-comentario" name="form-reserva-comentario"></textarea>
+        </div>
+        <div class="form-reserva-form-group">
+          <label for="form-reserva-tipo_pago">Tipo de Pago:</label>
+          <select id="form-reserva-tipo_pago" name="form-reserva-tipo_pago" required>
+            <option value="">Seleccione el tipo de pago</option>
+            <option value="tarjeta">Tarjeta de Crédito</option>
+            <option value="efectivo">Efectivo</option>
+            <option value="transferencia">Transferencia Bancaria</option>
+          </select>
+        </div>
+        <button type="submit" class="form-reserva-submit">Confirmar Reserva</button>
+      </form>
+    </section>
+    <section class="form-reserva-right-section">
+      <h2>Resumen de la Reserva</h2>
+      <div class="form-reserva-resumen">
+        <!-- Aquí se mostrará el resumen de la reserva -->
+      </div>
+    </section>
+  </div>
+
+  <!-- <footer class="footer">
+
+        <div class="footer-content">
+
+            <div id="about" class="footer-section">
+                <h3>Información</h3>
+                <p>Sobre nosotros</p>
+                <p>Servicios</p>
+                <p>Contacto</p>
+            </div>
+            <div class="footer-section">
+                <h3>Habitaciones</h3>
+                <p>Habitaciones y tarifas</p>
+                <p>Reservas</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <p>Síguenos en Facebook</p>
+                <p>Síguenos en Instagram</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Hotel XYZ. Todos los derechos reservados.</p>
+        </div>
+    </footer> -->
+  <!-- <script src="../JS/formulario.js"></script> -->
+  <script src="../../logicasJs/JS/formulario.js"></script>
+</body>
+
+</html>

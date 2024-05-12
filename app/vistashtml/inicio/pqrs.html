@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Fidelización</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../../disenoscss/inicio/styleFidelizacióm.css">
+</head>
+
+<body class="body">
+        <!-- HEADER - TOPBAR -->
+        <header class="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../index.html" class=""><img src="../images/Logo-proyecto(1).png" alt="Logo del hotel"></a>
+                    <p>San José Real</p>
+                </div>
+                <ul class="menu">
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="404.html">Reservas y Servicios</a></li>
+                    <li><a href="reserva.html">Habitaciones</a></li>
+                    <li><a href="404.html">Acerca de Nosotros</a></li>
+                </ul>
+    
+                <div class="login">
+                    <!-- <a href=""><img src="./images/logito.png" class="logo-login" alt="Logo de inicio de sesión"> </a> -->
+                    <a href=""><img src="../images/perfilblanco.png" class="logo-login" alt="Logo de inicio de sesión"> </a>
+                    <ul class="sesion">
+                        <li id="inicio-sesion" ><a  href="/index.html"> <p>Cerrar Sesion</p> </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+    <div class="container">
+        <h2>Formulario de Fidelización</h2>
+            <form action="#" method="post" id="formulario" class="formulario">
+
+                <ul class="grid">
+
+                    <li id="group__name">
+                        <label class="validar" id="" for="first_name">Nombre/s:</label>
+                        <div class="primer_nombre">
+                            <input type="text" name="Nombre/s" id="first_name">
+                        </div>
+                    </li>
+
+                    <li id="group__name">
+                        <label class="validar" id="" for="first_name">Apelldio/s:</label>
+                        <div class="primer_nombre">
+                            <input type="text" name="Nombre/s" id="first_name">
+                        </div>
+                    </li>
+
+                    <li id="group__name">
+                        <label class="validar" id="" for="first_name">Cedula:</label>
+                        <div class="primer_nombre">
+                            <input type="number" name="Nombre/s" id="first_name">
+                        </div>
+                    </li>
+
+                    <li id="group__tipoDocumento">
+                        <label class="validar" id="" for="document_type">Tipo:</label>
+                            <div class="select-class">
+                                <select id="document_type" name="document_type" required>
+                                    <option value="">Seleccione</option>
+                                    <option value="">Pregunta</option>
+                                    <option value="Cédula de Ciudadanía">Queja</option>
+                                    <option value="Tarjeta de Identidad">Reclamo</option>
+                                    <option value="Cedula extranjera">Solicitud</option>
+                                </select>
+                            </div>
+                    </li>
+
+                    <li id="group__name">
+                        <label class="validar" id="" for="first_name">Descripción:</label>
+                        <div class="primer_nombre">
+                            <input type="text" name="Nombre/s" id="first_name">
+                        </div>
+                    </li><br>
+
+                    <li class="li-buttons">
+                        <button type="submit" class="btn btn-login">Enviar</button>
+                    </li>
+                </ul>
+            </form>
+
+    </div>
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div id="about" class="footer-section">
+                <h3>Información</h3>
+                <p>Sobre nosotros</p>
+                <p>Servicios</p>
+                <p>Contacto</p>
+            </div>
+            <div class="footer-section">
+                <h3>Habitaciones</h3>
+                <p>Habitaciones y tarifas</p>
+                <p>Reservas</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <p>Síguenos en Facebook</p>
+                <p>Síguenos en Instagram</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Hotel XYZ. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="../JS/formulario.js"></script>
+</body>
+
+</html>
+
+
