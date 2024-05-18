@@ -97,20 +97,13 @@ $remix-complementary: harmonious-mix($mix-base, $mix-complementary);
 
 html {
     --color-base: $remix-base;
-    --darkest-base: $darker-base;
-    --lighter-base: $lighter-base;
-    --lightest-base: $lightest-base;
+    --base-oscuro: $darker-base;
+    --base-claro: $lighter-base;
+    --base-mas-claro: $lightest-base;
   
-    --color-complement: $remix-complementary;
-    --darker-complement: $darker-complementary;
-    --lighter-complement: $lighter-complementary;
-    --lightest-complement: $lightest-complementary;
+    --color-complemento: $remix-complementary;
+    --complemento-oscuro: $darker-complementary;
+    --complemento-claro: $lighter-complementary;
+    --complemento-mas-claro: $lightest-complementary;
 }
 
-body {
-    background-color: var(--color-base);
-}
-
-p {
-    color: $darker-complementary;
-}
