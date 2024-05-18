@@ -1,0 +1,116 @@
+@use "sass:color";
+
+$base-color: hsl(204, 100%, 50%);
+$complementary-color: hsl(24, 100%, 50%);
+
+@function is-cool-color($color) {
+	@return hue($color) < 300 and hue($color) > 120;
+}
+
+@function is-high-key-value($color) {
+	@return hue($color) > 30 and hue($color) < 140;
+}
+
+@function harmonious-mix($mix, $base) {
+	@if (is-cool-color($mix)){
+		@if is-high-key-value($base) {
+			@return mix($mix, $base, 11%);
+		}
+		@else {
+			@return mix($mix, $base, 16%);
+		}
+	}
+	@else {
+		@if is-high-key-value($base) {
+			@return mix($mix, $base, 13%);
+		}
+		@else {
+			@return mix($mix, $base, 23%);
+		}
+	}
+}
+
+@function mix-neutral($color) {
+    @if is-highest-key-value($color) {
+        @if is-high-key-value(complement($color)) {
+            @return mix(complement($color), $color, 19%);
+        } @else {
+            @return mix(complement($color), $color, 13%);
+        }
+    } @else if is-high-key-value($color) {
+        @if is-high-key-value(complement($color)) {
+            @return mix(complement($color), $color, 31%);
+        } @else {
+            @return mix(complement($color), $color, 23%);
+        }
+    } @else {
+        @if is-highest-key-value(complement($color)) {
+            @return mix(complement($color), $color, 31%);
+        } @else if is-high-key-value(complement($color)) {
+            @return mix(complement($color), $color, 26%);
+        } @else {
+            @return mix(complement($color), $color, 23%);
+        }
+    }
+}
+
+@function pick-contrast($color) {
+	@if is-high-key-value($color){
+		@if lightness($color) < 30% {
+			@return lighten(complement($color), 86);
+		}
+		@else if lightness($color) > 70% {
+			@return darken(complement($color), 68);
+		}
+		@else {
+			@return darken(complement($color), 53);
+		}
+} @else {
+	@if lightness($color) < 30% {
+			@return lighten(complement($color), 86);
+		}
+		@else if lightness($color) > 70% {
+			@return darken(complement($color), 68);
+		}
+		@else {
+			@return lighten(complement($color), 53);
+		}
+	}
+}
+
+//Mezclas entre el color base y el complemento
+$mix-base: harmonious-mix($complementary-color, $base-color);
+$mix-complementary: harmonious-mix($base-color, $complementary-color);
+
+
+//Mezclas con el mix-base
+$darker-base: harmonious-mix(black, $mix-base);
+$lightest-base: harmonious-mix(white, $mix-base);
+$lighter-base: harmonious-mix($lightest-base, $mix-base);
+$remix-base: harmonious-mix($mix-complementary, $mix-base);
+
+//Mezclas con el mix-complementary
+$darker-complementary: harmonious-mix(black, $mix-complementary);
+$lightest-complementary: harmonious-mix(white, $mix-complementary );
+$lighter-complementary: harmonious-mix($lightest-complementary, $mix-complementary);
+$remix-complementary: harmonious-mix($mix-base, $mix-complementary);
+
+html {
+    --color-base: $remix-base;
+    --darkest-base: $darker-base;
+    --lighter-base: $lighter-base;
+    --lightest-base: $lightest-base;
+  
+    --color-complement: $remix-complementary;
+    --darker-complement: $darker-complementary;
+    --lighter-complement: $lighter-complementary;
+    --lightest-complement: $lightest-complementary;
+}
+
+body {
+    background-color: var(--color-base);
+}
+
+p {
+    color: $darker-complementary;
+}
