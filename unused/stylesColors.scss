@@ -1,3 +1,5 @@
+//No usaremos esto por ahora
+
 @use "sass:color";
 
 $base-color: hsl(204, 100%, 50%);
@@ -107,3 +109,12 @@ html {
     --complemento-mas-claro: $lightest-complementary;
 }
 
+@debug $remix-base;
+@debug $darker-base;
+@debug $lighter-base;
+@debug $lightest-base;
+  
+@debug $remix-complementary;
+@debug $darker-complementary;
+@debug $lighter-complementary;
+@debug $lightest-complementary;

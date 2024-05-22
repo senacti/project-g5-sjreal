@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-primario: 95 134 160;
+        --color-p-lighter: 66 145 198;
+        --color-p-lightest: 104 167 210;
+        --color-p-darker: 45 109 151;
+        
+        --color-secundario: 189 115 66;
+        --color-s-lighter: 216 118 52;
+        --color-s-lightest: 223 143 90;
+        --color-s-darker: 165 85 32;
+    }
+}
