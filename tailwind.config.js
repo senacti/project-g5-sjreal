@@ -18,7 +18,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        
+        parrafo: 'Montserrat, sans-serif',
+        subtitulo: 'Rubik, sans-serif',
+        titulo: 'Archivo Black'
       }
     }
   },
