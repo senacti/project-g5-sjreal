@@ -5,65 +5,100 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,1,0" />
   <link rel="stylesheet" href="stylesIndexOutput.css">
-  <link rel="stylesheet" href="stylesCalendar.css">
+  <!-- <link rel="stylesheet" href="stylesCalendar.css"> -->
 </head>
 
-<body>
-
-  <main class="principal">
-    <header class="header">
-  
-    <nav class="navbar">
-      <div class="logo">
-        <!-- <a href="./index.html" class=""><img src="./app/assets/images/Logo-proyecto(1).png" alt="Logo del hotel"></a> -->
-      </div>
-
-      <ul class="menu">
-        <li><a href="app/vistashtml/errors/500.html">Habitaciones</a></li>
-        <li><a href="app/vistashtml/acercade/acerca.html">Acerca </a></li>
-        <li><a href="app/vistashtml/servicios/servicios.html">Servicios</a></li>
-        <li><a href="../inicio/reserva.html">Reservas</a></li>
+<body class="">
  
-      </ul>
-
-      <div class="login">
-        <a href=""><img src="./app/assets/images/perfilblanco.png" class="logo-login" alt="Logo de inicio de sesión">
-        </a>
-        <ul class="sesion">
-          <li id="inicio-sesion"><a id="inicia-sesion" href="app/vistashtml/inicio/login.html">
-              <p>Inicia sesión </p>
-            </a></li>
-          <li id="inicio-registro"><a href="app/vistashtml/inicio/registro.html">
-              <p>Registrarse</p>
-            </a></li>
-        </ul>
+  <main class="w-full bg-primario-100" >
+    <header class="w-full py-0  bg-primario-300/100 flex sticky top-0 ">
+    
+      <div class="basis-1/2 p-4 mx-4">
+        <img class="w-16 h-16 " src="app/assets/images/Logo-proyecto(1).png" alt="Hotel Logo">
       </div>
-    </nav>
-  </header>    
-  
-    <section class="home">
 
-      <div class="bienvenida">
-        <h2 class="encabezado font-titulo">Sobre nosotros</h2>
-        <p class="parrafo ">
+      <nav class="p-4 mx-8 grow font-subtitulo uppercase">
+        <ul class="py-2 flex justify-between border-b-2 border-secundario-base">
+          <li class="flex w-[5rem] transition ease-in-out hover:-translate-y-1 hover:scale-110">
+            <span class="material-symbols-outlined">
+              home
+            </span>
+            <a href="#home">Home</a>
+          </li >
+          <li class="flex px-2 w-[10rem] transition ease-in-out hover:-translate-y-1 hover:scale-110">
+            <span class="material-symbols-outlined">
+              person
+            </span>
+            <a>Iniciar sesion</a>
+          </li>
+          <li class="flex px-2 w-[6rem] transition ease-in-out hover:-translate-y-1 hover:scale-110">
+            <span class="material-symbols-outlined">
+              person_check
+            </span>
+            <a href="">Registro</a>
+          </li>
+          <li class="flex px-2 w-[10rem] transition ease-in-out hover:-translate-y-1 hover:scale-110">
+            <span class="material-symbols-outlined">
+              checkbook
+            </span>
+            <a href="">Reservas</a>
+          </li>
+        </ul>
+    
+        <ul class="flex py-2 justify-between ">
+          <li class="flex w-[5rem] transition ease-in-out hover:-translate-y-1 hover:scale-110">
+            <span class="material-symbols-outlined">
+              open_in_new
+            </span>
+            <a href="#about">Sobre</a>
+          </li>
+          <li class="flex px-2 w-[10rem] transition ease-in-out hover:-translate-y-1 hover:scale-110">
+            <span class="material-symbols-outlined">
+              bed
+            </span>
+            <a href="#rooms">Habitaciones</a>
+          </li>
+          <li class="flex px-2 w-[6rem] transition ease-in-out hover:-translate-y-1 hover:scale-110">
+            <span class="material-symbols-outlined">
+              loyalty
+            </span>
+            <a href="#plans">Planes</a>
+          </li>
+          <li class="flex px-2 w-[10rem] transition ease-in-out hover:-translate-y-1 hover:scale-110">
+            <span class="material-symbols-outlined">
+              rate_review
+            </span>
+            <a href="#reviews">Opiniones</a>
+          </li>
+    
+        </ul>
+      </nav>
+    
+    </header>
+    
+    <section class="grid grid-cols-2 p-32 font-parrafo">
+    
+      <div class="basis-1/4">
+        <h2 class="font-titulo uppercase">Sobre nosotros</h2>
+        <p class="">
           Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
           doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore
           veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim
           ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia
           consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque
           porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur
-
-
+    
+    
         </p>
       </div>
-   
-
-        <div class="container">
+    
+      <div class="basis-3/4">Calendar
+        <!-- <div class="container">
           <div class="date-input-container">
             <label for="date-input-1">FECHA DE<br>INGRESO</label>
             <textarea id="date-input-1" class="date-input" readonly></textarea>
@@ -97,7 +132,7 @@
             </div>
             <div class="days"></div>
           </div>
-      
+    
           <div class="date-input-container">
             <label for="date-output">FECHA DE<br>SALIDA</label>
             <textarea id="date-output" class="date-input" readonly></textarea>
@@ -130,14 +165,14 @@
             </div>
             <div class="days"></div>
           </div>
-        </div>
-      </div> -->
+        </div> -->
+      </div>
     </section>
   </main>
   
-  <section class="habitaciones">
+  <section class="">
 
-    <div class="reserva-container">
+    <div class="">
       <h3>¿Cuántos son y por cuántos dias?</h3>
       <form action="#" method="POST" class="reserva-form" id="reserva-form">
         <div class="reserva-form-group">
