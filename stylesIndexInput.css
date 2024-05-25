@@ -15,3 +15,13 @@
         --color-s-darker: 165 85 32;
     }
 }
+
+.header {
+    
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.header.scrolled {
+    background-color: gray;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
