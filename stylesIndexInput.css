@@ -17,11 +17,15 @@
 }
 
 .header {
-    
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
   
 .header.scrolled {
-    background-color: gray;
+    background-color: rgba(104, 167, 210, 0.5);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* main {
+    background-image: url('app/assets/images/plaza.jpg');
+    background-size: cover;
+} */
