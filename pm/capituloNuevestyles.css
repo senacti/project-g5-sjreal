@@ -1,0 +1,62 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    padding: 0;
+    background-color: #f0f3f4;  /* Color de fondo gris azulado */
+}
+
+header, section, footer {
+    margin-bottom: 20px;
+    background-color: #fff;  /* Fondo blanco para secciones */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Estilos para el encabezado */
+header h1 {
+    font-size: 2.8em;
+    color: #2980b9;  /* Azul suave */
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 1.8em;
+    color: #3498db;  /* Azul */
+    margin-bottom: 20px;
+}
+
+/* Estilos para las secciones */
+section {
+    border: 1px solid #bdc3c7;  /* Borde gris claro */
+    background-color: #ecf0f1;  /* Fondo gris azulado claro */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+section h3 {
+    font-size: 1.5em;
+    color: #2980b9;  /* Azul suave */
+    margin-bottom: 10px;
+}
+
+section p {
+    margin-bottom: 10px;
+}
+
+section ol {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    padding-top: 20px;
+    background-color: #fff;  /* Fondo blanco */
+    border-top: 1px solid #bdc3c7;  /* Borde superior gris claro */
+    clear: both;
+}

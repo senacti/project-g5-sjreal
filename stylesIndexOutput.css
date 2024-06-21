@@ -804,10 +804,58 @@ video {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* main {
-    background-image: url('app/assets/images/plaza.jpg');
-    background-size: cover;
+.main-reserva {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 2em 0.5em;
+  padding: 4em;
+  gap: 1.5em
+}
+
+img {
+  max-width: 50%;
+  height: 200px;
+}
+
+/* .calendar > * > * > * > * > *>*>*>*>*>*>*>*>*>* {
+  font-family: Montserrat;
+  border: 1px solid #2E4B5F;
 } */
+
+
+.media-object {
+  display: flex;
+  padding: 1em 0;
+  gap: 0.5em;
+  margin: 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+}
+
+.media-object .item-left {
+  display: flex;
+  gap: 0.4em;
+  margin: 0 0.5em;
+}
+
+.item-left img {
+  border-radius: 5px;
+}
+
+.media-object > .item-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-right > h1 {
+  font-weight: bold;
+  text-transform: uppercase   ;
+}
+
+.item-left > img {
+  width: 10em;
+  height: 10em;
+}
 
 .habitaciones {
   display: grid;
