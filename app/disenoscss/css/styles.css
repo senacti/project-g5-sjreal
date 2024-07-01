@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+/*
+FUENTES  
+Montserrat      ( para parrafos largos ) 
+Rubik           (para subtitulos)
+Archivo Black   (para titulos)
+PALETA DE COLORES 
+#2E4B5F
+#B9AE9D
+#CED8E2
+#6C5B4D
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Montserrat;
+  font-size: 16px;
+}
+
+h1, h2 {
+  font-family: Archivo Black;
+}
+
+h3, h4, h5, h6 {
+  font-family: Rubik;
+}
+
+p {
+  font-family: Montserrat;
+}
+
+/* 
+Objeto Imagen-descripcion
+
+Modulo para un objeto que contiene una imagen y una descripción, una al lado de la otra
+y abajo de los un boton de secleccion.
+Markup:
+<div class="media-object">
+    <div class="item-up__mo">
+      <img src="../assets/images/habitacion3.jpeg" alt="Imagen de habitacion">
+      <div class="description__mo">
+        <h1>Habitacion sencilla</h1>
+        <p>Habitacion con una cama doble, ducha caliente e internet, capacidad para dos o tres personas</p>
+      </div>
+    </div>
+    <div class="item-down__mo">
+      <button class="selection__mo">
+        Elegir 
+      </button>
+    </div>
+</div>
+
+Styleguide Media
+*/
+
+.media-object {
+  width: 30em;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+  margin: 1em;
+  gap: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  box-shadow: 0.2em 0.2em 1em gray;
+}
+
+.media-object .item-up__mo {
+  display: flex;
+  margin: 0 0.5em;
+  padding: 0.5em;
+  gap: 1em;
+}
+
+.item-up__mo img {
+  border-radius: 5px;
+}
+
+.description__mo h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #333;
+  margin: 0 0 0.2em 0;
+}
+
+.description__mo p {
+  text-align: center;
+  color: #333;
+}
+
+.item-down__mo {
+  width: 100%;
+  padding: 1em;
+}
+
+.item-down__mo > .selection__mo {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+  border: 1px solid transparent;
+  border-radius: 0.5em;
+  background-color: #68a7d2;
+  transition: background-color 0.5s linear;
+}
+
+.item-down__mo .selection__mo--active {
+  background-color: #2d6d97;
+  color: #CED8E2;
+}
+
+.item-up__mo > img {
+  width: 10em;
+  height: 10em;
+}
+
+/*# sourceMappingURL=styles.css.map */

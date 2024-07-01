@@ -1,0 +1,13 @@
+{
+    "title": "Documentacion de estilos de la aplicacion",
+    "source": [
+    "app/disenoscss/css"
+    ],
+    "destination": "docs/",
+    "css": [
+    "app/disenoscss/css/styles.css"
+    ],
+    "js": [
+    "app/logicaJs/index.js"
+    ]
+}
