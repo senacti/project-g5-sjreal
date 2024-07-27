@@ -1,0 +1,149 @@
+/* 
+Objeto Header-lista
+
+Modulo para un encabezado, con logotipo a la izquierda y lista de navegacion a ala derecha
+Markup:
+<header class="header-module">
+        <div class="header-module__logo">
+          <img src="app/assets/images/Logo-proyecto(1).png" alt="Hotel Logo">
+          <h1>Hotel San Jose Real</h1>
+        </div>
+        <nav class="header-module__nav">
+          <ul class="header-module__list">
+            <li>
+              <a class="list-item">
+                <span class="material-symbols-outlined list-item__icon">
+                  home
+                </span>
+                <p class="list-item__label">Home</p>
+              </a>
+            </li>           
+            <li>
+              <a class="list-item">
+                <span class="material-symbols-outlined list-item__icon">
+                  person
+                </span>
+                <p class="list-item__label">Iniciar sesion</p>
+              </a>
+            </li>           
+            <li>
+              <a class="list-item">
+                <span class="material-symbols-outlined list-item__icon">
+                  person_check
+                </span>
+                <p class="list-item__label">Registro</p>
+              </a>
+            </li>            
+            <li>
+              <a class="list-item">
+                <span class="material-symbols-outlined list-item__icon">
+                  checkbook
+                </span>
+                <p class="list-item__label">Reservas</p>
+              </a>
+            </li>
+          </ul>    
+          <ul class="header-module__list">
+            <li>
+              <a class="list-item">
+                <span class="material-symbols-outlined list-item__icon">
+                  open_in_new
+                </span>
+                <p class="list-item__label">Sobre</p>
+              </a>
+            </li>           
+            <li>
+              <a class="list-item">
+                <span class="material-symbols-outlined list-item__icon">
+                  bed
+                </span>
+                <p class="list-item__lab">Habitaciones</p>
+              </a>
+            </li>    
+            <li>
+              <a class="list-item">
+                <span class="material-symbols-outlined list-item__icon">
+                  loyalty
+                </span>
+                <p class="list-item__label">Planes</p>
+              </a>
+            </li>           
+            <li>
+              <a class="list-item">
+                <span class="material-symbols-outlined list-item__icon">
+                  rate_review
+                </span>
+                <p class="list-item__label">Opiniones</p>
+              </a>
+            </li>            
+    
+          </ul>
+        </nav>   
+    </header>
+Styleguide Media
+*/
+
+.header-module__logo img {
+    max-width: 5em;
+    height: 5em;
+}
+
+.header-module {
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-around;
+    padding: 1em;
+    background-color: hsla(204, 57%, 33%, 0.9);
+    transition: background-color 0.5s linear;
+}
+
+.header-module__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-module__nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-module__list:first-child {
+    border-bottom: 1px solid black;
+}
+
+.header-module__list:last-child {
+    margin-top: 1em ;
+}
+
+.header-module__list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    list-style: none;
+}
+
+.header-module__list > li > a {
+    display: flex;
+    padding: 0.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+}
+
+.list-item__icon {
+    height: 1.5em;
+    width: 1.5em;
+
+}
+
+.header-module__list > li > a:hover {
+    transform: scale(1.1);
+    color: #4291c6;
+}
+
+.header-module.scrolled {
+    background-color: hsla(360, 100%, 100%, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

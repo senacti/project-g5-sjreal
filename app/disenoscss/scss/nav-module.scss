@@ -1,0 +1,14 @@
+/* 
+Modulo nav
+
+Modulo para un nav flex horizontal
+Markup:
+<nav class="nav-container">
+</nav>
+
+Styleguide Media
+*/
+.nav-container {
+    display: flex;
+    flex-direction: column;
+}

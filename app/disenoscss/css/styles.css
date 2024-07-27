@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 /*
 FUENTES  
@@ -35,6 +36,7 @@ Objeto Imagen-descripcion
 Modulo para un objeto que contiene una imagen y una descripción, una al lado de la otra
 y abajo de los un boton de secleccion.
 Markup:
+
 <div class="media-object">
     <div class="item-up__mo">
       <img src="../assets/images/habitacion3.jpeg" alt="Imagen de habitacion">
@@ -52,7 +54,6 @@ Markup:
 
 Styleguide Media
 */
-
 .media-object {
   width: 30em;
   display: flex;
@@ -99,7 +100,6 @@ Styleguide Media
   padding: 1em;
   border: 1px solid transparent;
   border-radius: 0.5em;
-  background-color: #68a7d2;
   transition: background-color 0.5s linear;
 }
 
@@ -111,6 +111,284 @@ Styleguide Media
 .item-up__mo > img {
   width: 10em;
   height: 10em;
+}
+
+/* 
+Modulo link con texto e icono
+
+Modulo para un link con texto e icono. El icono se encuentra a la izquierda del texto.
+Markup:
+<div class="header-module__logo">
+    <img src="app/assets/images/Logo-proyecto(1).png" alt="Hotel Logo">
+    <h1>Hotel San Jose Real</h1>
+</div>
+
+Styleguide Media
+*/
+.header-module__logo img {
+  max-width: 5em;
+  height: 5em;
+}
+
+.header-module__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+/* 
+Modulo header
+
+Modulo para el layout del header de la pagina
+Markup:
+<header class="header-module"></header>
+
+Styleguide Media
+*/
+.header-module {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-around;
+  padding: 1em;
+  transition: background-color 0.5s linear;
+}
+
+.header-module.scrolled {
+  background-color: hsl(0, 100%, 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+Botones
+
+Modulo para los botones y sus diferentes estados
+Markup:
+<button class="selection__mo {{modifier-class}}">
+    Elegir 
+</button>
+
+.selection__mo--active - Boton con transicion aplicada
+.selection__mo--danger - Boton con color de alerta
+
+Styleguide Media
+*/
+.selection__mo {
+  width: 10em;
+  margin: 0 auto;
+  padding: 1em;
+  font-family: Montserrat;
+  border: 1px solid transparent;
+  border-radius: 0.5em;
+  transition: background-color 0.5s linear;
+}
+
+.selection__mo--active {
+  background-color: #2d6d97;
+  color: #CED8E2;
+}
+
+.danger {
+  background-color: #d26868;
+  color: #000;
+}
+
+/* 
+Modulo link con texto e icono
+
+Modulo para un link con texto e icono. El icono se encuentra a la izquierda del texto.
+Markup:
+<a class="list-item">
+    <span class="material-symbols-outlined list-item__icon">
+    home
+    </span>
+    <p class="list-item__label">Home</p>
+</a>
+
+Styleguide Media
+*/
+.item {
+  display: flex;
+  padding: 0.5em;
+  margin: 0.5em 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.item__icon {
+  height: 1.5em;
+  width: 1.5em;
+  font-size: 20px;
+}
+
+a:hover {
+  color: #B9AE9D;
+}
+
+/* 
+Modulo nav
+
+Modulo para un nav flex horizontal
+Markup:
+<nav class="nav-container">
+</nav>
+
+Styleguide Media
+*/
+.nav-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 
+Modulo nav
+
+Modulo para una lista horizontal
+Markup:
+<ul class="horizontal-list">    
+</ul>
+
+Styleguide Media
+*/
+.horizontal-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  list-style: none;
+}
+
+/* 
+Modulo contenido principal
+
+Modulo para el layout de un main
+Markup:
+<main class="main-content"></main>
+
+Styleguide Media
+*/
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+}
+
+/* 
+Modulo calendar
+
+Modulo para una los estilos del calendar
+Markup:
+<div class="calendar">    
+</div>
+
+Styleguide Media
+*/
+.calendar {
+  font-family: Rubik;
+  margin: 1.5em 1em;
+  padding: 1em 1.5em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  box-shadow: 0.2em 0.2em 1em gray;
+}
+
+/* 
+Modulo para los bordes
+
+Modulo para una los estilos de los bordes
+Markup:
+<div class="border">    
+</div>
+
+Styleguide Media
+*/
+.border {
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  box-shadow: 0.2em 0.2em 1em gray;
+}
+
+/* 
+Modulo map
+
+Modulo para los estilos del mapa de la ubicacion del hotel
+Markup:
+<section class="map border">
+
+    <div class="map-text">
+      <h1>Esta es nuestra ubicacion</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Possimus voluptates maxime voluptatibus nulla odit deleniti
+        architecto, amet natus? Repudiandae expedita, fugit minus
+        tempora laudantium corporis labore ipsa cumque quos velit?
+      </p>
+
+      <a class="item">
+        <span class="material-symbols-outlined list-item__icon">
+          location_on
+        </span>
+        <p class="list-item__label">Cr 7a #5A-49, Sibaté.</p>
+      </a>
+      <a class="item">
+        <span class="material-symbols-outlined list-item__icon">
+        call
+        </span>
+        <p class="list-item__label">+57-3147245703</p>
+      </a>
+      <a class="item">
+        <span class="material-symbols-outlined list-item__icon">
+        mail
+        </span>
+        <p class="list-item__label">pedroburgos988@gmail.com</p>
+      </a>
+    </div>
+
+    <div class="map-content ">
+      <iframe class="border"
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3977.5871233282396!2d-74.26304612502203!3d4.487521695486818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwMjknMTUuMSJOIDc0wrAxNSczNy43Ilc!5e0!3m2!1ses!2sco!4v1708658396182!5m2!1ses!2sco"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+</section>
+
+Styleguide Media
+*/
+.map {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 1em 1em;
+  display: flex;
+  gap: 2em;
+  background-color: #f5f1ea;
+}
+
+.map-text {
+  flex: 1;
+}
+
+.map-text > h1 {
+  text-transform: uppercase;
+  margin: 2em 1em 3em 1em;
+  padding: 0.5em;
+}
+
+.map-text > p {
+  margin: 1em 0 0 1em;
+  padding: 0.5em;
+}
+
+.map-content {
+  flex: 2;
+}
+
+iframe {
+  width: 100%;
+  height: 40vh;
 }
 
 /*# sourceMappingURL=styles.css.map */

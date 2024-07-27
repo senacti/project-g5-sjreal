@@ -1,0 +1,23 @@
+/* 
+Modulo header
+
+Modulo para el layout del header de la pagina
+Markup:
+<header class="header-module"></header>
+
+Styleguide Media
+*/
+.header-module {
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-around;
+    padding: 1em;
+    // background-color: hsla(204, 57%, 33%, 0.9);
+    transition: background-color 0.5s linear;
+}
+
+.header-module.scrolled {
+    background-color: hsla(360, 100%, 100%, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

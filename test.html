@@ -1,105 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="index.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,1,0" />
-    <link rel="stylesheet" href="test.css">
-    <script src="app/logicasJs/index.js"></script>
-    <title>Pruebas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,1,0" />
+  <title>Pruebas</title>
+  <link rel="stylesheet" href="test.css">
 </head>
+
 <body>
-    <header class="header-module">
 
-        <div class="header-module__logo">
-          <img src="app/assets/images/Logo-proyecto(1).png" alt="Hotel Logo">
-          <h1>Hotel San Jose Real</h1>
-        </div>
-    
-        <nav class="header-module__nav">
-          <ul class="header-module__list">
-            <li>
-              <a class="list-item">
-                <span class="material-symbols-outlined list-item__icon">
-                  home
-                </span>
-                <p class="list-item__label">Home</p>
-              </a>
-            </li>
-            
-            <li>
-              <a class="list-item">
-                <span class="material-symbols-outlined list-item__icon">
-                  person
-                </span>
-                <p class="list-item__label">Iniciar sesion</p>
-              </a>
-            </li>
-            
-            <li>
-              <a class="list-item">
-                <span class="material-symbols-outlined list-item__icon">
-                  person_check
-                </span>
-                <p class="list-item__label">Registro</p>
-              </a>
-            </li>
-            
-            <li>
-              <a class="list-item">
-                <span class="material-symbols-outlined list-item__icon">
-                  checkbook
-                </span>
-                <p class="list-item__label">Reservas</p>
-              </a>
-            </li>
+  <form action="" class="form border">
+    <fieldset class="">
+      <legend>Entrada y salida</legend>
+      <ul>
+        <li class="form__item border ">
+          <p class="item-lp">
+            <label for="date-check-in">Fecha de entrada:</label>
+            <input type="date" name="date-check-in" id="date-check-in">
+          </p>
+          <span class="msg-ctrl">Input invalido</span>
+        </li>
+        <li class="form__item border">
+          <p class="item-lp">
+            <label for="time-check-in">Hora de entrada:</label>
+            <input type="time" name="time-check-in" id="time-check-in" value="15:00">
+          </p>
+          <span class="msg-ctrl">Input invalido</span>
+        </li>
+        <li class="form__item border">
+          <p class="item-lp">
+            <label for="date-check-out">Fecha de salida:</label>
+            <input type="date" name="date-check-out" id="date-check-out">
+          </p>
+          <span class="msg-ctrl">Input invalido</span>
+        </li>
+        <li class="form__item border">
+          <p class="item-lp">
+            <label for="time-check-out">Hora de salida:</label>
+            <input type="time" name="time-check-out" id="time-check-out" value="12:00">
+          </p>
+          <span class="msg-ctrl">Input invalido</span>
+        </li>
+      </ul>
+    </fieldset>
 
-          </ul>
-    
-          <ul class="header-module__list">
-            <li>
-              <a class="list-item">
-                <span class="material-symbols-outlined list-item__icon">
-                  open_in_new
-                </span>
-                <p class="list-item__label">Sobre</p>
-              </a>
-            </li>
-            
-            <li>
-              <a class="list-item">
-                <span class="material-symbols-outlined list-item__icon">
-                  bed
-                </span>
-                <p class="list-item__lab">Habitaciones</p>
-              </a>
-            </li>
-            
-            <li>
-              <a class="list-item">
-                <span class="material-symbols-outlined list-item__icon">
-                  loyalty
-                </span>
-                <p class="list-item__label">Planes</p>
-              </a>
-            </li>
-            
-            <li>
-              <a class="list-item">
-                <span class="material-symbols-outlined list-item__icon">
-                  rate_review
-                </span>
-                <p class="list-item__label">Opiniones</p>
-              </a>
-            </li>            
-    
-          </ul>
-        </nav>
-    
-    </header>
+    <fieldset>
+      <legend>Cantidad de personas</legend>
+      <ul>
+        <li class="form__item border">
+          <p class="item-lp">
+            <label for="num-adults">Numero de adultos:</label>
+            <input type="number" name="num-adults" id="num-adults" min="1" value="2">
+          </p>
+          <span class="msg-ctrl">Input invalido</span>
+        </li>
+        <li class="form__item border">
+          <p class="item-lp">
+            <label for="num-children">Numero de niños:</label>
+            <input type="number" name="num-children" id="num-children" value="0">
+          </p>
+          <span class="msg-ctrl">Input invalido</span>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset>
+      <legend>Cantidad habitaciones</legend>
+      <ul>
+        <li class="form__item border">
+          <p class="item-lp">
+            <label for="num-couple-room">Habitacion de pareja:</label>
+            <input type="number" name="num-couple-room" id="num-couple-room" max="8" value="1">
+          </p>
+          <span class="msg-ctrl">Input invalido</span>
+        </li>
+        <li class="form__item border">
+          <p class="item-lp">
+            <label for="num-single-room">Habitacion sencilla:</label>
+            <input type="number" name="num-single-room" id="num-single-room" max="10" value="0">
+          </p>
+          <span class="msg-ctrl">Input invalido</span>
+        </li>
+        <li class="form__item border">
+          <p class="item-lp">
+            <label for="num-multiple-room">Habitacion múltiple:</label>
+            <input type="number" name="num-multiple-room" id="num-multiple-room" max="3" value="0">
+          </p>
+          <span class="msg-ctrl">Input invalido</span>
+        </li>
+      </ul>
+    </fieldset>
+  </form>
+
+  
+
 </body>
+<script src="test.js"></script>
 
 </html>

@@ -1,0 +1,14 @@
+/* 
+Modulo contenido principal
+
+Modulo para el layout de un main
+Markup:
+<main class="main-content"></main>
+
+Styleguide Media
+*/
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+}

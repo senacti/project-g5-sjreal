@@ -1,0 +1,16 @@
+/* 
+Modulo nav
+
+Modulo para una lista horizontal
+Markup:
+<ul class="horizontal-list">    
+</ul>
+
+Styleguide Media
+*/
+.horizontal-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    list-style: none;
+}

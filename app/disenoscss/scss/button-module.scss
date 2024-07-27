@@ -1,0 +1,35 @@
+/* 
+Botones
+
+Modulo para los botones y sus diferentes estados
+Markup:
+<button class="selection__mo {{modifier-class}}">
+    Elegir 
+</button>
+
+.selection__mo--active - Boton con transicion aplicada
+.selection__mo--danger - Boton con color de alerta
+
+Styleguide Media
+*/
+
+.selection__mo {
+    width: 10em;
+    margin: 0 auto;
+    padding: 1em;
+    font-family: Montserrat;
+    border: 1px solid transparent;
+    border-radius: 0.5em;
+    // background-color: #68a7d2;
+    transition: background-color 0.5s linear;
+}
+
+.selection__mo--active {
+    background-color: #2d6d97;
+    color: #CED8E2;
+}
+
+.danger {
+    background-color: #d26868;
+    color: #000;
+}

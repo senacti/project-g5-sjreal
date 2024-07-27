@@ -1,0 +1,31 @@
+/* 
+Modulo link con texto e icono
+
+Modulo para un link con texto e icono. El icono se encuentra a la izquierda del texto.
+Markup:
+<a class="list-item">
+    <span class="material-symbols-outlined list-item__icon">
+    home
+    </span>
+    <p class="list-item__label">Home</p>
+</a>
+
+Styleguide Media
+*/
+.item {
+    display: flex;
+    padding: 0.5em;
+    margin: 0.5em 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.item__icon {
+    height: 1.5em;
+    width: 1.5em;
+    font-size: 20px;
+}
+
+a:hover {
+    color: #B9AE9D;
+}

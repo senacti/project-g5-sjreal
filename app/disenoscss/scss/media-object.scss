@@ -32,6 +32,31 @@ p {
   font-family: Montserrat;
 }
 
+/* 
+Objeto Imagen-descripcion
+
+Modulo para un objeto que contiene una imagen y una descripción, una al lado de la otra
+y abajo de los un boton de secleccion.
+Markup:
+
+<div class="media-object">
+    <div class="item-up__mo">
+      <img src="../assets/images/habitacion3.jpeg" alt="Imagen de habitacion">
+      <div class="description__mo">
+        <h1>Habitacion sencilla</h1>
+        <p>Habitacion con una cama doble, ducha caliente e internet, capacidad para dos o tres personas</p>
+      </div>
+    </div>
+    <div class="item-down__mo">
+      <button class="selection__mo">
+        Elegir 
+      </button>
+    </div>
+</div>
+
+Styleguide Media
+*/
+
 .media-object {
     width: 30em;
     display: flex;
@@ -42,6 +67,7 @@ p {
     border: 1px solid #ccc;
     border-radius: 0.5em;
     box-shadow: 0.2em 0.2em 1em gray;
+    // background-color: ;
 }
 
 .media-object .item-up__mo {
@@ -79,7 +105,7 @@ p {
     padding: 1em;
     border: 1px solid transparent;
     border-radius: 0.5em;
-    background-color: #68a7d2;
+    // background-color: #68a7d2;
     transition: background-color 0.5s linear;
 }
 

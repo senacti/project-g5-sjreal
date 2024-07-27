@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 *,
 *::before,
 *::after {
@@ -7,6 +9,10 @@
     margin: 0;
     padding: 0;
     font-size: 16px;
+}
+
+ul {
+    list-style: none;
 }
 
 h1,
@@ -18,67 +24,119 @@ h3,
 h4,
 h5,
 h6,
-a {
+a,
+legend {
     font-family: Rubik;
-
 }
 
-p {
+p, span {
     font-family: Montserrat;
 }
 
-img {
-    max-width: 5em;
-    height: 5em;
-}
+/* 
+Modulo los input de los formularios
 
-.header-module {
-    display: flex;
-    justify-content: space-around;
-    padding: 1em;
-    border-bottom: 1px solid #2d6d97;
-}
+Modulo 
+Markup:
+<li class="form__item">
+    <p class="item-lp" {{modifier-class}}">
+        <label></label>
+        <input>
+    </p>
+    <span class="msg-ctrl"></span>
+</li>
 
-.header-module__logo {
+Styleguide Media
+*/
+
+.form__item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 1em;
+    width: 24em;
+    padding: 0.5em;
+    font-weight: bold;
 }
 
-.header-module__nav {
-    display: flex;
-    flex-direction: column;
+.msg-ctrl {
+    display: none;
 }
 
-.header-module__list:first-child {
-    border-bottom: 1px solid #2d6d97;
+.msg-ctrl--valid {
+    display: block;
+    color: #68a7d2;
+    font-weight: 600;
 }
 
-.header-module__list:last-child {
-    margin-top: 1em ;
+.msg-ctrl--invalid {
+    display: block;
+    color: red;
+    font-weight: 600;
 }
 
-.header-module__list {
+.item-lp {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 1rem;
-    list-style: none;
+    padding: .5em .2em;
+
 }
 
-.header-module__list > li > a {
+.item-lp > input {
+    width: 10em;
+}
+
+/* 
+Modulo formulario
+
+Modulo para un formulario de longitud del 90% del viewport y centrado en la pantalla
+Markup:
+<form class="form">
+    <fieldset>
+
+    </fieldset>
+</li>
+
+Styleguide Media
+*/
+.form {
     display: flex;
-    padding: 0.5em;
-    text-decoration: none;
-    text-transform: uppercase;
-    
+    justify-content: space-around;
+    width: 90vw;
+    padding: 2em;
+    margin: 0 auto;
 }
 
-.list-item__icon {
-    height: 1.5em;
-    width: 1.5em;
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    border: 1px solid #0e2330;
+    border-radius: 4px;
 }
 
-.header-module__list > li > a:hover {
-    transform: scale(1.1);
-    color: #4291c6;
+/*Bordes*/
+
+
+.border {
+    border: 1px solid #0e2330;
+    border-radius: 0.3em;
+    box-shadow: 0.1em 0.1em 0.3em gray;
 }
+
+.border--invalid {
+    border: 1px solid red;
+}
+
+.border--valid {
+    border: 1px solid #4291c6;
+}
+
+/*Fonts*/
+
+.text--invalid {
+    color: red;
+}
+

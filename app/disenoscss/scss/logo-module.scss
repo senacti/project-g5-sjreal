@@ -1,0 +1,26 @@
+/* 
+Modulo link con texto e icono
+
+Modulo para un link con texto e icono. El icono se encuentra a la izquierda del texto.
+Markup:
+<div class="header-module__logo">
+    <img src="app/assets/images/Logo-proyecto(1).png" alt="Hotel Logo">
+    <h1>Hotel San Jose Real</h1>
+</div>
+
+Styleguide Media
+*/
+.header-module__logo img {
+    max-width: 5em;
+    height: 5em;
+}
+
+.header-module__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-transform: uppercase;
+}

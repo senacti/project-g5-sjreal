@@ -1,0 +1,15 @@
+/* 
+Modulo para los bordes
+
+Modulo para una los estilos de los bordes
+Markup:
+<div class="border  {{modifier}}">    
+</div>
+
+Styleguide Media
+*/
+.border {
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    box-shadow: 0.2em 0.2em 1em gray;
+}
