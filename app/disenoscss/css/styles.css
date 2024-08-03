@@ -249,7 +249,7 @@ Modulo nav
 
 Modulo para una lista horizontal
 Markup:
-<ul class="horizontal-list">    
+<ul class="horizontal-list {{modifier}}">    
 </ul>
 
 Styleguide Media
@@ -259,6 +259,12 @@ Styleguide Media
   justify-content: space-between;
   padding: 0 1rem;
   list-style: none;
+}
+
+.horizontal-list--vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* 
@@ -300,7 +306,7 @@ Modulo para los bordes
 
 Modulo para una los estilos de los bordes
 Markup:
-<div class="border">    
+<div class="border  {{modifier}}">    
 </div>
 
 Styleguide Media
@@ -309,6 +315,14 @@ Styleguide Media
   border: 1px solid #ccc;
   border-radius: 0.5em;
   box-shadow: 0.2em 0.2em 1em gray;
+}
+
+.border--invalid {
+  border: 2px solid red;
+}
+
+.border--valid {
+  border: 1px solid #4291c6;
 }
 
 /* 
@@ -389,6 +403,95 @@ Styleguide Media
 iframe {
   width: 100%;
   height: 40vh;
+}
+
+/* 
+Modulo formulario
+
+Modulo para un formulario de longitud del 90% del viewport y centrado en la pantalla
+Markup:
+<form class="form">
+    <fieldset class="form-item">
+
+    </fieldset>
+</li>
+
+Styleguide Media
+*/
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 2em 4em;
+}
+
+.form-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 90vw;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+.form-item {
+  padding: 1em;
+  margin: 2em 4em;
+  border: 1px solid #0e2330;
+  border-radius: 4px;
+}
+
+/* 
+Modulo los input de los formularios
+
+Modulo 
+Markup:
+<li class="form__item">
+    <p class="item-lp" {{modifier-class}}">
+        <label></label>
+        <input>
+    </p>
+    <span class="msg-ctrl"></span>
+</li>
+
+Styleguide Media
+*/
+.form__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+  width: 24em;
+  font-weight: bold;
+}
+
+.msg-ctrl {
+  display: none;
+  color: red;
+}
+
+.msg-ctrl.active {
+  display: block;
+}
+
+.item-lp {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0.2em;
+}
+
+label {
+  margin: 1.5em auto;
+}
+
+input {
+  margin: 1.5em auto;
+  width: 10em;
+}
+
+.message {
+  width: 15em;
 }
 
 /*# sourceMappingURL=styles.css.map */

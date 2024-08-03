@@ -14,87 +14,71 @@
 
 <body>
 
-  <form action="" class="form border">
-    <fieldset class="">
-      <legend>Entrada y salida</legend>
-      <ul>
-        <li class="form__item border ">
-          <p class="item-lp">
-            <label for="date-check-in">Fecha de entrada:</label>
-            <input type="date" name="date-check-in" id="date-check-in">
-          </p>
-          <span class="msg-ctrl">Input invalido</span>
-        </li>
-        <li class="form__item border">
-          <p class="item-lp">
-            <label for="time-check-in">Hora de entrada:</label>
-            <input type="time" name="time-check-in" id="time-check-in" value="15:00">
-          </p>
-          <span class="msg-ctrl">Input invalido</span>
-        </li>
-        <li class="form__item border">
-          <p class="item-lp">
-            <label for="date-check-out">Fecha de salida:</label>
-            <input type="date" name="date-check-out" id="date-check-out">
-          </p>
-          <span class="msg-ctrl">Input invalido</span>
-        </li>
-        <li class="form__item border">
-          <p class="item-lp">
-            <label for="time-check-out">Hora de salida:</label>
-            <input type="time" name="time-check-out" id="time-check-out" value="12:00">
-          </p>
-          <span class="msg-ctrl">Input invalido</span>
-        </li>
-      </ul>
-    </fieldset>
-
-    <fieldset>
-      <legend>Cantidad de personas</legend>
-      <ul>
-        <li class="form__item border">
-          <p class="item-lp">
-            <label for="num-adults">Numero de adultos:</label>
-            <input type="number" name="num-adults" id="num-adults" min="1" value="2">
-          </p>
-          <span class="msg-ctrl">Input invalido</span>
-        </li>
-        <li class="form__item border">
-          <p class="item-lp">
-            <label for="num-children">Numero de niños:</label>
-            <input type="number" name="num-children" id="num-children" value="0">
-          </p>
-          <span class="msg-ctrl">Input invalido</span>
-        </li>
-      </ul>
-    </fieldset>
-
-    <fieldset>
-      <legend>Cantidad habitaciones</legend>
-      <ul>
-        <li class="form__item border">
-          <p class="item-lp">
-            <label for="num-couple-room">Habitacion de pareja:</label>
-            <input type="number" name="num-couple-room" id="num-couple-room" max="8" value="1">
-          </p>
-          <span class="msg-ctrl">Input invalido</span>
-        </li>
-        <li class="form__item border">
-          <p class="item-lp">
-            <label for="num-single-room">Habitacion sencilla:</label>
-            <input type="number" name="num-single-room" id="num-single-room" max="10" value="0">
-          </p>
-          <span class="msg-ctrl">Input invalido</span>
-        </li>
-        <li class="form__item border">
-          <p class="item-lp">
-            <label for="num-multiple-room">Habitacion múltiple:</label>
-            <input type="number" name="num-multiple-room" id="num-multiple-room" max="3" value="0">
-          </p>
-          <span class="msg-ctrl">Input invalido</span>
-        </li>
-      </ul>
-    </fieldset>
+  <form action="" class="form border" id="form">
+    <div class="form-inputs">
+      <fieldset class="">
+        <legend>Entrada y salida</legend>
+        <ul>
+          <li class="form__item border" id="li-check-in">
+            <p class="item-lp">
+              <label for="date-check-in">Fecha de entrada:</label>
+              <input type="date" name="date-check-in" id="date-check-in">
+            </p>
+            <span class="msg-ctrl">Input invalido</span>
+          </li>
+          <li class="form__item border" >
+            <p class="item-lp">
+              <label for="time-check-in">Hora de entrada:</label>
+              <input type="time" name="time-check-in" id="time-check-in" value="15:00">
+            </p>
+            <span class="msg-ctrl">Input invalido</span>
+          </li>
+          <li class="form__item border" id="li-check-out">
+            <p class="item-lp">
+              <label for="date-check-out">Fecha de salida:</label>
+              <input type="date" name="date-check-out" id="date-check-out">
+            </p>
+            <span class="msg-ctrl">Input invalido</span>
+          </li>
+          <li class="form__item border">
+            <p class="item-lp">
+              <label for="time-check-out">Hora de salida:</label>
+              <input type="time" name="time-check-out" id="time-check-out" value="12:00">
+            </p>
+            <span class="msg-ctrl">Input invalido</span>
+          </li>
+        </ul>
+      </fieldset>
+  
+      <fieldset>
+        <legend>Cantidad habitaciones</legend>
+        <ul>
+          <li class="form__item border">
+            <p class="item-lp">
+              <label for="num-couple-room">Habitacion de pareja:</label>
+              <input type="number" name="num-couple-room" id="num-couple-room" max="8">
+            </p>
+            <span class="msg-ctrl">Input invalido</span>
+          </li>
+          <li class="form__item border">
+            <p class="item-lp">
+              <label for="num-single-room">Habitacion sencilla:</label>
+              <input type="number" name="num-single-room" id="num-single-room" max="10">
+            </p>
+            <span class="msg-ctrl">Input invalido</span>
+          </li>
+          <li class="form__item border">
+            <p class="item-lp">
+              <label for="num-multiple-room">Habitacion múltiple:</label>
+              <input type="number" name="num-multiple-room" id="num-multiple-room" max="3" >
+            </p>
+            <span class="msg-ctrl">Input invalido</span>
+          </li>
+        </ul>
+      </fieldset>
+    </div>
+    
+    <input id="send" type="submit" value="Enviar">
   </form>
 
   

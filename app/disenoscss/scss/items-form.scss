@@ -1,0 +1,50 @@
+/* 
+Modulo los input de los formularios
+
+Modulo 
+Markup:
+<li class="form__item">
+    <p class="item-lp" {{modifier-class}}">
+        <label></label>
+        <input>
+    </p>
+    <span class="msg-ctrl"></span>
+</li>
+
+Styleguide Media
+*/
+
+.form__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+    width: 24em;
+    font-weight: bold;
+}
+
+.msg-ctrl {
+    display: none;
+    color: red;
+}
+
+.msg-ctrl.active {
+    display: block;
+}
+
+.item-lp {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .5em .2em;
+}
+
+label {
+    margin: 1.5em auto;
+}
+
+input {
+    margin: 1.5em auto;
+    width: 10em;
+
+}

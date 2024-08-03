@@ -10,13 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    const button = document.querySelector('.selection__mo');
 
-    button.addEventListener('click', () => {
-        button.classList.toggle('selection__mo--active');
-    });
-});
 
 
 

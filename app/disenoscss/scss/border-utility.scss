@@ -13,3 +13,11 @@ Styleguide Media
     border-radius: 0.5em;
     box-shadow: 0.2em 0.2em 1em gray;
 }
+
+.border--invalid {
+    border: 2px solid red;
+}
+
+.border--valid {
+    border: 1px solid #4291c6;
+}

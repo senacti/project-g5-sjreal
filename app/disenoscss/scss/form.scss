@@ -1,0 +1,36 @@
+/* 
+Modulo formulario
+
+Modulo para un formulario de longitud del 90% del viewport y centrado en la pantalla
+Markup:
+<form class="form">
+    <fieldset class="form-item">
+
+    </fieldset>
+</li>
+
+Styleguide Media
+*/
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 2em 4em;
+}
+
+.form-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90vw;
+    padding: 2em;
+    margin: 0 auto;
+}
+
+.form-item {
+    padding: 1em;
+    margin: 2em 4em;
+    border: 1px solid #0e2330;
+    border-radius: 4px;
+}

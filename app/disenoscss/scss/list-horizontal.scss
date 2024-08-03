@@ -3,7 +3,7 @@ Modulo nav
 
 Modulo para una lista horizontal
 Markup:
-<ul class="horizontal-list">    
+<ul class="horizontal-list {{modifier}}">    
 </ul>
 
 Styleguide Media
@@ -13,4 +13,10 @@ Styleguide Media
     justify-content: space-between;
     padding: 0 1rem;
     list-style: none;
+}
+
+.horizontal-list--vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
