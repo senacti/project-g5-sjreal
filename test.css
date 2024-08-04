@@ -33,7 +33,67 @@ p, span {
     font-family: Montserrat;
 }
 
-
+.media-object {
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+    margin: 1em;
+    gap: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    box-shadow: 0.2em 0.2em 1em gray;
+    // background-color: ;
+  }
+  
+  .media-object .item-up__mo {
+    display: flex;
+    margin: 0 0.5em;
+    padding: 0.5em;
+    gap: 1em;
+  }
+  
+  .item-up__mo img {
+    border-radius: 5px;
+  }
+  
+  .description__mo h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #333;
+    margin: 0 0 0.2em 0;
+  }
+  
+  .description__mo p {
+    text-align: center;
+    color: #333;
+  }
+  
+  .item-down__mo {
+    width: 100%;
+    padding: 1em;
+  
+  }
+  
+  .item-down__mo>.selection__mo {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    border: 1px solid transparent;
+    border-radius: 0.5em;
+    background-color: #68a7d2;
+    transition: background-color 0.5s linear;
+  }
+  
+  .item-down__mo .selection__mo--active {
+    background-color: #2d6d97;
+    color: #CED8E2;
+  }
+  
+  .item-up__mo>img {
+    width: 10em;
+    height: 10em;
+  }
 
 
 
