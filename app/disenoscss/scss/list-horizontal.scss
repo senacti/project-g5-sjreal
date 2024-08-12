@@ -18,5 +18,7 @@ Styleguide Media
 .horizontal-list--vertical {
     display: flex;
     flex-direction: column;
+    padding: 0 1em;
     justify-content: space-between;
+    list-style: none;
 }
